@@ -12,8 +12,11 @@ module.exports = {
             colors: {
                 'primary': '#01DC82',
                 'secondary': '#272838',
+                'uteq-black':  '#262626',
                 'floral-white': '#FEFAF2',
-            }
+                'uteq-yellow': '#FFD501',
+                'uteq-blue': '#3559FE',
+            },
         },
     },
     variants: {
