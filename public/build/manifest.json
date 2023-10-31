@@ -1,0 +1,44 @@
+{
+  "public/fonts/Sregs Serif Free - Heavy.otf": {
+    "file": "assets/Sregs Serif Free - Heavy-485e0785.otf",
+    "src": "public/fonts/Sregs Serif Free - Heavy.otf"
+  },
+  "public/fonts/SregsSerifDisplay-SemiBold.otf": {
+    "file": "assets/SregsSerifDisplay-SemiBold-95456ea7.otf",
+    "src": "public/fonts/SregsSerifDisplay-SemiBold.otf"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-32e9ba8d.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/images/avatar.png": {
+    "file": "assets/avatar-d58c9536.png",
+    "src": "resources/images/avatar.png"
+  },
+  "resources/images/favicon.png": {
+    "file": "assets/favicon-d0572ae3.png",
+    "src": "resources/images/favicon.png"
+  },
+  "resources/images/favicon1.png": {
+    "file": "assets/favicon1-6ad35909.png",
+    "src": "resources/images/favicon1.png"
+  },
+  "resources/images/safesent.png": {
+    "file": "assets/safesent-947c96c2.png",
+    "src": "resources/images/safesent.png"
+  },
+  "resources/images/superkracht1.webp": {
+    "file": "assets/superkracht1-dc6c7000.webp",
+    "src": "resources/images/superkracht1.webp"
+  },
+  "resources/images/uteq-optocht.webp": {
+    "file": "assets/uteq-optocht-8fbb1e57.webp",
+    "src": "resources/images/uteq-optocht.webp"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
