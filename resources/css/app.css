@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Sregs Serif Free";
+    src: url("/public/fonts/Sregs Serif Free - Heavy.otf");
+}
+
+@font-face {
+    font-family: "Sregs Serif Display";
+    src: url("/public/fonts/SregsSerifDisplay-SemiBold.otf");
+}
+
+[x-cloak] {
+    display: none;
+}

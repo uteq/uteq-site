@@ -1,17 +1,20 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
+import preset from './vendor/filament/support/tailwind.config.preset';
 
 module.exports = {
+    preset: [preset],
     content: [
+        './app/Filament/**/*.php',
+        './resources/views/filament/**/*.blade.php',
+        './vendor/wire-elements/modal/resources/views/*.blade.php',
+        './vendor/filament/**/*.blade.php',
+        './storage/framework/views/*.php',
         './app/**/*.php',
         './resources/**/*.blade.php',
-        './resources/**/*.html',
-        './resources/**/*.js',
-        './resources/**/*.jsx',
-        './resources/**/*.ts',
-        './resources/**/*.tsx',
-        './resources/**/*.php',
-        './resources/**/*.vue',
-        './resources/**/*.twig',
+        './resources/**/*.{html,json,js,jsx,ts,tsx,vue,php}',
+    ],
+    safelist: [
+        'sm:max-w-2xl'
     ],
     theme: {
         extend: {
