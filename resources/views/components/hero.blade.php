@@ -24,7 +24,7 @@
                 <div class="hidden lg:flex lg:gap-x-12">
 
                 </div>
-                <div class="hidden lg:flex lg:gap-x-12 lg:flex-1 lg:justify-end">
+                <div class="hidden lg:flex lg:gap-x-16 lg:flex-1 lg:justify-end">
                     <a href="#" class="text-lg leading-6 font-sregs text-white">Hoe?</a>
                     <a href="#" class="text-lg leading-6 font-sregs text-white">Diensten</a>
                     <a href="#" class="text-lg leading-6 font-sregs text-white">Prijzen</a>
@@ -38,7 +38,7 @@
 
     <div class="relative isolate px-6 pt-14 lg:px-8 bg-secondary">
         <div class="relative mx-auto max-w-2xl pb-32 pt-16 sm:pb-48 sm:pt-24 lg:pb-72 lg:pt-28">
-            <div class="absolute bottom-20 -left-40 xl:-left-60">
+            <div class="hidden md:absolute bottom-20 -left-40 xl:-left-60">
                 <svg class="h-56 w-auto" viewBox="0 0 394 286" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_6640_814)">
                         <path d="M229.505 50.4185C236.889 50.4185 242.876 44.444 242.876 37.0741C242.876 29.7042 236.889 23.7297 229.505 23.7297C222.121 23.7297 216.135 29.7042 216.135 37.0741C216.135 44.444 222.121 50.4185 229.505 50.4185Z" fill="#F2F2F2"/>
@@ -164,7 +164,7 @@
                 <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
                     <a href="#" class="rounded-xl bg-primary px-14 py-6 text-lg font-semibold text-white shadow-sm">Bekijk plannen</a>
                 </div>
-                <p class="text-gray-500">Maandelijkse opzegging</p>
+                <p class="text-gray-400">Maandelijkse opzegging</p>
             </div>
         </div>
 

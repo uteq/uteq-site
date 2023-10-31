@@ -3,7 +3,7 @@
         <div>
             <p class="text-4xl font-sregs-bold text-secondary flex justify-center pb-16">Waarom een abonnement zo fijn werkt</p>
         </div>
-        <div class="grid grid-cols-3 grid-rows-2 gap-6">
+        <div class="grid md:grid-cols-3 grid-rows-2 gap-6">
             <div class="bg-floral-white flex flex-col p-10">
                 <div class="flex justify-center">
                     <svg width="193" height="113" viewBox="0 0 193 113" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -668,8 +668,8 @@
         <p class="flex text-lg justify-center text-center leading-7 max-w-2xl mx-auto pb-16">Bij UTEQ begrijpen we dat ieder bedrijf uniek is, daarom bieden we flexibele prijsplannen aan die aansluiten bij jouw behoeften.
         </p>
 
-        <div class="flex gap-6">
-            <div class="w-1/3 flex flex-col border-2 p-8 rounded-2xl border-gray-950">
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/3 flex flex-col border-2 p-8 rounded-2xl border-gray-950">
                 <p class="text-xl font-bold pb-3">Maandelijks</p>
                 <p class="text-gray-400">Pauzeer of beëindig maandelijks</p>
                 <div class="flex items-center gap-4 py-8">
@@ -713,7 +713,7 @@
                 </a>
             </div>
 
-            <div class="w-1/3 flex flex-col border-2 p-8 rounded-2xl border-gray-950">
+            <div class="md:w-1/3 flex flex-col border-2 p-8 rounded-2xl border-gray-950">
                 <p class="text-xl font-bold pb-3">Elk kwartaal</p>
                 <p class="text-gray-400">Pauzeer of beëindig maandelijks</p>
                 <div class="flex items-center gap-4 py-8">
@@ -757,7 +757,7 @@
                 </a>
             </div>
 
-            <div class="w-1/3 flex flex-col border-2 p-8 rounded-2xl border-gray-950">
+            <div class="md:w-1/3 flex flex-col border-2 p-8 rounded-2xl border-gray-950">
                 <p class="text-xl font-bold pb-3">Jaarlijks</p>
                 <p class="text-gray-400">Pauzeer of beëindig maandelijks</p>
                 <div class="flex items-center gap-4 py-8">
@@ -805,7 +805,7 @@
         </div>
 
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-            <svg width="907" height="330" viewBox="0 0 907 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="md:w-[907px] md:h-[330px]" viewBox="0 0 907 330" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6644_3229)">
                     <path d="M546.28 331.334H341.51V70.2346C341.51 36.2546 369.147 8.60962 403.117 8.60962H484.673C518.643 8.60962 546.28 36.2546 546.28 70.2346V331.334Z" fill="#E6E6E6"/>
                     <path d="M476.303 67.3588H412.376C407.244 67.3588 403.068 63.1822 403.068 58.0482V40.9434C403.068 35.8094 407.244 31.6328 412.376 31.6328H476.303C481.436 31.6328 485.611 35.8094 485.611 40.9434V58.0482C485.611 63.1822 481.436 67.3588 476.303 67.3588Z" fill="white"/>

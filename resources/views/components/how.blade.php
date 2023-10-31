@@ -4,23 +4,23 @@
             <h2 class="text-5xl font-sregs-bold text-secondary">Het is super eenvoudig</h2>
         </div>
         <p class="text-xl text-center max-w-3xl mx-auto leading-8 pb-16">Bij UTEQ houden we het simpel en persoonlijk. We beginnen met een kop koffie, bespreken welk abonnementsmodel bij jou past, en duiken dan in de actie.</p>
-        <div class="flex gap-x-6">
-            <div class="bg-floral-white flex flex-col w-1/3 p-10">
-                <p class="text-2xl font-sregs pt-10 pb-4">Kennismaking</p>
+        <div class="flex flex-col md:flex-row gap-x-6">
+            <div class="bg-floral-white flex flex-col md:w-1/3 p-10">
+                <p class="text-2xl font-sregs-bold tracking-wide pt-10 pb-4">Kennismaking</p>
                 <p class="leading-7">We beginnen met een ontmoeting en een kopje koffie om elkaar beter te leren kennen. Jij kiest het abonnementsmodel dat het beste bij jou past.</p>
             </div>
-            <div class="bg-floral-white flex flex-col w-1/3 p-10">
-                <p class="text-2xl font-sregs pt-10 pb-4">Prioritering</p>
+            <div class="bg-floral-white flex flex-col md:w-1/3 p-10">
+                <p class="text-2xl font-sregs pt-10 pb-4 font-sregs-bold tracking-wide">Prioritering</p>
                 <p class="leading-7">We komen bij jou op kantoor om meer mensen in jouw bedrijf te ontmoeten. Samen stellen we een lijst op met mogelijke verbeterpunten, waarbij we deze ordenen op basis van impact en gemak van implementatie.</p>
             </div>
-            <div class="bg-floral-white flex flex-col w-1/3 p-10">
-                <p class="text-2xl font-sregs pt-10 pb-4">Lancering</p>
+            <div class="bg-floral-white  flex flex-col md:w-1/3 p-10">
+                <p class="text-2xl font-sregs pt-10 pb-4 font-sregs-bold tracking-wide">Lancering</p>
                 <p class="leading-7">Op de dag van de lancering zijn we bij jou op kantoor aanwezig. We blijven regelmatig in contact om ervoor te zorgen dat alles soepel verloopt, passen aan waar nodig, en leveren de gewenste oplossingen.</p>
             </div>
         </div>
 
         <div class="flex justify-center pt-40">
-            <svg class="h-auto" width="740" viewBox="0 0 740 482" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="h-auto w-40 md:w-[740px]" viewBox="0 0 740 482" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6644_8015)">
                     <path d="M683.259 55.455H-10.0402C-10.8312 55.4378 -11.5838 55.1168 -12.137 54.5607C-12.6902 54.0046 -13 53.2576 -13 52.4797C-13 51.7018 -12.6902 50.9548 -12.137 50.3987C-11.5838 49.8426 -10.8312 49.5216 -10.0402 49.5044H683.259C684.05 49.5216 684.803 49.8426 685.356 50.3987C685.909 50.9548 686.219 51.7018 686.219 52.4797C686.219 53.2576 685.909 54.0046 685.356 54.5607C684.803 55.1168 684.05 55.4378 683.259 55.455Z" fill="#E6E6E6"/>
                     <path d="M12.9816 27.6488C16.9496 27.6488 20.1663 24.3585 20.1663 20.2998C20.1663 16.241 16.9496 12.9507 12.9816 12.9507C9.01358 12.9507 5.79688 16.241 5.79688 20.2998C5.79688 24.3585 9.01358 27.6488 12.9816 27.6488Z" fill="#3F3D56"/>

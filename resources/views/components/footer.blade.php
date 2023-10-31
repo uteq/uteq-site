@@ -1,6 +1,6 @@
-<div class="bg-secondary">
+<div class="bg-secondary px-8">
     <div class="max-w-2xl pt-32 mx-auto">
-        <div class="text-white text-5xl font-sregs-bold text-center mb-4 tracking-wide">
+        <div class="text-white text-3xl md:text-5xl font-sregs-bold text-center mb-4 tracking-wide">
             Samen tillen we jouw bedrijf naar het volgende niveau
         </div>
         <div class="text-center text-gray-200 text-lg">

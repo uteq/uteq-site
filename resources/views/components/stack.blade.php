@@ -1,10 +1,10 @@
 <div class="bg-white pb-32">
-    <div class="max-w-6xl mx-auto bg-secondary rounded-2xl p-20">
+    <div class="max-w-6xl mx-auto bg-secondary rounded-2xl p-10 md:p-20">
         <div class="text-white font-sregs-bold text-4xl pb-8">Waar wij graag mee werken</div>
-        <div class="w-1/2 text-white pb-10">We beginnen met een ontmoeting en een kopje koffie om elkaar beter te leren kennen. Jij kiest het abonnementsmodel dat het beste bij jou past.</div>
+        <div class="md:w-1/2 text-white pb-10">We beginnen met een ontmoeting en een kopje koffie om elkaar beter te leren kennen. Jij kiest het abonnementsmodel dat het beste bij jou past.</div>
 
-        <div class="flex gap-24">
-            <div class=" flex flex-col text-white text-lg gap-6">
+        <div class="flex flex-col md:flex-row gap-24">
+            <div class="flex md:flex-col text-white text-lg gap-6">
                 <div class="text-gray-500">
                     Front-End
                 </div>
@@ -15,7 +15,7 @@
                     DevOps
                 </div>
             </div>
-            <div class="flex gap-12">
+            <div class="flex flex-col md:flex-row gap-12">
                 <div>
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g clip-path="url(#clip0_6644_3909)">
