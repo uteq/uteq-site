@@ -1,6 +1,18 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+    content: [
+        './app/**/*.php',
+        './resources/**/*.blade.php',
+        './resources/**/*.html',
+        './resources/**/*.js',
+        './resources/**/*.jsx',
+        './resources/**/*.ts',
+        './resources/**/*.tsx',
+        './resources/**/*.php',
+        './resources/**/*.vue',
+        './resources/**/*.twig',
+    ],
     theme: {
         extend: {
             fontFamily: {
@@ -24,17 +36,6 @@ module.exports = {
             backgroundColor: ['active'],
         }
     },
-    content: [
-        './app/**/*.php',
-        './resources/**/*.html',
-        './resources/**/*.js',
-        './resources/**/*.jsx',
-        './resources/**/*.ts',
-        './resources/**/*.tsx',
-        './resources/**/*.php',
-        './resources/**/*.vue',
-        './resources/**/*.twig',
-    ],
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),

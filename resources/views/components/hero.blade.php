@@ -37,7 +37,7 @@
     </header>
 
     <div class="relative isolate px-6 pt-14 lg:px-8 bg-secondary">
-        <div class="relative mx-auto max-w-2xl pb-32 pt-16 sm:pb-48 sm:pt-24 lg:pb-72 lg:pt-28">
+        <div class="relative mx-auto max-w-4xl pb-32 pt-16 sm:pb-48 sm:pt-24 lg:pb-72 lg:pt-28">
             <div class="hidden md:absolute bottom-20 -left-40 xl:-left-60">
                 <svg class="h-56 w-auto" viewBox="0 0 394 286" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_6640_814)">
@@ -154,12 +154,14 @@
                 </svg>
             </div>
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div class="relative rounded-full px-3 py-1 leading-6 text-gray-200">
+                <div class="relative rounded-full px-3 py-1 leading-6 text-gray-300">
                     Discover. Build. Grow.
                 </div>
             </div>
             <div class="text-center">
-                <h1 class="text-4xl font-sregs-bold tracking-wide text-white sm:text-6xl">Programmeerabonnementen voor Langdurig Succes</h1>
+                <h1 class="text-4xl font-sregs-bold tracking-wide text-white sm:text-8xl">
+                    Kleine toepassingen<br /> met grote impact
+                </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">Met een focus op lange termijn doelen en duurzame groei, leiden onze diensten bedrijven naar een toekomst van blijvend succes. Wij geloven dat echte transformatie tijd kost, en ons partnerschap gaat verder dan de korte termijn.</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
                     <a href="#" class="rounded-xl bg-primary px-14 py-6 text-lg font-semibold text-white shadow-sm">Bekijk plannen</a>
