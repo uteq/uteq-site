@@ -16,13 +16,13 @@
 {{--                </div>--}}
                 <div>
                     <h3 class="text-lg lg:text-4xl leading-relaxed max-w-4xl mx-auto">
-                        <span class="whitespace-nowrap">SaaS web ontwikkeling en design</span>
-                        · <span class="whitespace-nowrap">API integraties</span>
+                        <span class="whitespace-nowrap">API integraties</span>
                         · <span class="whitespace-nowrap">Adminpanelen</span>
                         · <span class="whitespace-nowrap">Notificatiesystemen</span>
                         · <span class="whitespace-nowrap">Consultancy</span>
                         · <span class="whitespace-nowrap">UX/UI</span>
                         · <span class="whitespace-nowrap">Grafish ontwerp</span>
+                        · <span class="whitespace-nowrap">SaaS- web ontwikkeling en design</span>
                     </h3>
 
                     <x-contact-form-modal title="Afspraak maken">

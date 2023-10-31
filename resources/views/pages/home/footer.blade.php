@@ -34,13 +34,18 @@
             We zien er naar uit om samen impact te maken. ✌️
         </div>
 
-        <div class="flex gap-6 justify-center text-gray-200 pb-12">
-            <a href="#" class="underline">
-                Algemene voorwaarden
-            </a>
-            <a href="#" class="underline">
-                Algemene voorwaarden
-            </a>
+        <div class="text-center">
+            <div class="flex gap-2 justify-center text-gray-200 pb-2">
+                <a href="mailto:info@uteq.nl" class="border-b border-primary">info@uteq.nl</a>
+                · <a href="tel:+31614032722" class="border-b border-primary">+31 6 14032722</a>
+                · <a href="https://github.com/nathanjansen" class="border-b border-primary" target="_blank">Github</a>
+            </div>
+
+            <div class="flex gap-2 justify-center text-gray-200 pb-12">
+                <span>NL26 KNAB 0401 7906 06</span>
+                · <span>NL003362950B45</span>
+                · <span>53331540</span>
+            </div>
         </div>
     </div>
 </div>
