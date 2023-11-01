@@ -44,14 +44,14 @@
                 </a>
             </div>
             <div class="flex lg:hidden">
-                <button x-on:click="showMenu = ! showMenu" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <button x-on:click="showMenu = ! showMenu" type="button" class=" -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
-                <div class="absolute right-0 top-0 w-full p-4" x-show="showMenu" x-cloak>
-                    <button x-on:click.prevent="showMenu = !showMenu " class="px-2 pt-2 pb-6 font-bold flex justify-between text-primary-900 w-full border-b border-gray-100 border-primary-900 bg-white rounded-t-2xl">
+                <div class="absolute right-0 top-0 w-full p-0" x-show="showMenu" x-cloak>
+                    <button x-on:click.prevent="showMenu = !showMenu " class="p-8 font-bold flex justify-between text-primary-900 w-full border-b border-gray-100 border-primary-900 bg-white">
                         <div class="text-secondary">
                             <svg class="h-10 w-auto" viewBox="0 0 187 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M36.6695 7.22359L18.3348 17.8092L12.2232 21.3377V49.5661L6.11158 46.0393V46.0375H6.10979L0 42.5108V14.2807L24.4463 0.166504L36.6695 7.22359ZM64.8547 54.8839C61.9949 58.4251 60.2746 60.1183 56.8953 62.3545C53.169 64.2742 50.8772 65.1083 45.9142 65.5612C42.3875 65.5612 39.7577 65.0382 32.9001 62.3545C28.7155 60.627 26.341 59.9494 22.0125 59.615C13.3089 59.2717 9.04519 60.3484 2.76644 64.9734C4.44173 61.6426 9.44244 55.5886 17.4091 54.1577C17.4091 54.1577 18.1551 53.9381 19.6274 53.8433L18.3342 53.097V53.0952H18.3324L12.2226 49.5684V49.5667L36.669 35.4525V7.22415L42.7805 10.7527H42.7823L48.8921 14.2812V42.5096L27.9447 54.6036C29.5509 54.9447 30.5993 55.265 30.5993 55.265C31.6221 55.5472 32.7438 55.8906 34.02 56.2878C35.8894 56.8765 37.387 57.4933 38.8102 58.0794C41.398 59.1451 43.7398 60.1096 47.6237 60.6198C55.6658 60.7223 59.5718 59.7049 64.8511 54.8839H64.8547Z" fill="#3EE88C"/>
@@ -65,24 +65,24 @@
                             </svg>
                         </div>
                     </button>
-                    <nav class="flex flex-col bg-white rounded-b-2xl">
-                        <a href="#how" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                    <nav class="flex flex-col bg-white p-8">
+                        <a href="#how" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Ons proces
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="#projects" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="#projects" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Producten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="#services" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="#services" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Diensten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-{{--                        <a href="#" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">--}}
-{{--                            Over ons--}}
-{{--                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>--}}
-{{--                        </a>--}}
-                        <a href="#footer" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        {{--                        <a href="#" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">--}}
+                        {{--                            Over ons--}}
+                        {{--                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>--}}
+                        {{--                        </a>--}}
+                        <a href="#footer" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Contact
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
