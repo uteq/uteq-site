@@ -32,9 +32,25 @@
     "file": "assets/superkracht1-dc6c7000.webp",
     "src": "resources/images/superkracht1.webp"
   },
+  "resources/images/uteq-adminpanelen.png": {
+    "file": "assets/uteq-adminpanelen-e8223ff4.png",
+    "src": "resources/images/uteq-adminpanelen.png"
+  },
+  "resources/images/uteq-auc.png": {
+    "file": "assets/uteq-auc-afbdee06.png",
+    "src": "resources/images/uteq-auc.png"
+  },
   "resources/images/uteq-optocht.webp": {
     "file": "assets/uteq-optocht-8fbb1e57.webp",
     "src": "resources/images/uteq-optocht.webp"
+  },
+  "resources/images/uteq-telegram.png": {
+    "file": "assets/uteq-telegram-85c887cc.png",
+    "src": "resources/images/uteq-telegram.png"
+  },
+  "resources/images/uteq-wallable.png": {
+    "file": "assets/uteq-wallable-dff057f1.png",
+    "src": "resources/images/uteq-wallable.png"
   },
   "resources/js/app.js": {
     "file": "assets/app-4ed993c7.js",
