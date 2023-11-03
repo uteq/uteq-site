@@ -92,7 +92,7 @@
             </div>
             <div class="hidden lg:flex lg:gap-x-16 lg:flex-grow lg:justify-end">
                 <a href="#how" class="text-lg leading-6 font-sregs text-white">Ons proces</a>
-                <a href="#projects" class="text-lg leading-6 font-sregs text-white">Producten</a>
+                <a href="#projects" class="text-lg leading-6 font-sregs text-white">Projecten</a>
                 <a href="#services" class="text-lg leading-6 font-sregs text-white">Diensten</a>
 {{--                <a href="#" class="text-lg leading-6 font-sregs text-white">Over ons</a>--}}
                 <a href="#footer" class="text-lg leading-6 font-sregs text-white">Contact</a>
