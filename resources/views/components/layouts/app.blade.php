@@ -72,7 +72,7 @@
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
                         <a href="#projects" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
-                            Producten
+                            Projecten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
                         <a href="#services" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
