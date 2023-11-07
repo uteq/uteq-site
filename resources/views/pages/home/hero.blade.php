@@ -1,7 +1,7 @@
 <div class="relative isolate px-6 pt-14 lg:px-8 bg-secondary">
     <div class="relative mx-auto max-w-4xl pb-32 pt-16 sm:pb-48 sm:pt-24 lg:pb-72 lg:pt-28">
 
-        <div class="hidden xl:block absolute bottom-24 -left-40">
+        <div class="hidden absolute bottom-24 -left-40">
             <svg width="394" height="286" viewBox="0 0 394 286" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6712_894)">
                     <path d="M229.504 50.4187C236.889 50.4187 242.875 44.4442 242.875 37.0743C242.875 29.7045 236.889 23.73 229.504 23.73C222.12 23.73 216.134 29.7045 216.134 37.0743C216.134 44.4442 222.12 50.4187 229.504 50.4187Z" fill="#F2F2F2"/>
@@ -115,7 +115,6 @@
                     </clipPath>
                 </defs>
             </svg>
-
         </div>
 
         <div class="hidden sm:mb-8 sm:flex sm:justify-center">
