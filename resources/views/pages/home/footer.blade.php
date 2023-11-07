@@ -14,23 +14,6 @@
                     Contact opnemen
                 </button>
             </x-contact-form-modal>
-
-
-
-{{--            <x-filament::modal>--}}
-{{--                <x-slot name="trigger">--}}
-{{--                    <x-filament::button>--}}
-{{--                        Open modal--}}
-{{--                    </x-filament::button>--}}
-{{--                </x-slot>--}}
-
-
-{{--                <livewire:contact-form />--}}
-{{--            </x-filament::modal>--}}
-
-{{--            <a href="#" class="w-52 border-2 border-white flex justify-center py-4 px-8 text-white rounded-xl font-medium mb-3">--}}
-{{--                Bekijk plannen--}}
-{{--            </a>--}}
         </div>
         <div class="text-center text-gray-200 pb-32">
             We zien er naar uit om samen impact te maken. ✌️
@@ -47,6 +30,10 @@
                 <span class="whitespace-nowrap">NL26 KNAB 0401 7906 06</span>
                 · <span>NL003362950B45</span>
                 · <span>53331540</span>
+            </div>
+
+            <div class="flex gap-2 justify-center text-gray-200 pb-12">
+                <span>Wolkammersstraat 6c · 8601VB · Sneek</span>
             </div>
         </div>
     </div>
