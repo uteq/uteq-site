@@ -3,10 +3,10 @@
         <div class="font-sregs-bold text-5xl text-secondary pb-16">Onze Projecten</div>
 
         <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-adminpanelen.png')); ?>" alt="uteq optocht">
             </div>
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <div class="flex flex-col gap-3">
                     <p class="uppercase tracking-wider text-gray-700">Adminpaneel</p>
                     <p class="font-sregs-bold text-3xl md:text-4xl">BioValue</p>
@@ -27,10 +27,10 @@
             </div>
         </div>
         <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-telegram.png')); ?>" alt="uteq optocht">
             </div>
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <div class="flex flex-col gap-3">
                     <p class="uppercase tracking-wider text-gray-700">Koppeling</p>
                     <p class="font-sregs-bold text-3xl md:text-4xl">Storingsdienst BioValue</p>
@@ -48,10 +48,10 @@
             </div>
         </div>
         <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-wallable.png')); ?>" alt="uteq optocht">
             </div>
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <div class="flex flex-col gap-3">
                     <p class="uppercase tracking-wider text-gray-700">Poster generator</p>
                     <p class="font-sregs-bold text-3xl md:text-4xl">Wallable</p>
@@ -71,10 +71,10 @@
         </div>
 
         <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-auc.png')); ?>" alt="uteq optocht">
             </div>
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <div class="flex flex-col gap-3">
                     <p class="uppercase tracking-wider text-gray-700">Dashboards</p>
                     <p class="font-sregs-bold text-3xl md:text-4xl">All Under Control paneel</p>
@@ -91,10 +91,10 @@
         </div>
 
         <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-optocht.webp')); ?>" alt="uteq optocht">
             </div>
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <div class="flex flex-col gap-3">
                     <p class="uppercase tracking-wider text-gray-700">Ticketsysteem</p>
                     <p class="font-sregs-bold text-3xl md:text-4xl">Festival Ticket-systemen</p>
@@ -112,10 +112,10 @@
             </div>
         </div>
         <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
-            <div class="lg:w-1/2">
-                <img class="rounded-[40px]" src="<?php echo e(Vite::image('safesent.png')); ?>" alt="uteq optocht">
+            <div class="md:w-1/2">
+                <img class="rounded-[40px]" src="<?php echo e(Vite::image('dienst6.webp')); ?>" alt="uteq optocht">
             </div>
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2">
                 <div class="flex flex-col gap-3">
                     <p class="uppercase tracking-wider text-gray-700">SaaS</p>
                     <p class="font-sregs-bold text-3xl md:text-4xl">Safesent</p>

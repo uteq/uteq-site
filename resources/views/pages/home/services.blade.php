@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('superkracht1.webp') }}" alt="uteq optocht">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-api.webp') }}" alt="uteq optocht">
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('notifications.webp') }}" alt="uteq optocht">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-notifications.webp') }}" alt="uteq optocht">
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('consultancy.webp') }}" alt="uteq optocht">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-consultancy.webp') }}" alt="uteq optocht">
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('uiux.webp') }}" alt="uteq optocht">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-uiux.webp') }}" alt="uteq optocht">
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('grafischontwerp.webp') }}" alt="uteq optocht">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-grafischontwerp.webp') }}" alt="grafisch ontwerp">
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('superkracht1.webp') }}" alt="uteq optocht">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-saas.webp') }}" alt="uteq optocht">
                 </div>
             </div>
 

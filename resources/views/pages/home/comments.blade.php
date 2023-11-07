@@ -1,9 +1,9 @@
 <div class="bg-secondary py-24 lg:py-32">
-    <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-6xl mx-auto px-6">
 {{--        <div class="max-w-3xl mx-auto bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">--}}
 {{--            <div class="bg-primary h-2.5 rounded-full" style="width: 65%"></div>--}}
 {{--        </div>--}}
-        <p class="font-sregs-bold text-white text-4xl md:text-7xl tracking-wider text-center md:leading-[3.8rem] mb-8 lg:my-24">
+        <p class="font-sregs-bold text-white text-4xl md:text-5xl lg:text-7xl tracking-wider text-center md:leading-[3.8rem] mb-8 lg:my-24">
             "Wij vullen het gat tussen de websitebouwer en grote softwarepartijen."
         </p>
 

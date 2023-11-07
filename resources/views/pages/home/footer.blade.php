@@ -44,7 +44,7 @@
             </div>
 
             <div class="flex gap-2 justify-center text-gray-200 pb-12">
-                <span>NL26 KNAB 0401 7906 06</span>
+                <span class="whitespace-nowrap">NL26 KNAB 0401 7906 06</span>
                 · <span>NL003362950B45</span>
                 · <span>53331540</span>
             </div>
