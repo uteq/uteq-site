@@ -14,6 +14,11 @@ use LivewireUI\Modal\ModalComponent;
 
 class ContactForm extends ModalComponent implements HasForms
 {
+    public static function modalMaxWidth(): string
+    {
+        return '4xl';
+    }
+
     use InteractsWithForms;
 
     public ?array $data = [];

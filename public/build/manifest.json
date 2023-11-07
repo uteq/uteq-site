@@ -8,13 +8,17 @@
     "src": "public/fonts/SregsSerifDisplay-SemiBold.otf"
   },
   "resources/css/app.css": {
-    "file": "assets/app-1eed63da.css",
+    "file": "assets/app-6eb479ad.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/images/avatar.png": {
     "file": "assets/avatar-d58c9536.png",
     "src": "resources/images/avatar.png"
+  },
+  "resources/images/consultancy.webp": {
+    "file": "assets/consultancy-39ec1f10.webp",
+    "src": "resources/images/consultancy.webp"
   },
   "resources/images/favicon.png": {
     "file": "assets/favicon-d0572ae3.png",
@@ -24,6 +28,14 @@
     "file": "assets/favicon1-6ad35909.png",
     "src": "resources/images/favicon1.png"
   },
+  "resources/images/grafischontwerp.webp": {
+    "file": "assets/grafischontwerp-e082b1f9.webp",
+    "src": "resources/images/grafischontwerp.webp"
+  },
+  "resources/images/notifications.webp": {
+    "file": "assets/notifications-050c967b.webp",
+    "src": "resources/images/notifications.webp"
+  },
   "resources/images/safesent.png": {
     "file": "assets/safesent-947c96c2.png",
     "src": "resources/images/safesent.png"
@@ -31,6 +43,10 @@
   "resources/images/superkracht1.webp": {
     "file": "assets/superkracht1-dc6c7000.webp",
     "src": "resources/images/superkracht1.webp"
+  },
+  "resources/images/uiux.webp": {
+    "file": "assets/uiux-10f9362c.webp",
+    "src": "resources/images/uiux.webp"
   },
   "resources/images/uteq-adminpanelen.png": {
     "file": "assets/uteq-adminpanelen-e8223ff4.png",
