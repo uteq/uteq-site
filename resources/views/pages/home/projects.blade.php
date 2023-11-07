@@ -2,7 +2,7 @@
     <div class="max-w-6xl px-8 py-32 mx-auto">
         <div class="font-sregs-bold text-5xl text-secondary pb-16">Onze Projecten</div>
 
-        <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
+        <div data-aos="fade-up" class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
             <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-adminpanelen.png')); ?>" alt="uteq optocht">
             </div>
@@ -26,7 +26,8 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
+
+        <div data-aos="fade-up" class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
             <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-telegram.png')); ?>" alt="uteq optocht">
             </div>
@@ -47,7 +48,8 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
+
+        <div data-aos="fade-up" class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
             <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-wallable.png')); ?>" alt="uteq optocht">
             </div>
@@ -70,7 +72,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
+        <div data-aos="fade-up" class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
             <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-auc.png')); ?>" alt="uteq optocht">
             </div>
@@ -90,7 +92,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
+        <div data-aos="fade-up" class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
             <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('uteq-optocht.webp')); ?>" alt="uteq optocht">
             </div>
@@ -111,7 +113,8 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
+
+        <div data-aos="fade-up" class="flex flex-col md:flex-row gap-x-12 gap-y-6 pb-12">
             <div class="md:w-1/2">
                 <img class="rounded-[40px]" src="<?php echo e(Vite::image('dienst6.webp')); ?>" alt="uteq optocht">
             </div>

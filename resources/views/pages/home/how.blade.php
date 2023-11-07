@@ -1,39 +1,24 @@
 <div class="bg-white w-full py-32" id="how">
-{{--    <div class="max-w-6xl mx-auto px-8 relative">--}}
-{{--        <div class="flex justify-center pb-8">--}}
-{{--            <h2 class="text-5xl font-sregs-bold text-secondary">Het is super eenvoudig</h2>--}}
-{{--        </div>--}}
-{{--        <p class="text-xl text-center max-w-3xl mx-auto leading-8 pb-16">--}}
-{{--            Bij UTEQ houden we het simpel en persoonlijk. We beginnen met een kop koffie, bespreken de behoeften van jouw bedrijf en gaan dan over tot actie.--}}
-{{--        </p>--}}
-{{--        <div class="flex flex-col md:flex-row gap-x-6">--}}
-{{--            <div class="bg-floral-white flex flex-col md:w-1/3 p-10">--}}
-{{--                <p class="text-2xl font-sregs-bold tracking-wide pt-10 pb-4">Kennismaking</p>--}}
-{{--                <p class="leading-7">We beginnen met een ontmoeting en een kopje koffie om elkaar beter te leren kennen. We bespreken wat je precies nodig hebt.</p>--}}
-{{--            </div>--}}
-{{--            <div class="bg-floral-white flex flex-col md:w-1/3 p-10">--}}
-{{--                <p class="text-2xl font-sregs pt-10 pb-4 font-sregs-bold tracking-wide">Prioritering</p>--}}
-{{--                <p class="leading-7">We komen bij jou op kantoor om meer mensen in jouw bedrijf te ontmoeten. Samen stellen we een lijst op met mogelijke verbeterpunten, waarbij we deze ordenen op basis van impact en gemak van implementatie.</p>--}}
-{{--            </div>--}}
-{{--            <div class="bg-floral-white  flex flex-col md:w-1/3 p-10">--}}
-{{--                <p class="text-2xl font-sregs pt-10 pb-4 font-sregs-bold tracking-wide">Lancering</p>--}}
-{{--                <p class="leading-7">Op de dag van de lancering zijn we bij jou op kantoor aanwezig. We blijven regelmatig in contact om ervoor te zorgen dat alles soepel verloopt, passen aan waar nodig, en leveren de gewenste oplossingen.</p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
     <div class="max-w-6xl mx-auto px-8 relative font-satoshi">
-        <h2 class="text-5xl font-sregs-bold text-secondary pb-4">Wat Micro Development voor jouw bedrijf kan betekenen</h2>
+        <h2 data-aos="fade-up" class="text-5xl font-sregs-bold text-secondary pb-4">Wat Micro Development voor jouw bedrijf kan betekenen</h2>
 
-        <h3 class="text-xl font-medium mt-6 mb-2">Stapsgewijze Groei</h3>
-        <p>Micro Development betekent stapsgewijze vooruitgang. Je hoeft niet te wachten op grote projecten om resultaten te zien. We boeken continu kleine successen die zich in de loop van de tijd opstapelen.</p>
+        <div class="" data-aos="fade-up">
+            <h3 class="text-xl font-medium mt-6 mb-2">Stapsgewijze Groei</h3>
+            <p>Micro Development betekent stapsgewijze vooruitgang. Je hoeft niet te wachten op grote projecten om resultaten te zien. We boeken continu kleine successen die zich in de loop van de tijd opstapelen.</p>
+        </div>
 
-        <h3 class="text-xl font-medium  mt-6 mb-2">Flexibel en Aanpasbaar</h3>
-        <p>Met Micro Development kunnen we snel reageren op veranderende behoeften. We passen ons aan en verbeteren voortdurend je online aanwezigheid, of het nu gaat om nieuwe functies of gebruiksvriendelijkheid.</p>
+        <div class="" data-aos="fade-up">
+            <h3 class="text-xl font-medium  mt-6 mb-2">Flexibel en Aanpasbaar</h3>
+            <p>Met Micro Development kunnen we snel reageren op veranderende behoeften. We passen ons aan en verbeteren voortdurend je online aanwezigheid, of het nu gaat om nieuwe functies of gebruiksvriendelijkheid.</p>
+        </div>
 
         <div class="lg:flex w-full items-end">
             <div>
-                <h3 class="text-xl font-medium mt-6 mb-2">Langdurige Resultaten</h3>
-                <p class="pb-6">De kleine verbeteringen van microdevelopment hebben een blijvend effect. Je bouwt een stevige basis voor toekomstige groei, zonder grote investeringen vooraf. Het is een strategie voor duurzaam succes.</p>
+                <div data-aos="fade-up">
+                    <h3 class="text-xl font-medium mt-6 mb-2">Langdurige Resultaten</h3>
+                    <p class="pb-6">De kleine verbeteringen van microdevelopment hebben een blijvend effect. Je bouwt een stevige basis voor toekomstige groei, zonder grote investeringen vooraf. Het is een strategie voor duurzaam succes.</p>
+                </div>
+
 
                 <x-contact-form-modal title="Afspraak maken">
                     <button class="lg:mt-12 rounded-xl bg-primary px-8 py-4 md:px-8 md:py-6 md:text-lg font-semibold text-white shadow-sm inline-flex gap-4 items-center">
