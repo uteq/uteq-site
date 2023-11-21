@@ -138,9 +138,14 @@
 {{--                    </button>--}}
 {{--                </x-contact-form-modal>--}}
 
-                <x-contact-form-modal title="Afspraak maken">
+                <x-contact-form-modal title="Gratis bedrijfsscan boeken">
+                    <x-slot:content class="text-gray-600 text-sm">
+                        Is jouw bedrijf klaar voor de volgende stap in groei en innovatie?
+                        Uteq biedt een <b>gratis bedrijfsscan</b> aan die jouw bedrijfsprocessen doorlicht en kansen voor optimalisatie identificeert.
+                    </x-slot:content>
+
                     <button class="lg:mt-12 rounded-xl bg-primary px-8 py-6 md:px-14 md:py-6 md:text-lg font-semibold text-white shadow-sm inline-flex gap-4 items-center">
-                        Bedrijfsscan aanvragen
+                        Gratis bedrijfsscan boeken (Tijdelijk)
                     </button>
                 </x-contact-form-modal>
 
