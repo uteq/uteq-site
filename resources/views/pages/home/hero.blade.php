@@ -127,7 +127,7 @@
                 Kleine toepassingen<br /> met grote impact
             </h1>
             <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-                Met Micro Development vullen het gat tussen de websitebouwer en grote softwarepartijen.
+                Met Micro Development vullen we het gat tussen de websitebouwer en grote softwarepartijen.
                 Met focus op de lange termijn en duurzame groei, leiden onze diensten jou naar stabiliteit en blijvend succes.
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
