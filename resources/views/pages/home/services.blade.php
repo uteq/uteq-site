@@ -68,9 +68,9 @@
 
             <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
                 <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
-                    <div class="font-sregs-bold text-4xl">UI/UX</div>
+                    <div class="font-sregs-bold text-4xl">UX/UI</div>
                     <div class="leading-7">
-                        Bij UI/UX draait alles om de manier waarop mensen je digitale producten ervaren.
+                        Bij UX/UI draait alles om de manier waarop mensen je digitale producten ervaren.
                         We maken niet alleen interfaces niet alleen aantrekkelijk zijn, maar ook intuïtief en gebruiksvriendelijk.
                     </div>
                     <div>

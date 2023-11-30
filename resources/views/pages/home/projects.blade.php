@@ -19,7 +19,7 @@
                     </p>
                     <div class="">
                         <span class="w-fit whitespace-nowrap md:mr-2 mb-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Programming</span>
-                        <span class="w-fit whitespace-nowrap md:mr-2 mr-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UI/UX</span>
+                        <span class="w-fit whitespace-nowrap md:mr-2 mr-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UX/UI</span>
                         <span class="w-fit whitespace-nowrap md:mr-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Mobile App Design</span>
                         <span class="w-fit whitespace-nowrap md:mr-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Rapportage</span>
                     </div>
@@ -84,7 +84,7 @@
                         Een overzichtelijk dashboard dat de status van vergistingsprocessen bijhoudt.
                     </p>
                     <div class="">
-                        <span class="w-fit whitespace-nowrap md:mr-2 mb-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UI/UX</span>
+                        <span class="w-fit whitespace-nowrap md:mr-2 mb-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UX/UI</span>
                         <span class="w-fit whitespace-nowrap md:mr-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Mobile App Design</span>
                         <span class="w-fit whitespace-nowrap md:mr-2 inline-flex items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Programming</span>
                     </div>
@@ -106,7 +106,7 @@
                         De vrijwilligers die de QR codes scannen gebruiken onze web app om gekochte tickets te zien en te valideren.
                     </p>
                     <div class="md:flex-row">
-                        <span class="w-fit inline-flex md:mr-2 mb-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UI/UX</span>
+                        <span class="w-fit inline-flex md:mr-2 mb-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UX/UI</span>
                         <span class="w-fit inline-flex md:mr-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Mobile App Design</span>
                         <span class="w-fit inline-flex md:mr-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Programming</span>
                     </div>
@@ -131,7 +131,7 @@
                     </p>
                     <div class="md:flex-row">
                         <span class="w-fit inline-flex md:mr-2 mb-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Programming</span>
-                        <span class="w-fit inline-flex md:mr-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UI/UX</span>
+                        <span class="w-fit inline-flex md:mr-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Design UX/UI</span>
                         <span class="w-fit inline-flex md:mr-2 items-center rounded-full bg-gray-100 px-4 py-2 font-medium text-gray-500">Mobile App Design</span>
                     </div>
                 </div>
