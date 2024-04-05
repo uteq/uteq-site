@@ -124,7 +124,7 @@
         </div>
         <div class="text-center">
             <h1 class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white">
-                Kleine toepassingen<br /> met grote impact
+                Kleine <i>web</i> toepassingen<br /> met grote impact
             </h1>
             <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
                 Met Micro Development vullen we het gat tussen de websitebouwer en grote softwarepartijen.
