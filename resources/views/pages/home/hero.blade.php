@@ -124,10 +124,10 @@
         </div>
         <div class="text-center">
             <h1 class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white">
-                Kleine <i>web</i> toepassingen<br /> met grote impact
+                Bouwt online (SaaS) toepassingen voor jouw bedrijf
             </h1>
             <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-                Met Micro Development vullen we het gat tussen de websitebouwer en grote softwarepartijen.
+                Wil je een product dat vermarktbaar is? Wij helpen je met het ontwikkelen van een MVP.
                 Met focus op de lange termijn en duurzame groei, leiden onze diensten jou naar stabiliteit en blijvend succes.
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
