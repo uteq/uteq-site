@@ -124,7 +124,7 @@
         </div>
         <div class="text-center">
             <h1 class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white">
-                Bouwt online (SaaS) toepassingen voor jouw bedrijf
+                Bouwt online (SaaS) toepassingen en maatwerk voor jouw bedrijf
             </h1>
             <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
                 Wil je een product dat vermarktbaar is? Wij helpen je met het ontwikkelen van een MVP.
