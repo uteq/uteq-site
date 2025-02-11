@@ -8,6 +8,27 @@
 
             <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
                 <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
+                    <div class="font-sregs-bold text-4xl">SaaS- Webontwikkeling</div>
+                    <div class="leading-7">
+                        Wij zijn er om jouw visie werkelijkheid te maken.
+                        Met onze webontwikkelingsvaardigheden zorgen we samen voor
+                        een gebruiksvriendelijke SaaS-oplossing die aansluit bij wat jij voor ogen hebt.
+                    </div>
+                    <div>
+                        <x-contact-form-modal title="Maak een afspraak">
+                            <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 md:text-lg font-semibold text-white shadow-sm inline-flex gap-4 items-center">
+                                Maak een afspraak
+                            </button>
+                        </x-contact-form-modal>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 order-1 md:order-1">
+                    <img class="rounded-[40px]" src="{{ Vite::image('service-saas.webp') }}" alt="uteq optocht">
+                </div>
+            </div>
+
+            <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
+                <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
                     <div class="font-sregs-bold text-4xl">API integraties</div>
                     <div class="leading-7">Met API-integraties zorgen we ervoor dat je systemen met elkaar kunnen 'praten'. Jouw data komt op de juiste plek. Laat ons de technische puzzelstukken voor je bedrijf in elkaar zetten. </div>
                     <div>
@@ -25,9 +46,9 @@
 
             <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
                 <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
-                    <div class="font-sregs-bold text-4xl">Notificatie systemen</div>
+                    <div class="font-sregs-bold text-4xl">Maatwerkoplossingen</div>
                     <div class="leading-7">
-                        Met een notificatiesystemen is jouw bedrijf altijd goed geïnformeerd is over cruciale gebeurtenissen en veranderingen.<br><br>
+                        Met bijvoorbeeld een maatwerk notificatiesystemen is jouw bedrijf altijd goed geïnformeerd is over cruciale gebeurtenissen en veranderingen.<br><br>
                         Of het nu gaat om belangrijke meldingen van klanten, essentiële statusupdates van je systemen of andere waardevolle informatie,
                         onze notificatiesystemen zijn er om je bedrijf soepel te laten draaien door de juiste informatie op het juiste moment te leveren.</div>
                     <div>
@@ -66,66 +87,45 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
-                <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
-                    <div class="font-sregs-bold text-4xl">UX/UI</div>
-                    <div class="leading-7">
-                        Bij UX/UI draait alles om de manier waarop mensen je digitale producten ervaren.
-                        We maken niet alleen interfaces niet alleen aantrekkelijk zijn, maar ook intuïtief en gebruiksvriendelijk.
-                    </div>
-                    <div>
-                        <x-contact-form-modal title="Maak een afspraak">
-                            <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm inline-flex gap-4 items-center">
-                                Maak een afspraak
-                            </button>
-                        </x-contact-form-modal>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('service-uiux.webp') }}" alt="uteq optocht">
-                </div>
-            </div>
+{{--            <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">--}}
+{{--                <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">--}}
+{{--                    <div class="font-sregs-bold text-4xl">UX/UI</div>--}}
+{{--                    <div class="leading-7">--}}
+{{--                        Bij UX/UI draait alles om de manier waarop mensen je digitale producten ervaren.--}}
+{{--                        We maken niet alleen interfaces niet alleen aantrekkelijk zijn, maar ook intuïtief en gebruiksvriendelijk.--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <x-contact-form-modal title="Maak een afspraak">--}}
+{{--                            <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm inline-flex gap-4 items-center">--}}
+{{--                                Maak een afspraak--}}
+{{--                            </button>--}}
+{{--                        </x-contact-form-modal>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="lg:w-1/2 order-1 md:order-1">--}}
+{{--                    <img class="rounded-[40px]" src="{{ Vite::image('service-uiux.webp') }}" alt="uteq optocht">--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
-                <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
-                    <div class="font-sregs-bold text-4xl">Grafisch ontwerp en Design</div>
-                    <div class="leading-7">
-                        Met onze grafisch ontwerpdienst geven we jouw merk een visuele identiteit die opvalt.
-                        Onze ontwerpers zetten jouw ideeën om in doordachte en aansprekende ontwerpen voor logo's, marketingmateriaal en meer.
-                    </div>
-                    <div>
-                        <x-contact-form-modal title="Maak een afspraak">
-                            <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm inline-flex gap-4 items-center">
-                                Maak een afspraak
-                            </button>
-                        </x-contact-form-modal>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('service-grafischontwerp.webp') }}" alt="grafisch ontwerp">
-                </div>
-            </div>
-
-            <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">
-                <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">
-                    <div class="font-sregs-bold text-4xl">SaaS- Webontwikkeling</div>
-                    <div class="leading-7">
-                        Wij zijn er om jouw visie werkelijkheid te maken.
-                        Met onze webontwikkelingsvaardigheden zorgen we samen voor
-                        een gebruiksvriendelijke SaaS-oplossing die aansluit bij wat jij voor ogen hebt.
-                    </div>
-                    <div>
-                        <x-contact-form-modal title="Maak een afspraak">
-                            <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 md:text-lg font-semibold text-white shadow-sm inline-flex gap-4 items-center">
-                                Maak een afspraak
-                            </button>
-                        </x-contact-form-modal>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 order-1 md:order-1">
-                    <img class="rounded-[40px]" src="{{ Vite::image('service-saas.webp') }}" alt="uteq optocht">
-                </div>
-            </div>
+{{--            <div data-aos="fade-up" class="flex max-w-xl lg:max-w-full mx-auto lg:mx-0 flex-col lg:flex-row gap-6 lg:gap-14">--}}
+{{--                <div class="lg:w-1/2 order-2 md:order-2 flex flex-col gap-4 my-auto">--}}
+{{--                    <div class="font-sregs-bold text-4xl">Grafisch ontwerp en Design</div>--}}
+{{--                    <div class="leading-7">--}}
+{{--                        Met onze grafisch ontwerpdienst geven we jouw merk een visuele identiteit die opvalt.--}}
+{{--                        Onze ontwerpers zetten jouw ideeën om in doordachte en aansprekende ontwerpen voor logo's, marketingmateriaal en meer.--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <x-contact-form-modal title="Maak een afspraak">--}}
+{{--                            <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm inline-flex gap-4 items-center">--}}
+{{--                                Maak een afspraak--}}
+{{--                            </button>--}}
+{{--                        </x-contact-form-modal>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="lg:w-1/2 order-1 md:order-1">--}}
+{{--                    <img class="rounded-[40px]" src="{{ Vite::image('service-grafischontwerp.webp') }}" alt="grafisch ontwerp">--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
         </div>
     </div>

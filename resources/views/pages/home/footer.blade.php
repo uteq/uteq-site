@@ -4,10 +4,6 @@
             Samen tillen we jouw bedrijf naar het volgende niveau
         </div>
 
-        <div class="text-center text-gray-200 text-lg">
-            Ontdek de mogelijkheden en neem vandaag nog de eerste stap naar groei. Klaar om te beginnen? Klik op 'Contact opnemen' hieronder.
-        </div>
-
         <div class="flex gap-4 justify-center py-8">
             <x-contact-form-modal title="Neem contact op">
                 <button class=" rounded-xl bg-primary px-8 py-4 md:px-14 md:py-6 md:text-lg font-semibold text-white shadow-sm inline-flex gap-4 items-center">
