@@ -1,4 +1,4 @@
-<x-filament::modal>
+<x-filament::modal class="dark:text-white">
     <x-slot name="trigger">
         {{ $trigger ?? $slot }}
     </x-slot>
@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <div>
+    <div class="dark:text-white">
         <div class="flex items-center">
             <span class="w-6 inline-block text-right">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">

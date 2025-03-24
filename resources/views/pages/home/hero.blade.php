@@ -132,14 +132,8 @@
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
 
-{{--                <x-contact-form-modal title="Bedrijfsscan aanvragen">--}}
-{{--                    <button class="rounded-xl bg-primary px-14 py-6 text-lg font-semibold text-white shadow-sm">--}}
-{{--                        Bedrijfsscan aanvragen--}}
-{{--                    </button>--}}
-{{--                </x-contact-form-modal>--}}
-
                 <x-contact-form-modal title="Gratis bedrijfsscan boeken">
-                    <x-slot:content class="text-gray-600 text-sm">
+                    <x-slot:content class="text-gray-600 text-sm dark:text-white">
                         Is jouw bedrijf klaar voor de volgende stap in groei en innovatie?
                         Uteq biedt een <b>gratis bedrijfsscan</b> aan die jouw bedrijfsprocessen doorlicht en kansen voor optimalisatie identificeert.
                     </x-slot:content>
