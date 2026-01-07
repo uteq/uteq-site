@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'pages.home')->name('home');
+Route::view('/flexlokaal', 'pages.flexlokaal')->name('flexlokaal');
