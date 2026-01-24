@@ -1,25 +1,41 @@
-<x-layouts.app>
+<x-layouts.app :nav="false">
     {{-- Hero Section --}}
     <section class="bg-floral-white pt-28">
         <div class="max-w-6xl mx-auto px-6 py-16 lg:py-24">
-            <div class="max-w-3xl" data-aos="fade-up">
-                <span class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-medium">
-                    Flexlokaal
-                </span>
-                <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-sregs-bold text-secondary leading-tight">
-                    Bedankt voor je komst!
-                </h1>
-                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                    Leuk dat je er was bij de presentatie in het Flexlokaal. Hier kun je de slides en prompts
-                    nog een keer terugkijken en downloaden.
-                </p>
-                <div class="mt-10">
-                    <a href="#downloads" class="inline-flex items-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                        </svg>
-                        Bekijk downloads
-                    </a>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="max-w-3xl" data-aos="fade-up">
+                    <span class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-medium">
+                        Flexlokaal
+                    </span>
+                    <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-sregs-bold text-secondary leading-tight">
+                        Bedankt voor je komst!
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                        Leuk dat je bij de presentatie in het Flexlokaal was. Hier kun je de slides en prompt
+                        nog een keer terugkijken en downloaden.
+                    </p>
+                    <div class="mt-10">
+                        <a href="#downloads" class="inline-flex items-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                            Bekijk downloads
+                        </a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-sm font-medium text-gray-500 mb-3">Bekijk de presentatie terug</p>
+                    <div class="relative w-full overflow-hidden rounded-2xl shadow-lg" style="padding-bottom: 56.25%;">
+                        <iframe
+                            class="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/JxacnXxg1Nw"
+                            title="Flexlokaal presentatie"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,7 +46,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-sregs-bold text-secondary">Downloads</h2>
             <p class="mt-4 text-gray-600 max-w-2xl">
-                De presentatie en prompts van de sessie, vrij te gebruiken en te delen.
+                De presentatie en prompt van de sessie, vrij te gebruiken en te delen.
             </p>
 
             <div class="mt-12 grid md:grid-cols-2 gap-8">
@@ -51,9 +67,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                                 </svg>
-                                PowerPoint / PDF
+                                PDF
                             </div>
-                            <a href="/downloads/flexlokaal-presentatie.pptx" download class="mt-4 inline-flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-medium text-white hover:bg-secondary/90 transition-colors">
+                            <a href="/downloads/flexlokaal-presentatie.pdf" download class="mt-4 inline-flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-medium text-white hover:bg-secondary/90 transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                 </svg>
@@ -74,7 +90,7 @@
                         <div class="flex-1">
                             <h3 class="text-xl font-semibold text-secondary">AI Prompts</h3>
                             <p class="mt-2 text-gray-600">
-                                De prompts uit de presentatie die je direct kunt gebruiken in je eigen werk.
+                                De prompt uit de presentatie die je direct kunt gebruiken in je eigen werk.
                             </p>
                             <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -82,12 +98,12 @@
                                 </svg>
                                 Tekst / PDF
                             </div>
-                            <a href="#prompts" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-medium text-white hover:bg-secondary/90 transition-colors">
+                            <a href="#prompt" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-medium text-white hover:bg-secondary/90 transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 </svg>
-                                Bekijk prompts
+                                Bekijk prompt
                             </a>
                         </div>
                     </div>
@@ -97,13 +113,13 @@
     </section>
 
     {{-- Prompts Detail Section --}}
-    <section id="prompts" class="bg-gray-50 py-16 lg:py-24">
+    <section id="prompt" class="bg-gray-50 py-16 lg:py-24">
         <div class="max-w-6xl mx-auto px-6">
             <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-sregs-bold text-secondary">
-                Board of directors
+                Prompts
             </h2>
             <p class="mt-4 text-gray-600 max-w-2xl">
-                Kopieer de prompts en probeer ze uit in ChatGPT, Claude of een andere AI-tool.
+                Kopieer de prompt en probeer ze uit in ChatGPT, Claude of een andere AI-tool.
             </p>
 
             <div class="mt-12 space-y-6">
@@ -111,8 +127,8 @@
                 <div x-data="{ copied: false }" data-aos="fade-up" class="rounded-2xl border border-gray-200 bg-white p-6">
                     <div class="flex items-start justify-between gap-4">
                         <div>
-                            <h3 class="text-lg font-semibold text-secondary">Voorbeeld Prompt 1</h3>
-                            <p class="mt-1 text-sm text-gray-500">Algemeen doel prompt</p>
+                            <h3 class="text-lg font-semibold text-secondary">Board of directors</h3>
+                            <p class="mt-1 text-sm text-gray-500">Helpt jou om je doelen te behalen. Plan deze prompt maandelijks in je agenda voor maximaal effect.<br /> Pas de prompt aan en lever documenten aan met resultaat om een waardevol gesprek te voeren.</p>
                         </div>
                         <button
                             @click="navigator.clipboard.writeText($refs.prompt1.innerText); copied = true; setTimeout(() => copied = false, 2000)"

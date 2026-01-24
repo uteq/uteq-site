@@ -46,6 +46,8 @@
                     </div>
                 </a>
             </div>
+
+            @if ($nav ?? true)
             <div class="flex lg:hidden">
                 <button x-on:click="showMenu = ! showMenu" type="button" class=" -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
@@ -69,23 +71,23 @@
                         </div>
                     </button>
                     <nav class="flex flex-col bg-white p-8">
-                        <a href="#how" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="/#how" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Ons proces
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="#projects" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="/#projects" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Projecten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="#services" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="/#services" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Diensten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        {{--                        <a href="#" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">--}}
+                        {{--                        <a href="/#" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">--}}
                         {{--                            Over ons--}}
                         {{--                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>--}}
                         {{--                        </a>--}}
-                        <a href="#footer" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="/#footer" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Contact
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -93,12 +95,13 @@
                 </div>
             </div>
             <div class="hidden lg:flex lg:gap-x-16 lg:flex-grow lg:justify-end">
-                <a href="#how" class="text-lg leading-6 font-sregs text-white">Ons proces</a>
-                <a href="#projects" class="text-lg leading-6 font-sregs text-white">Projecten</a>
-                <a href="#services" class="text-lg leading-6 font-sregs text-white">Diensten</a>
-{{--                <a href="#" class="text-lg leading-6 font-sregs text-white">Over ons</a>--}}
-                <a href="#footer" class="text-lg leading-6 font-sregs text-white">Contact</a>
+                <a href="/#how" class="text-lg leading-6 font-sregs text-white">Ons proces</a>
+                <a href="/#projects" class="text-lg leading-6 font-sregs text-white">Projecten</a>
+                <a href="/#services" class="text-lg leading-6 font-sregs text-white">Diensten</a>
+{{--                <a href="/#" class="text-lg leading-6 font-sregs text-white">Over ons</a>--}}
+                <a href="/#footer" class="text-lg leading-6 font-sregs text-white">Contact</a>
             </div>
+            @endif
         </div>
 
     </nav>
