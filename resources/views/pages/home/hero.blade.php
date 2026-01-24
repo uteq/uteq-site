@@ -1,4 +1,7 @@
-<div class="relative isolate px-6 pt-14 lg:px-8 bg-secondary">
+<div class="relative isolate px-6 pt-14 lg:px-8 bg-secondary overflow-hidden">
+    {{-- Subtle decorative gradient --}}
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/[0.05] to-transparent pointer-events-none"></div>
+
     <div class="relative mx-auto max-w-4xl pb-32 pt-16 sm:pb-48 sm:pt-24 lg:pb-72 lg:pt-28">
 
         <div class="hidden absolute bottom-24 -left-40">
@@ -117,20 +120,20 @@
             </svg>
         </div>
 
-        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div class="relative rounded-full px-3 py-1 leading-6 text-gray-300">
+        <div class="sm:mb-8 flex justify-center" data-aos="fade-up">
+            <span class="inline-flex items-center rounded-full bg-white/10 text-white/90 px-4 py-1.5 text-sm font-medium tracking-wide backdrop-blur-sm">
                 Discover. Build. Grow.
-            </div>
+            </span>
         </div>
         <div class="text-center">
-            <h1 class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white">
+            <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white leading-tight">
                 Bouwt online (SaaS) toepassingen en maatwerk voor jouw bedrijf
             </h1>
-            <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
+            <p data-aos="fade-up" data-aos-delay="200" class="mt-6 text-lg leading-relaxed text-gray-300 max-w-2xl mx-auto">
                 Wil je een product dat vermarktbaar is? Wij helpen je met het ontwikkelen van een MVP.
                 Met focus op de lange termijn en duurzame groei, leiden onze diensten jou naar stabiliteit en blijvend succes.
             </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
+            <div class="mt-10 flex items-center justify-center gap-x-6 pb-6" data-aos="fade-up" data-aos-delay="300">
 
                 <x-contact-form-modal title="Gratis bedrijfsscan boeken">
                     <x-slot:content class="text-gray-600 text-sm dark:text-white">
@@ -138,16 +141,16 @@
                         Uteq biedt een <b>gratis bedrijfsscan</b> aan die jouw bedrijfsprocessen doorlicht en kansen voor optimalisatie identificeert.
                     </x-slot:content>
 
-                    <button class="lg:mt-12 rounded-xl bg-primary px-8 py-6 md:px-14 md:py-6 md:text-lg font-semibold text-white shadow-sm inline-flex gap-4 items-center">
+                    <button class="lg:mt-12 rounded-xl bg-primary px-8 py-6 md:px-14 md:py-6 md:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                         Gratis bedrijfsscan boeken (Tijdelijk)
                     </button>
                 </x-contact-form-modal>
 
 
             </div>
-            <p class="text-gray-400">of</p>
-            <div class="mt-6 flex items-center justify-center gap-x-6 pb-6">
-                <a href="#how" class="border-b-primary text-lg font-semibold text-white shadow-sm">
+            <p class="text-gray-400" data-aos="fade-up" data-aos-delay="350">of</p>
+            <div class="mt-6 flex items-center justify-center gap-x-6 pb-6" data-aos="fade-up" data-aos-delay="400">
+                <a href="#how" class="text-lg font-semibold text-white hover:text-primary transition-colors duration-300">
                     Lees verder ↓
                 </a>
             </div>
