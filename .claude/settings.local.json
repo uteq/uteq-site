@@ -3,7 +3,11 @@
     "allow": [
       "mcp__plugin_laravel-boost_laravel-boost__application-info",
       "mcp__plugin_laravel-boost_laravel-boost__list-routes",
-      "mcp__plugin_laravel-boost_laravel-boost__database-schema"
+      "mcp__plugin_laravel-boost_laravel-boost__database-schema",
+      "mcp__plugin_laravel-boost_laravel-boost__get-absolute-url",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_click"
     ]
   }
 }
