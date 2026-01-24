@@ -4,7 +4,7 @@
     </x-slot>
 
     @if ($title ?? null)
-        <h2 class="text-2xl">{{ $title }}</h2>
+        <h2 class="text-2xl" id="contact-modal-title">{{ $title }}</h2>
     @endif
 
     @isset ($content)

@@ -9,7 +9,7 @@
 
         <div class="flex gap-4 justify-center py-8" data-aos="fade-up" data-aos-delay="100">
             <x-contact-form-modal title="Neem contact op">
-                <button class="rounded-xl bg-primary px-8 py-4 md:px-14 md:py-6 md:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
+                <button class="rounded-xl bg-primary px-8 py-4 md:px-14 md:py-6 md:text-lg font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                     Contact opnemen
                 </button>
             </x-contact-form-modal>

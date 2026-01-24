@@ -4,14 +4,23 @@
 
 @font-face {
     font-family: "Sregs Serif Free";
-    src: url("/public/fonts/Sregs Serif Free - Heavy.otf");
+    src: url("/fonts/Sregs Serif Free - Heavy.woff2") format("woff2"),
+         url("/fonts/Sregs Serif Free - Heavy.otf") format("opentype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Sregs Serif Display";
-    src: url("/public/fonts/SregsSerifDisplay-SemiBold.otf");
+    src: url("/fonts/SregsSerifDisplay-SemiBold.woff2") format("woff2"),
+         url("/fonts/SregsSerifDisplay-SemiBold.otf") format("opentype");
+    font-display: swap;
 }
 
 [x-cloak] {
     display: none;
+}
+
+/* Prevent AOS transform from creating a containing block that traps fixed-position modals */
+[data-aos].aos-animate {
+    transform: none !important;
 }

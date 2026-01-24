@@ -6,9 +6,9 @@
     <meta name="application-name" content="{{ config('app.name') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Uteq bouwt online (SaaS) toepassingen en maatwerk software voor jouw bedrijf. Van MVP tot schaalbare oplossingen met focus op duurzame groei.">
     <link rel="shortcut icon" href="{{ Vite::image('favicon1.png') }}">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <link rel="preload" href="/fonts/Sregs Serif Free - Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
     <title>{{ config('app.name') }}</title>
 
@@ -117,10 +117,6 @@
     @livewire('wire-elements-modal')
 </div>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 
 </body>
 </html>

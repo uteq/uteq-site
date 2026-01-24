@@ -1,14 +1,6 @@
 {
-  "public/fonts/Sregs Serif Free - Heavy.otf": {
-    "file": "assets/Sregs Serif Free - Heavy-485e0785.otf",
-    "src": "public/fonts/Sregs Serif Free - Heavy.otf"
-  },
-  "public/fonts/SregsSerifDisplay-SemiBold.otf": {
-    "file": "assets/SregsSerifDisplay-SemiBold-95456ea7.otf",
-    "src": "public/fonts/SregsSerifDisplay-SemiBold.otf"
-  },
   "resources/css/app.css": {
-    "file": "assets/app-8b21c5d5.css",
+    "file": "assets/app-b5d32e17.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -60,9 +52,17 @@
     "file": "assets/uteq-adminpanelen-e8223ff4.png",
     "src": "resources/images/uteq-adminpanelen.png"
   },
+  "resources/images/uteq-adminpanelen.webp": {
+    "file": "assets/uteq-adminpanelen-ce84c266.webp",
+    "src": "resources/images/uteq-adminpanelen.webp"
+  },
   "resources/images/uteq-auc.png": {
     "file": "assets/uteq-auc-afbdee06.png",
     "src": "resources/images/uteq-auc.png"
+  },
+  "resources/images/uteq-auc.webp": {
+    "file": "assets/uteq-auc-a3cdfbb9.webp",
+    "src": "resources/images/uteq-auc.webp"
   },
   "resources/images/uteq-optocht.webp": {
     "file": "assets/uteq-optocht-8fbb1e57.webp",
@@ -72,12 +72,27 @@
     "file": "assets/uteq-telegram-85c887cc.png",
     "src": "resources/images/uteq-telegram.png"
   },
+  "resources/images/uteq-telegram.webp": {
+    "file": "assets/uteq-telegram-34794b97.webp",
+    "src": "resources/images/uteq-telegram.webp"
+  },
   "resources/images/uteq-wallable.png": {
     "file": "assets/uteq-wallable-dff057f1.png",
     "src": "resources/images/uteq-wallable.png"
   },
+  "resources/images/uteq-wallable.webp": {
+    "file": "assets/uteq-wallable-a93fab0c.webp",
+    "src": "resources/images/uteq-wallable.webp"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-73168167.css",
+    "src": "resources/js/app.css"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-4ed993c7.js",
+    "css": [
+      "assets/app-73168167.css"
+    ],
+    "file": "assets/app-ec8506d5.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

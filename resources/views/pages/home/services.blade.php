@@ -25,7 +25,7 @@
                         </div>
                         <div>
                             <x-contact-form-modal title="Maak een afspraak">
-                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 md:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
+                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 md:text-lg font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                                     Maak een afspraak
                                 </button>
                             </x-contact-form-modal>
@@ -44,7 +44,7 @@
                         <div class="leading-relaxed text-gray-600">Met API-integraties zorgen we ervoor dat je systemen met elkaar kunnen 'praten'. Jouw data komt op de juiste plek. Laat ons de technische puzzelstukken voor je bedrijf in elkaar zetten. </div>
                         <div>
                             <x-contact-form-modal title="Maak een afspraak">
-                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
+                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                                     Maak een afspraak
                                 </button>
                             </x-contact-form-modal>
@@ -66,7 +66,7 @@
                             onze notificatiesystemen zijn er om je bedrijf soepel te laten draaien door de juiste informatie op het juiste moment te leveren.</div>
                         <div>
                             <x-contact-form-modal title="Maak een afspraak">
-                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
+                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                                     Maak een afspraak
                                 </button>
                             </x-contact-form-modal>
@@ -91,7 +91,7 @@
                             Jouw succes is ons succes, en samen werken we aan een mooie toekomst voor jouw onderneming.</div>
                         <div>
                             <x-contact-form-modal title="Maak een afspraak">
-                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
+                                <button class="rounded-xl bg-primary px-8 py-4 md:px-10 md:py-4 font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                                     Maak een afspraak
                                 </button>
                             </x-contact-form-modal>

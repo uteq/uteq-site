@@ -13,7 +13,7 @@
             <div data-aos="fade-up" data-aos-delay="100" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-adminpanelen.png')); ?>" alt="BioValue adminpaneel">
+                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-adminpanelen.webp')); ?>" alt="BioValue adminpaneel" width="990" height="684" loading="lazy">
                     </div>
                     <div class="md:w-1/2">
                         <div class="flex flex-col gap-3">
@@ -41,7 +41,7 @@
             <div data-aos="fade-up" data-aos-delay="150" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
                     <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-telegram.png')); ?>" alt="Storingsdienst BioValue">
+                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-telegram.webp')); ?>" alt="Storingsdienst BioValue" width="990" height="684" loading="lazy">
                     </div>
                     <div class="md:w-1/2">
                         <div class="flex flex-col gap-3">
@@ -66,7 +66,7 @@
             <div data-aos="fade-up" data-aos-delay="200" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-wallable.png')); ?>" alt="Wallable poster generator">
+                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-wallable.webp')); ?>" alt="Wallable poster generator" width="990" height="684" loading="lazy">
                     </div>
                     <div class="md:w-1/2">
                         <div class="flex flex-col gap-3">
@@ -92,7 +92,7 @@
             <div data-aos="fade-up" data-aos-delay="250" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
                     <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-auc.png')); ?>" alt="All Under Control paneel">
+                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-auc.webp')); ?>" alt="All Under Control paneel" width="990" height="684" loading="lazy">
                     </div>
                     <div class="md:w-1/2">
                         <div class="flex flex-col gap-3">
@@ -115,7 +115,7 @@
             <div data-aos="fade-up" data-aos-delay="300" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-optocht.webp')); ?>" alt="Festival ticket-systeem">
+                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-optocht.webp')); ?>" alt="Festival ticket-systeem" width="990" height="684" loading="lazy">
                     </div>
                     <div class="md:w-1/2">
                         <div class="flex flex-col gap-3">
@@ -140,7 +140,7 @@
             <div data-aos="fade-up" data-aos-delay="350" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                 <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
                     <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('dienst6.webp')); ?>" alt="Safesent">
+                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('dienst6.webp')); ?>" alt="Safesent" width="990" height="684" loading="lazy">
                     </div>
                     <div class="md:w-1/2">
                         <div class="flex flex-col gap-3">

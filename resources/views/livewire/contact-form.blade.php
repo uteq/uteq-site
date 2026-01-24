@@ -6,7 +6,7 @@
         <form wire:submit="create">
             {{ $this->form }}
 
-            <button type="submit" class="bg-primary rounded-lg px-4 py-3 text-white w-full mt-10 font-medium">
+            <button type="submit" class="bg-primary rounded-lg px-4 py-3 text-secondary w-full mt-10 font-medium">
                 Verstuur bericht
             </button>
         </form>

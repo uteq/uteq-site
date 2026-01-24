@@ -126,14 +126,14 @@
             </span>
         </div>
         <div class="text-center">
-            <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white leading-tight">
+            <h1 data-aos="fade-up" class="text-5xl md:text-6xl lg:text-8xl font-sregs-bold tracking-wide text-white leading-tight">
                 Bouwt online (SaaS) toepassingen en maatwerk voor jouw bedrijf
             </h1>
             <p data-aos="fade-up" data-aos-delay="200" class="mt-6 text-lg leading-relaxed text-gray-300 max-w-2xl mx-auto">
                 Wil je een product dat vermarktbaar is? Wij helpen je met het ontwikkelen van een MVP.
                 Met focus op de lange termijn en duurzame groei, leiden onze diensten jou naar stabiliteit en blijvend succes.
             </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6 pb-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="mt-10 flex items-center justify-center gap-x-6 pb-6">
 
                 <x-contact-form-modal title="Gratis bedrijfsscan boeken">
                     <x-slot:content class="text-gray-600 text-sm dark:text-white">
@@ -141,7 +141,7 @@
                         Uteq biedt een <b>gratis bedrijfsscan</b> aan die jouw bedrijfsprocessen doorlicht en kansen voor optimalisatie identificeert.
                     </x-slot:content>
 
-                    <button class="lg:mt-12 rounded-xl bg-primary px-8 py-6 md:px-14 md:py-6 md:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
+                    <button class="lg:mt-12 rounded-xl bg-primary px-8 py-6 md:px-14 md:py-6 md:text-lg font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 inline-flex gap-4 items-center">
                         Gratis bedrijfsscan boeken (Tijdelijk)
                     </button>
                 </x-contact-form-modal>
