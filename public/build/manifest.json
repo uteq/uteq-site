@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-b5d32e17.css",
+    "file": "assets/app-5956175a.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -19,6 +19,10 @@
   "resources/images/favicon1.png": {
     "file": "assets/favicon1-6ad35909.png",
     "src": "resources/images/favicon1.png"
+  },
+  "resources/images/nathan.webp": {
+    "file": "assets/nathan-ab1cf1b3.webp",
+    "src": "resources/images/nathan.webp"
   },
   "resources/images/safesent.png": {
     "file": "assets/safesent-947c96c2.png",

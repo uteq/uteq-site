@@ -6,9 +6,11 @@
     <meta name="application-name" content="{{ config('app.name') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Uteq bouwt online (SaaS) toepassingen en maatwerk software voor jouw bedrijf. Van MVP tot schaalbare oplossingen met focus op duurzame groei.">
+    <meta name="description" content="Ik bouw software die handmatig werk overneemt. Eenmalig €20-50k. Geen maandelijkse licenties. Jouw eigendom.">
     <link rel="shortcut icon" href="{{ Vite::image('favicon1.png') }}">
-    <link rel="preload" href="/fonts/Sregs Serif Free - Heavy.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
 
     <title>{{ config('app.name') }}</title>
 
@@ -71,22 +73,18 @@
                         </div>
                     </button>
                     <nav class="flex flex-col bg-white p-8">
-                        <a href="/#how" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
-                            Ons proces
+                        <a href="/#aanpak" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                            Aanpak
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="/#projects" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
-                            Projecten
+                        <a href="/#resultaten" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                            Resultaten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="/#services" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
-                            Diensten
+                        <a href="/#aanbod" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                            Aanbod
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        {{--                        <a href="/#" x-on:click="showMenu = false" class="px-2 py-4 text-primary-600 bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">--}}
-                        {{--                            Over ons--}}
-                        {{--                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>--}}
-                        {{--                        </a>--}}
                         <a href="/#footer" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
                             Contact
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
@@ -95,10 +93,9 @@
                 </div>
             </div>
             <div class="hidden lg:flex lg:gap-x-16 lg:flex-grow lg:justify-end">
-                <a href="/#how" class="text-lg leading-6 font-sregs text-white">Ons proces</a>
-                <a href="/#projects" class="text-lg leading-6 font-sregs text-white">Projecten</a>
-                <a href="/#services" class="text-lg leading-6 font-sregs text-white">Diensten</a>
-{{--                <a href="/#" class="text-lg leading-6 font-sregs text-white">Over ons</a>--}}
+                <a href="/#aanpak" class="text-lg leading-6 font-sregs text-white">Aanpak</a>
+                <a href="/#resultaten" class="text-lg leading-6 font-sregs text-white">Resultaten</a>
+                <a href="/#aanbod" class="text-lg leading-6 font-sregs text-white">Aanbod</a>
                 <a href="/#footer" class="text-lg leading-6 font-sregs text-white">Contact</a>
             </div>
             @endif

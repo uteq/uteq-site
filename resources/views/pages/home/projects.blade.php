@@ -1,162 +1,94 @@
-<div class="relative bg-[#F9F8F8] overflow-hidden" id="projects">
-    {{-- Subtle decorative gradient --}}
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/[0.03] to-transparent pointer-events-none"></div>
+<div class="relative bg-gray-50 overflow-hidden" id="resultaten">
+    <div class="max-w-6xl px-8 py-20 lg:py-28 mx-auto relative">
+        <div class="mb-16">
+            <p data-aos="fade-up" class="text-primary font-semibold uppercase tracking-widest text-sm mb-4">Resultaten</p>
+            <h2 data-aos="fade-up" class="font-sregs-bold text-3xl md:text-4xl text-secondary leading-tight mb-4">
+                Wat het oplevert
+            </h2>
+            <p data-aos="fade-up" class="text-gray-600 text-lg max-w-2xl">
+                Concrete resultaten van MKB-bedrijven die hun operationele processen hebben geautomatiseerd.
+            </p>
+        </div>
 
-    <div class="max-w-6xl px-8 py-32 mx-auto relative">
-        <span data-aos="fade-up" class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-medium tracking-wide mb-4">
-            Portfolio
-        </span>
-        <div data-aos="fade-up" data-aos-delay="50" class="font-sregs-bold text-4xl md:text-5xl text-secondary pb-16 leading-tight">Onze Projecten</div>
-
-        <div class="flex flex-col gap-10">
-            {{-- Project 1: BioValue --}}
-            <div data-aos="fade-up" data-aos-delay="100" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-adminpanelen.webp')); ?>" alt="BioValue adminpaneel" width="990" height="684" loading="lazy">
+        <div class="space-y-8">
+            {{-- Case 1: BioValue Administratie --}}
+            <div data-aos="fade-up" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2">
+                        <img class="w-full h-64 lg:h-full object-cover" src="{{ Vite::image('uteq-adminpanelen.webp') }}" alt="BioValue adminpaneel" width="990" height="684" loading="lazy">
                     </div>
-                    <div class="md:w-1/2">
-                        <div class="flex flex-col gap-3">
-                            <p class="uppercase tracking-wider text-xs font-semibold text-primary/80">Adminpaneel</p>
-                            <p class="font-sregs-bold text-2xl md:text-3xl text-secondary">BioValue</p>
-                            <p class="leading-relaxed text-gray-600 pb-2">
-                                Voor BioValue hebben wij een adminpaneel ontworpen en gebouwd.
-                                Waarin de klant bonnen kan uploaden die vervolgens worden verwerkt in een balans.
-                                De toepassingen die we daar onder andere hebben verwerkt:
-                                Invoer bonnen, Invoer facturen, Koppel facturen aan bonnen,
-                                Vrachtplanning, Massabalans, Weekoverzichten en Metingen.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Programming</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Design UX/UI</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Mobile App Design</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Rapportage</span>
+                    <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                        <p class="text-primary font-semibold text-sm mb-2">BioValue &middot; Vergistingsinstallaties</p>
+                        <h3 class="font-sregs-bold text-2xl md:text-3xl text-secondary mb-4">Team verwerkt nu 3x zoveel orders</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">BioValue verwerkte bonnen, facturen en massabalansen met de hand. Nu doet de software het tikwerk en kan het team zich focussen op klantcontact en groei.</p>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">&euro;150k</p>
+                                <p class="text-sm text-gray-500">bespaard per jaar</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">3 mnd</p>
+                                <p class="text-sm text-gray-500">terugverdiend</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">0</p>
+                                <p class="text-sm text-gray-500">fouten per maand</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Project 2: Storingsdienst (alternating) --}}
-            <div data-aos="fade-up" data-aos-delay="150" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-telegram.webp')); ?>" alt="Storingsdienst BioValue" width="990" height="684" loading="lazy">
+            {{-- Case 2: BioValue Storingsdienst --}}
+            <div data-aos="fade-up" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+                <div class="flex flex-col lg:flex-row-reverse">
+                    <div class="lg:w-1/2">
+                        <img class="w-full h-64 lg:h-full object-cover" src="{{ Vite::image('uteq-telegram.webp') }}" alt="Storingsdienst BioValue" width="990" height="684" loading="lazy">
                     </div>
-                    <div class="md:w-1/2">
-                        <div class="flex flex-col gap-3">
-                            <p class="uppercase tracking-wider text-xs font-semibold text-primary/80">Koppeling</p>
-                            <p class="font-sregs-bold text-2xl md:text-3xl text-secondary">Storingsdienst BioValue</p>
-                            <p class="leading-relaxed text-gray-600 pb-2">
-                                Voor BioValue hebben wij een koppeling gemaakt waardoor de storingen van de installaties
-                                automatisch worden verwerkt naar Telegram. Wanneer een van hun installaties niet draait
-                                worden ze gebeld.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Programming</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Koppeling</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Telegram</span>
+                    <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                        <p class="text-primary font-semibold text-sm mb-2">BioValue &middot; Monitoring</p>
+                        <h3 class="font-sregs-bold text-2xl md:text-3xl text-secondary mb-4">Reactietijd: van 45 naar 2 minuten</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">Vergistingsinstallaties stonden soms 45 minuten stil voor iemand het merkte. Nu detecteert het systeem de storing en stuurt direct een melding. Automatisch.</p>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">95%</p>
+                                <p class="text-sm text-gray-500">snellere reactie</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">&euro;40k</p>
+                                <p class="text-sm text-gray-500">stilstand voorkomen</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">24/7</p>
+                                <p class="text-sm text-gray-500">automatische bewaking</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Project 3: Wallable --}}
-            <div data-aos="fade-up" data-aos-delay="200" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-wallable.webp')); ?>" alt="Wallable poster generator" width="990" height="684" loading="lazy">
+            {{-- Case 3: All Under Control --}}
+            <div data-aos="fade-up" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2">
+                        <img class="w-full h-64 lg:h-full object-cover" src="{{ Vite::image('uteq-auc.webp') }}" alt="All Under Control dashboard" width="990" height="684" loading="lazy">
                     </div>
-                    <div class="md:w-1/2">
-                        <div class="flex flex-col gap-3">
-                            <p class="uppercase tracking-wider text-xs font-semibold text-primary/80">Poster generator</p>
-                            <p class="font-sregs-bold text-2xl md:text-3xl text-secondary">Wallable</p>
-                            <p class="leading-relaxed text-gray-600 pb-2">
-                                Voor Wallable hebben wij een poster generator gemaakt. Wallable had zelf al een poster builder gemaakt.
-                                Waarmee de klanten van Wallable zelf posters hun posters maakten.
-                                Wij koppelden dat met WooCommerce en maakte daarna een koppeling met de poster generator.
-                                De Poster Generator zet de posters klaar in PDF formaat en stuurt deze door naar een map om te printen.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Programming</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Koppeling</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">WooCommerce</span>
+                    <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                        <p class="text-primary font-semibold text-sm mb-2">All Under Control &middot; Procesmonitoring</p>
+                        <h3 class="font-sregs-bold text-2xl md:text-3xl text-secondary mb-4">Handmatige checks vervangen door live dashboard</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">Vergistingsprocessen werden gecontroleerd met rondjes lopen en pen en papier. Nu staat alles real-time op &eacute;&eacute;n scherm. Afwijkingen vallen direct op.</p>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">6</p>
+                                <p class="text-sm text-gray-500">Excel-bestanden weg</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Project 4: All Under Control (alternating) --}}
-            <div data-aos="fade-up" data-aos-delay="250" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-auc.webp')); ?>" alt="All Under Control paneel" width="990" height="684" loading="lazy">
-                    </div>
-                    <div class="md:w-1/2">
-                        <div class="flex flex-col gap-3">
-                            <p class="uppercase tracking-wider text-xs font-semibold text-primary/80">Dashboards</p>
-                            <p class="font-sregs-bold text-2xl md:text-3xl text-secondary">All Under Control paneel</p>
-                            <p class="leading-relaxed text-gray-600 pb-2">
-                                Een overzichtelijk dashboard dat de status van vergistingsprocessen bijhoudt.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Design UX/UI</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Mobile App Design</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Programming</span>
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">10 uur</p>
+                                <p class="text-sm text-gray-500">per week bespaard</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Project 5: Festival Ticket-systemen --}}
-            <div data-aos="fade-up" data-aos-delay="300" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('uteq-optocht.webp')); ?>" alt="Festival ticket-systeem" width="990" height="684" loading="lazy">
-                    </div>
-                    <div class="md:w-1/2">
-                        <div class="flex flex-col gap-3">
-                            <p class="uppercase tracking-wider text-xs font-semibold text-primary/80">Ticketsysteem</p>
-                            <p class="font-sregs-bold text-2xl md:text-3xl text-secondary">Festival Ticket-systemen</p>
-                            <p class="leading-relaxed text-gray-600 pb-2">
-                                Voor de Allegorische Optocht van VVV St.Nicolaasga hebben wij een ticket systeem ontworpen en gebouwd.
-                                Dit systeem genereert een QR code die bij binnenkomst van het evenement gescand wordt.
-                                De vrijwilligers die de QR codes scannen gebruiken onze web app om gekochte tickets te zien en te valideren.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Design UX/UI</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Mobile App Design</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Programming</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Project 6: Safesent (alternating) --}}
-            <div data-aos="fade-up" data-aos-delay="350" class="group rounded-2xl border border-gray-200 bg-white p-6 md:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <img class="rounded-2xl ring-1 ring-black/5 shadow-lg w-full" src="<?php echo e(Vite::image('dienst6.webp')); ?>" alt="Safesent" width="990" height="684" loading="lazy">
-                    </div>
-                    <div class="md:w-1/2">
-                        <div class="flex flex-col gap-3">
-                            <p class="uppercase tracking-wider text-xs font-semibold text-primary/80">SaaS</p>
-                            <p class="font-sregs-bold text-2xl md:text-3xl text-secondary">Safesent</p>
-                            <p class="leading-relaxed text-gray-600 pb-2">
-                                We hebben een gratis web applicatie ontworpen en gebouwd voor het versturen van privacy gevoelige bestanden naar je accountant.
-                            </p>
-                            <a href="https://safesent.nl" class="inline-flex gap-2 items-center text-primary font-medium hover:text-primary/80 transition-colors" target="_blank">
-                                <span class="border-b border-primary/40">Bekijk safesent.nl</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            </a>
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Programming</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Design UX/UI</span>
-                                <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">Mobile App Design</span>
+                            <div>
+                                <p class="text-2xl font-sregs-bold text-primary">Real-time</p>
+                                <p class="text-sm text-gray-500">inzicht in processen</p>
                             </div>
                         </div>
                     </div>

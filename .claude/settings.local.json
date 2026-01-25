@@ -13,7 +13,19 @@
       "mcp__plugin_playwright_playwright__browser_run_code",
       "mcp__plugin_playwright_playwright__browser_resize",
       "mcp__plugin_playwright_playwright__browser_console_messages",
-      "mcp__plugin_playwright_playwright__browser_close"
+      "mcp__plugin_playwright_playwright__browser_close",
+      "Bash(cwebp:*)",
+      "Bash(pip3 show:*)",
+      "Bash(brew list:*)",
+      "Bash(brew install:*)",
+      "Bash(woff2_compress:*)",
+      "Bash(npm install:*)",
+      "Bash(lsof:*)",
+      "WebFetch(domain:fonts.google.com)",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "WebFetch(domain:uteq.nl)",
+      "WebFetch(domain:www.typewolf.com)",
+      "mcp__plugin_laravel-boost_laravel-boost__last-error"
     ]
   }
 }

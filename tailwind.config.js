@@ -21,9 +21,9 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
-                sregs: ['SregsSerifDisplay-SemiBold', 'sans-serif'],
-                'sregs-bold': ['Sregs Serif Free', 'sans-serif'],
-
+                display: ['Calistoga', 'Georgia', 'serif'],
+                sregs: ['Calistoga', 'Georgia', 'serif'],
+                'sregs-bold': ['Calistoga', 'Georgia', 'serif'],
             },
             colors: {
                 'primary': '#01DC82',
