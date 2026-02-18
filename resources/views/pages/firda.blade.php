@@ -206,6 +206,98 @@
         </div>
     </section>
 
+    {{-- Inhoud Section --}}
+    <section class="bg-white py-16 lg:py-24">
+        <div class="max-w-3xl mx-auto px-6">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-sregs-bold text-secondary">De impact van AI op het programmeeronderwijs</h2>
+                <p class="mt-6 text-gray-600 leading-relaxed">
+                    Ik heb 20 jaar geprogrammeerd. Van kleine games tot webshops met 600.000+ artikelen. Maar ik programmeer niet meer zelf. Dat is geen luiheid. Dat is de realiteit. AI schrijft code sneller, consistenter en vaak beter dan ik het handmatig deed.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Op de studiedag Software Development bij Firda heb ik docenten laten zien wat dat concreet betekent. Niet vanuit theorie, maar vanuit mijn dagelijkse praktijk als AI Business Architect.
+                </p>
+            </div>
+
+            {{-- Abstractielagen --}}
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-sregs-bold text-secondary">Elke generatie maakt de vorige onzichtbaar</h3>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    In de jaren '70 had je duizenden regels code nodig voor wat nu in één regel kan. Over vijf jaar schrijf je één zin in het Nederlands voor wat nu honderd regels code kost.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Bits &amp; Bytes werden Assembly. Assembly werd C. C werd Python en JavaScript. Elke laag maakte de vorige onzichtbaar. Niemand mist Assembly. Niemand gaat Python missen. AI is de volgende abstractielaag. En deze spreekt Nederlands.
+                </p>
+            </div>
+
+            {{-- Wat ik nu doe --}}
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-sregs-bold text-secondary">Van code schrijven naar systemen aansturen</h3>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Mijn werk bestaat nu uit vier stappen. Eerst definieer ik wat ik wil: wat moet het systeem doen, voor wie, welk probleem lost het op? Dan plan ik de architectuur: welke componenten, hoe hangen ze samen, wat zijn de grenzen? Vervolgens bepaal ik de juiste pakketten en regels die ik de AI meegeef. En als laatste test ik of het klopt: doet het wat het moet doen, is het veilig, schaalt het?
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    De 1% van het werk die overblijft is 100% van de waarde. Begrijpen en beoordelen blijft. Uitvoeren verdwijnt.
+                </p>
+            </div>
+
+            {{-- Analogieën --}}
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-sregs-bold text-secondary">Elk vak transformeert. Geen enkel vak verdwijnt.</h3>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Dit hebben we eerder gezien. De rekenmachine verving het hoofdrekenen, maar wiskunde bleef. Niemand leert nog staartdelingen, maar iedereen moet nog steeds begrijpen wat je deelt en waarom.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Spellingcontrole verschoof de focus van foutloos spellen naar helder communiceren. GPS verving kaartlezen, maar weten waar je heen wilt bleef. En herkennen dat de GPS fout zit werd een hele nieuwe skill. Dat is precies wat het controleren van AI straks is.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    In de fotografie verdween de doka en werd de technische drempel nul. Maar er kwamen meer fotografen, niet minder. De waarde verschoof van techniek naar visie en creativiteit. Precies wat er met developers gaat gebeuren.
+                </p>
+            </div>
+
+            {{-- Nieuw vakmanschap --}}
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-sregs-bold text-secondary">Wat blijft en wat erbij komt</h3>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Logisch denken blijft onmisbaar. Patronen herkennen, systemen doorgronden, oorzaak en gevolg begrijpen. AI kan code maken, maar kan niet beoordelen of de logica klopt voor jouw specifieke situatie. Het gaat niet meer om hoe je code schrijft, maar waarom een systeem zo werkt.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Daar komt nieuw vakmanschap bij. Prompt engineering: het verschil tussen een vaag verzoek en een scherpe opdracht is het verschil tussen rommel en bruikbare code. AI resultaten beoordelen: AI maakt code met 100% zelfvertrouwen, ook als het fout is. Iemand moet dat zien. En ethiek: als AI medische software bouwt, wie is verantwoordelijk als het misgaat?
+                </p>
+            </div>
+
+            {{-- Urgentie --}}
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-sregs-bold text-secondary">De kloof groeit elke dag</h3>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Dit staat nog in geen enkel MBO curriculum. Een student die nu begint aan een driejarige opleiding studeert af in 2029. In die wereld is AI standaard gereedschap. Elke dag dat het curriculum niet verandert, groeit de kloof.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Het gaat niet om of dit gebeurt. Het gaat om wanneer jullie klaar zijn.
+                </p>
+            </div>
+
+            {{-- Over de spreker --}}
+            <div class="mt-16 rounded-2xl bg-gray-50 border border-gray-200 p-8 md:p-10" data-aos="fade-up">
+                <div class="flex items-start gap-6">
+                    <img src="/images/firda/nathan-keynote.jpeg" alt="Nathan Jansen" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 hidden sm:block" />
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary">Over Nathan Jansen</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-sm">
+                            AI Business Architect bij UTEQ. Na 20 jaar software bouwen laat hij AI nu de code schrijven. Zijn werk: mooie plannen maken en controleren of die plannen goed zijn uitgevoerd. Nathan spreekt regelmatig over de impact van AI op het vakgebied.
+                        </p>
+                        <a href="https://www.linkedin.com/in/nathanjansen/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            Bekijk LinkedIn profiel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- Contact/CTA Section --}}
     <section class="relative bg-secondary py-16 lg:py-24 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/[0.03] rounded-full blur-3xl pointer-events-none"></div>
