@@ -1,3 +1,5 @@
+@props(['nav' => true, 'title' => null, 'metaDescription' => null])
+
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -6,11 +8,13 @@
     <meta name="application-name" content="{{ config('app.name') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Uteq bouwt online (SaaS) toepassingen en maatwerk software voor jouw bedrijf. Van MVP tot schaalbare oplossingen met focus op duurzame groei.">
+    <meta name="description" content="{{ $metaDescription ?? 'Uteq bouwt online (SaaS) toepassingen en maatwerk software voor jouw bedrijf. Van MVP tot schaalbare oplossingen met focus op duurzame groei.' }}">
     <link rel="shortcut icon" href="{{ Vite::image('favicon1.png') }}">
     <link rel="preload" href="/fonts/Sregs Serif Free - Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
-    <title>{{ config('app.name') }}</title>
+    <title>{{ $title ?: config('app.name') }}</title>
+
+    @stack('head')
 
     <style>
         [x-cloak] {
@@ -47,7 +51,7 @@
                 </a>
             </div>
 
-            @if ($nav ?? true)
+            @if ($nav)
             <div class="flex lg:hidden">
                 <button x-on:click="showMenu = ! showMenu" type="button" class=" -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>

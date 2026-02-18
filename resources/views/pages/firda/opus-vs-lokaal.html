@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opus 4.6 vs Lokaal — UTEQ</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #08090C; overflow-x: hidden; }
+  @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+const font = "'DM Sans', 'Segoe UI', system-ui, sans-serif";
+const mono = "'JetBrains Mono', monospace";
+const gold = "#D4A053";
+const blue = "#5B8DEF";
+
+/* ═══════════════════════════════════════════
+   CONCEPT 0: VISUAL / IN ÉÉN OOGOPSLAG
+   ═══════════════════════════════════════════ */
+
+const scenes = [
+  { id: "vision", title: "Wat ze 'zien'", subtitle: "Hetzelfde document, ander blikveld" },
+  { id: "puzzle", title: "Hoe ze denken", subtitle: "Hetzelfde probleem, andere aanpak" },
+  { id: "building", title: "Wat ze bouwen", subtitle: "Dezelfde opdracht, ander resultaat" },
+];
+
+function VisionScene() {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => { setTimeout(() => setAnimate(true), 300); }, []);
+  const pages = Array.from({ length: 12 }, (_, i) => i);
+  const connections = [[0,5],[1,8],[2,11],[3,7],[4,9],[0,11],[6,10]];
+
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 60px 1fr", gap: "0", alignItems: "center" }}>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ position: "relative", width: "100%", height: "320px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg viewBox="0 0 280 300" style={{ width: "100%", maxWidth: "280px", height: "300px" }}>
+            <circle cx="140" cy="40" r="22" fill={gold} opacity="0.9" />
+            <text x="140" y="45" textAnchor="middle" fontSize="18" fill="#000">🧠</text>
+            <line x1="140" y1="62" x2="140" y2="120" stroke={gold} strokeWidth="3" strokeLinecap="round" />
+            <line x1="140" y1="80" x2="110" y2="105" stroke={gold} strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="140" y1="80" x2="170" y2="105" stroke={gold} strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="140" y1="120" x2="118" y2="160" stroke={gold} strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="140" y1="120" x2="162" y2="160" stroke={gold} strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M 110,105 L 20,175 L 260,175 L 170,105" fill={`${gold}08`} stroke={`${gold}25`} strokeWidth="1" strokeDasharray="4 3" style={{ opacity: animate ? 1 : 0, transition: "opacity 1s ease 0.5s" }} />
+            {pages.map((p, i) => {
+              const col = i % 4, row = Math.floor(i / 4), x = 35 + col * 60, y = 185 + row * 36;
+              return (
+                <g key={i}>
+                  <rect x={x} y={y} width="44" height="28" rx="3" fill={animate ? `${gold}20` : "rgba(255,255,255,0.03)"} stroke={animate ? `${gold}50` : "rgba(255,255,255,0.08)"} strokeWidth="1" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} />
+                  <line x1={x+6} y1={y+8} x2={x+38} y2={y+8} stroke={animate ? `${gold}40` : "rgba(255,255,255,0.06)"} strokeWidth="1.5" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} />
+                  <line x1={x+6} y1={y+14} x2={x+30} y2={y+14} stroke={animate ? `${gold}30` : "rgba(255,255,255,0.04)"} strokeWidth="1.5" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} />
+                  <line x1={x+6} y1={y+20} x2={x+34} y2={y+20} stroke={animate ? `${gold}25` : "rgba(255,255,255,0.03)"} strokeWidth="1.5" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} />
+                </g>
+              );
+            })}
+            {connections.map(([from, to], ci) => {
+              const fc = from % 4, fr = Math.floor(from / 4), tc = to % 4, tr = Math.floor(to / 4);
+              return <line key={ci} x1={35+fc*60+22} y1={185+fr*36+14} x2={35+tc*60+22} y2={185+tr*36+14} stroke={gold} strokeWidth="1.5" strokeDasharray="3 3" opacity={animate ? 0.35 : 0} style={{ transition: `opacity 0.8s ease ${0.8 + ci * 0.15}s` }} />;
+            })}
+          </svg>
+        </div>
+        <div style={{ marginTop: "8px" }}>
+          <div style={{ fontSize: "15px", fontWeight: 700, color: gold }}>Opus 4.6</div>
+          <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px", lineHeight: 1.5 }}>Ziet <strong style={{ color: "rgba(255,255,255,0.7)" }}>alle 42 pagina's</strong> tegelijk.<br/>Ontdekt verbanden tussen secties.</div>
+        </div>
+      </div>
+      <div style={{ textAlign: "center", color: "rgba(255,255,255,0.1)", fontSize: "16px", fontWeight: 800 }}>VS</div>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ position: "relative", width: "100%", height: "320px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg viewBox="0 0 280 300" style={{ width: "100%", maxWidth: "280px", height: "300px" }}>
+            <circle cx="140" cy="40" r="22" fill={blue} opacity="0.9" />
+            <text x="140" y="45" textAnchor="middle" fontSize="18" fill="#000">⚙️</text>
+            <line x1="140" y1="62" x2="140" y2="120" stroke={blue} strokeWidth="3" strokeLinecap="round" />
+            <line x1="140" y1="80" x2="110" y2="105" stroke={blue} strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="140" y1="80" x2="170" y2="105" stroke={blue} strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="140" y1="120" x2="118" y2="160" stroke={blue} strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="140" y1="120" x2="162" y2="160" stroke={blue} strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M 120,105 L 90,175 L 190,175 L 160,105" fill={`${blue}08`} stroke={`${blue}25`} strokeWidth="1" strokeDasharray="4 3" style={{ opacity: animate ? 1 : 0, transition: "opacity 1s ease 0.5s" }} />
+            {pages.map((p, i) => {
+              const col = i % 4, row = Math.floor(i / 4), x = 35 + col * 60, y = 185 + row * 36;
+              const inView = (col === 1 || col === 2) && row === 0;
+              return (
+                <g key={i}>
+                  <rect x={x} y={y} width="44" height="28" rx="3" fill={animate && inView ? `${blue}20` : "rgba(255,255,255,0.02)"} stroke={animate && inView ? `${blue}50` : "rgba(255,255,255,0.05)"} strokeWidth="1" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} />
+                  {inView ? (<><line x1={x+6} y1={y+8} x2={x+38} y2={y+8} stroke={animate ? `${blue}40` : "rgba(255,255,255,0.06)"} strokeWidth="1.5" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} /><line x1={x+6} y1={y+14} x2={x+30} y2={y+14} stroke={animate ? `${blue}30` : "rgba(255,255,255,0.04)"} strokeWidth="1.5" style={{ transition: `all 0.6s ease ${0.3 + i * 0.08}s` }} /></>) : (<text x={x+22} y={y+18} textAnchor="middle" fontSize="12" fill="rgba(255,255,255,0.08)">?</text>)}
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+        <div style={{ marginTop: "8px" }}>
+          <div style={{ fontSize: "15px", fontWeight: 700, color: blue }}>Lokaal 72B</div>
+          <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px", lineHeight: 1.5 }}>Ziet <strong style={{ color: "rgba(255,255,255,0.7)" }}>maar 8 pagina's</strong> tegelijk.<br/>Mist de kruisverbanden.</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PuzzleScene() {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => { setTimeout(() => setAnimate(true), 300); }, []);
+  const pieces = Array.from({ length: 16 }, (_, i) => ({ col: i % 4, row: Math.floor(i / 4), id: i }));
+
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 60px 1fr", gap: "0", alignItems: "center" }}>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center", padding: "30px 0" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 52px)", gridTemplateRows: "repeat(4, 52px)", gap: "3px", padding: "12px", borderRadius: "14px", background: animate ? `${gold}08` : "transparent", border: `1px solid ${animate ? `${gold}20` : "rgba(255,255,255,0.04)"}`, transition: "all 0.8s ease 0.3s" }}>
+            {pieces.map((p) => (
+              <div key={p.id} style={{ width: "52px", height: "52px", borderRadius: "6px", background: animate ? `linear-gradient(135deg, ${gold}25, ${gold}15)` : "rgba(255,255,255,0.03)", border: `1px solid ${animate ? `${gold}35` : "rgba(255,255,255,0.06)"}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px", fontFamily: mono, fontWeight: 600, color: animate ? gold : "rgba(255,255,255,0.1)", opacity: animate ? 1 : 0.3, transform: animate ? "scale(1)" : "scale(0.8)", transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${0.2 + p.id * 0.06}s` }}>
+                {animate ? "✓" : ""}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div><div style={{ fontSize: "15px", fontWeight: 700, color: gold }}>Opus 4.6</div><div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px", lineHeight: 1.5 }}>Legt de <strong style={{ color: "rgba(255,255,255,0.7)" }}>hele puzzel</strong> in één keer.<br/>Elk stuk past. Coherent geheel.</div></div>
+      </div>
+      <div style={{ textAlign: "center", color: "rgba(255,255,255,0.1)", fontSize: "16px", fontWeight: 800 }}>VS</div>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center", padding: "30px 0" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 52px)", gridTemplateRows: "repeat(4, 52px)", gap: "3px", padding: "12px", borderRadius: "14px", background: "transparent", border: "1px solid rgba(255,255,255,0.04)" }}>
+            {pieces.map((p) => {
+              const placed = p.id < 5, wrong = p.id >= 5 && p.id < 8, missing = p.id >= 8;
+              const offsets = [{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:6,y:-4},{x:-5,y:7},{x:4,y:5},...Array(8).fill({x:0,y:0})];
+              const o = offsets[p.id] || {x:0,y:0};
+              return (
+                <div key={p.id} style={{ width: "52px", height: "52px", borderRadius: "6px", background: placed ? `${blue}18` : wrong ? "rgba(239,68,68,0.1)" : "rgba(255,255,255,0.015)", border: `1px solid ${placed ? `${blue}30` : wrong ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.04)"}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: missing ? "14px" : "11px", fontFamily: mono, fontWeight: 600, color: placed ? blue : wrong ? "#EF4444" : "rgba(255,255,255,0.06)", opacity: animate ? 1 : 0.3, transform: animate ? (wrong ? `translate(${o.x}px, ${o.y}px) rotate(${o.x}deg)` : "scale(1)") : "scale(0.8)", transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${0.2 + p.id * 0.06}s` }}>
+                  {placed ? "✓" : wrong ? "✗" : missing && animate ? "?" : ""}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div><div style={{ fontSize: "15px", fontWeight: 700, color: blue }}>Lokaal 72B</div><div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px", lineHeight: 1.5 }}>Legt <strong style={{ color: "rgba(255,255,255,0.7)" }}>5 van de 16</strong> stukken goed.<br/>3 verkeerd, 8 ontbreken.</div></div>
+      </div>
+    </div>
+  );
+}
+
+function BuildingScene() {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => { setTimeout(() => setAnimate(true), 300); }, []);
+  const opusFloors = [{label:"Tests",w:90},{label:"API",w:85},{label:"Services",w:80},{label:"Models",w:90},{label:"Database",w:95}];
+
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 60px 1fr", gap: "0", alignItems: "center" }}>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "20px 0", gap: "0" }}>
+          <div style={{ width: 0, height: 0, borderLeft: "50px solid transparent", borderRight: "50px solid transparent", borderBottom: `30px solid ${animate ? `${gold}35` : "rgba(255,255,255,0.03)"}`, marginBottom: "-1px", transition: `all 0.6s ease ${opusFloors.length * 0.15 + 0.3}s` }} />
+          <div style={{ fontSize: "16px", marginBottom: "2px", opacity: animate ? 1 : 0, transition: `opacity 0.5s ease ${opusFloors.length * 0.15 + 0.5}s` }}>🚩</div>
+          {opusFloors.map((f, i) => (
+            <div key={i} style={{ width: `${f.w}%`, maxWidth: "200px", height: "38px", background: animate ? `${gold}${15 + i * 7 > 99 ? 99 : 15 + i * 7}` : "rgba(255,255,255,0.02)", border: `1px solid ${animate ? `${gold}40` : "rgba(255,255,255,0.04)"}`, borderRadius: i === opusFloors.length - 1 ? "0 0 6px 6px" : "0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", fontWeight: 600, fontFamily: mono, color: animate ? gold : "rgba(255,255,255,0.1)", letterSpacing: "0.05em", opacity: animate ? 1 : 0.2, transform: animate ? "translateY(0)" : "translateY(10px)", transition: `all 0.5s ease ${(opusFloors.length - 1 - i) * 0.15 + 0.3}s`, marginTop: "-1px" }}>
+              {f.label}
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: "8px" }}><div style={{ fontSize: "15px", fontWeight: 700, color: gold }}>Opus 4.6</div><div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px", lineHeight: 1.5 }}>Bouwt een <strong style={{ color: "rgba(255,255,255,0.7)" }}>stevig gebouw</strong>.<br/>Elke laag draagt de volgende.</div></div>
+      </div>
+      <div style={{ textAlign: "center", color: "rgba(255,255,255,0.1)", fontSize: "16px", fontWeight: 800 }}>VS</div>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "20px 0", gap: "0" }}>
+          <div style={{ height: "30px" }} />
+          <div style={{ fontSize: "16px", marginBottom: "2px", opacity: animate ? 1 : 0, transition: "opacity 0.5s ease 1s" }}>⚠️</div>
+          {[{label:"???",w:50,rot:3,off:15},{label:"route?",w:60,rot:-2,off:-8},{label:"Ctrl...",w:70,rot:1.5,off:10},{label:"Model",w:80,rot:-1,off:-3},{label:"Database",w:90,rot:0,off:0}].map((f, i) => (
+            <div key={i} style={{ width: `${f.w}%`, maxWidth: "200px", height: "38px", background: animate ? i < 2 ? "rgba(239,68,68,0.12)" : i < 3 ? "rgba(251,191,36,0.12)" : `${blue}15` : "rgba(255,255,255,0.02)", border: `1px solid ${animate ? i < 2 ? "rgba(239,68,68,0.25)" : i < 3 ? "rgba(251,191,36,0.25)" : `${blue}30` : "rgba(255,255,255,0.04)"}`, borderRadius: i === 4 ? "0 0 6px 6px" : "0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", fontWeight: 600, fontFamily: mono, color: animate ? i < 2 ? "rgba(239,68,68,0.6)" : i < 3 ? "rgba(251,191,36,0.6)" : blue : "rgba(255,255,255,0.1)", letterSpacing: "0.05em", opacity: animate ? 1 : 0.2, transform: animate ? `translateX(${f.off}px) rotate(${f.rot}deg)` : "translateY(10px)", transition: `all 0.5s ease ${(4 - i) * 0.15 + 0.3}s`, marginTop: "-1px" }}>
+              {f.label}
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: "8px" }}><div style={{ fontSize: "15px", fontWeight: 700, color: blue }}>Lokaal 72B</div><div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px", lineHeight: 1.5 }}>Fundament oké, maar <strong style={{ color: "rgba(255,255,255,0.7)" }}>boven wankel</strong>.<br/>Lagen sluiten niet aan.</div></div>
+      </div>
+    </div>
+  );
+}
+
+function Concept0() {
+  const [activeScene, setActiveScene] = useState(0);
+  const [key, setKey] = useState(0);
+  const switchScene = (i) => { setActiveScene(i); setKey(k => k + 1); };
+  const SceneComponent = [VisionScene, PuzzleScene, BuildingScene][activeScene];
+
+  return (
+    <div>
+      <div style={{ textAlign: "center", marginBottom: "32px" }}>
+        <h2 style={{ fontSize: "24px", fontWeight: 800, margin: "0 0 8px 0", letterSpacing: "-0.03em" }}>Het verschil in één oogopslag</h2>
+        <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.35)", margin: 0 }}>Drie metaforen. Hetzelfde verhaal.</p>
+      </div>
+      <div style={{ display: "flex", gap: "8px", marginBottom: "28px", justifyContent: "center" }}>
+        {scenes.map((s, i) => (<button key={s.id} onClick={() => switchScene(i)} style={{ padding: "10px 20px", borderRadius: "10px", border: `1px solid ${i === activeScene ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.06)"}`, background: i === activeScene ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.02)", color: i === activeScene ? "#fff" : "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: "13px", fontWeight: 600, fontFamily: font, transition: "all 0.2s" }}>{s.title}</button>))}
+      </div>
+      <div style={{ textAlign: "center", marginBottom: "24px" }}><span style={{ fontSize: "12px", color: "rgba(255,255,255,0.25)", background: "rgba(255,255,255,0.03)", padding: "6px 16px", borderRadius: "20px" }}>{scenes[activeScene].subtitle}</span></div>
+      <div key={key} style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", padding: "32px 20px", animation: "fadeSlideIn 0.4s ease" }}><SceneComponent /></div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "24px" }}>
+        <div style={{ background: `${gold}08`, border: `1px solid ${gold}15`, borderRadius: "12px", padding: "16px 18px", textAlign: "center" }}>
+          <div style={{ fontSize: "28px", marginBottom: "6px" }}>🏆</div><div style={{ fontSize: "13px", fontWeight: 700, color: gold, marginBottom: "4px" }}>Opus: het brein</div><div style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>Complex denken, grote context,<br/>alles in samenhang</div>
+        </div>
+        <div style={{ background: `${blue}08`, border: `1px solid ${blue}15`, borderRadius: "12px", padding: "16px 18px", textAlign: "center" }}>
+          <div style={{ fontSize: "28px", marginBottom: "6px" }}>💪</div><div style={{ fontSize: "13px", fontWeight: 700, color: blue, marginBottom: "4px" }}>Lokaal: de spierkracht</div><div style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>Volume, privacy, snelheid,<br/>onbeperkt en gratis</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   CONCEPT 1: SIDE-BY-SIDE OUTPUT
+   ═══════════════════════════════════════════ */
+
+const prompts = [
+  { id: "laravel", label: "Laravel Architectuur", icon: "🏗️",
+    prompt: "Ontwerp de service-laag architectuur voor een order management systeem met inventory tracking, automatische facturatie en klantnotificaties.",
+    opus: `// App\\Services\\OrderOrchestrationService.php\n\nclass OrderOrchestrationService\n{\n    public function __construct(\n        private InventoryService $inventory,\n        private InvoiceService $invoicing,\n        private NotificationDispatcher $notifications,\n        private OrderRepository $orders,\n        private UnitOfWork $uow,\n    ) {}\n\n    public function placeOrder(PlaceOrderDTO $dto): Order\n    {\n        return $this->uow->execute(function () use ($dto) {\n            // 1. Reserve inventory\n            $reservation = $this->inventory->reserve($dto->items);\n\n            // 2. Create order aggregate\n            $order = Order::create($dto, $reservation);\n\n            // 3. Generate invoice via event\n            $order->recordEvent(new OrderPlaced($order));\n\n            // 4. Persist\n            $this->orders->save($order);\n\n            // 5. Dispatch async notifications\n            $this->notifications->queue(\n                new OrderConfirmation($order),\n                new InventoryAlert($reservation),\n                new InvoiceGenerated($order->invoice),\n            );\n\n            return $order;\n        });\n    }\n}\n\n// Separation of concerns:\n// - DTOs for input validation\n// - Repository pattern for persistence\n// - Domain events for side effects\n// - Unit of Work for transactional integrity\n// - Async notifications via queue`,
+    local: `// OrderController.php\n\nclass OrderController extends Controller\n{\n    public function store(Request $request)\n    {\n        $order = new Order();\n        $order->customer_id = $request->customer_id;\n        $order->items = $request->items;\n        $order->save();\n\n        // Check inventory\n        foreach ($request->items as $item) {\n            $product = Product::find($item['id']);\n            $product->stock -= $item['quantity'];\n            $product->save();\n        }\n\n        // Create invoice\n        $invoice = new Invoice();\n        $invoice->order_id = $order->id;\n        $invoice->amount = $order->total;\n        $invoice->save();\n\n        // Send email\n        Mail::to($order->customer->email)\n            ->send(new OrderConfirmation($order));\n\n        return response()->json($order);\n    }\n}\n\n// ⚠️ Geen service laag, geen transacties,\n// geen input validatie, synchrone mail,\n// race condition op inventory,\n// niet testbaar zonder database`,
+  },
+  { id: "analyze", label: "Document Analyse", icon: "📋",
+    prompt: "Analyseer deze verzekeringspolis en geef een overzicht van dekkingen, uitsluitingen en risico's.",
+    opus: `## Polisanalyse — Bedrijfsaansprakelijkheid\n\n### ✅ Dekkingen\n- Aansprakelijkheid derden\n- Bedrijfsschade producten (art. 4.2)\n- Werkgeversaansprakelijkheid (incl. ZZP)\n- Juridische bijstand tot €50.000\n\n### ❌ Uitsluitingen — LET OP\n- Art. 12.3: Cyberaanvallen UITGESLOTEN\n- Art. 14.1: Onderaannemers alleen gedekt\n  als zij zelf verzekerd zijn\n- Art. 9.7: Opzicht-clausule\n\n### ⚠️ Risico's\n1. Cyber-gap → aparte verzekering URGENT\n2. ZZP-contracten herzien (art. 7.2.b)\n3. Omzetclausule: >15% groei = geen dekking\n4. Eigen risico milieu: €25.000 (!)\n\n### 📋 Acties\n- [ ] Cyberverzekering afsluiten\n- [ ] ZZP-contracten herzien\n- [ ] Omzet monitoren\n- [ ] Milieurisico inventariseren`,
+    local: `## Verzekeringspolis Samenvatting\n\nDit is een bedrijfsaansprakelijkheids-\nverzekering.\n\n**Dekking:**\n- Schade aan derden\n- Productaansprakelijkheid\n- Werkgeversaansprakelijkheid\n\n**Uitsluitingen:**\n- Opzettelijke schade\n- Oorlog en terrorisme\n- Cyber-gerelateerde schade\n\n**Eigen risico:** €2.500\n\nDe polis biedt standaard dekking.\nEr zijn enkele uitsluitingen waar u\nrekening mee moet houden.\n\n// ⚠️ Mist specifieke artikelen,\n// omzetclausule, kruisverbanden,\n// en concrete actiepunten`,
+  },
+  { id: "email", label: "Klantmail", icon: "✉️",
+    prompt: "Schrijf een mail naar Rico (installatiebedrijf, 22 man) die twijfelt over AI. Hij vindt het te complex.",
+    opus: `Onderwerp: Simpeler dan je denkt, Rico\n\nHoi Rico,\n\nDie twijfel snap ik. "AI" klinkt als iets\nvoor techbedrijven met een IT-team.\n\nMaar even concreet: jullie verwerken ~180\nwerkbonnen per maand. Iemand typt die nu\nhandmatig over. Dat kost ~15 uur per maand.\n\nWat wij bouwen: medewerker maakt foto van\nwerkbon → systeem leest het → klaar in de\nplanning. Geen app, geen dashboard.\n\nDe eerlijke kanttekening: eerste 2 weken\nmoet het systeem jullie handschriften leren.\n\nZullen we dinsdag 20 min bellen? Dan laat\nik het live zien met jullie eigen werkbon.\n\nGroet,\nNathan`,
+    local: `Onderwerp: AI-automatisering voor uw bedrijf\n\nBeste Rico,\n\nBedankt voor uw interesse in onze\nAI-oplossingen. Ik begrijp dat u twijfels\nheeft over de complexiteit.\n\nAI-automatisering kan veel voordelen bieden\nvoor uw installatiebedrijf. Het kan helpen\nbij het verminderen van administratieve\ntaken.\n\nOnze oplossing is gebruiksvriendelijk en\nvereist geen technische kennis.\n\nEnkele voordelen:\n- Tijdsbesparing op administratie\n- Minder fouten\n- Betere planning\n- Snellere facturatie\n\nIk zou graag een afspraak maken om de\nmogelijkheden te bespreken.\n\nMet vriendelijke groet,\n[Naam]\n\n// ⚠️ Generiek, niet persoonlijk, gaat\n// niet in op zijn echte bezwaar`,
+  },
+];
+
+function Concept1() {
+  const [activePrompt, setActivePrompt] = useState(0);
+  const [showOutput, setShowOutput] = useState(true);
+  const p = prompts[activePrompt];
+  const switchPrompt = (i) => { if (i === activePrompt) return; setShowOutput(false); setTimeout(() => { setActivePrompt(i); setShowOutput(true); }, 200); };
+
+  return (
+    <div>
+      <div style={{ textAlign: "center", marginBottom: "32px" }}>
+        <h2 style={{ fontSize: "24px", fontWeight: 800, margin: "0 0 8px 0", letterSpacing: "-0.03em" }}>Dezelfde opdracht. Twee resultaten.</h2>
+        <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.35)", margin: 0 }}>Kies een taak en vergelijk de output.</p>
+      </div>
+      <div style={{ display: "flex", gap: "8px", marginBottom: "20px", justifyContent: "center", flexWrap: "wrap" }}>
+        {prompts.map((pr, i) => (<button key={pr.id} onClick={() => switchPrompt(i)} style={{ padding: "10px 18px", borderRadius: "10px", border: `1px solid ${i === activePrompt ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.06)"}`, background: i === activePrompt ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.02)", color: i === activePrompt ? "#fff" : "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: "13px", fontWeight: 600, fontFamily: font, transition: "all 0.2s" }}>{pr.icon} {pr.label}</button>))}
+      </div>
+      <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "12px", padding: "16px 20px", marginBottom: "16px", display: "flex", alignItems: "flex-start", gap: "12px" }}>
+        <span style={{ fontSize: "16px" }}>💬</span>
+        <div><div style={{ fontSize: "10px", fontWeight: 700, color: "rgba(255,255,255,0.25)", letterSpacing: "0.08em", marginBottom: "4px" }}>PROMPT</div><div style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>{p.prompt}</div></div>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", opacity: showOutput ? 1 : 0, transition: "opacity 0.2s ease" }}>
+        <div style={{ background: `linear-gradient(180deg, ${gold}08 0%, ${gold}02 100%)`, border: `1px solid ${gold}18`, borderRadius: "14px", overflow: "hidden" }}>
+          <div style={{ padding: "12px 16px", borderBottom: `1px solid ${gold}10`, display: "flex", alignItems: "center", gap: "8px" }}><span style={{ width: "8px", height: "8px", borderRadius: "2px", background: gold }} /><span style={{ fontSize: "12px", fontWeight: 700, color: gold, letterSpacing: "0.05em" }}>OPUS 4.6</span></div>
+          <pre style={{ padding: "16px", margin: 0, fontSize: "11px", fontFamily: mono, color: "rgba(255,255,255,0.7)", lineHeight: 1.65, whiteSpace: "pre-wrap", wordBreak: "break-word", maxHeight: "440px", overflowY: "auto" }}>{p.opus}</pre>
+        </div>
+        <div style={{ background: `linear-gradient(180deg, ${blue}08 0%, ${blue}02 100%)`, border: `1px solid ${blue}18`, borderRadius: "14px", overflow: "hidden" }}>
+          <div style={{ padding: "12px 16px", borderBottom: `1px solid ${blue}10`, display: "flex", alignItems: "center", gap: "8px" }}><span style={{ width: "8px", height: "8px", borderRadius: "2px", background: blue }} /><span style={{ fontSize: "12px", fontWeight: 700, color: blue, letterSpacing: "0.05em" }}>LOKAAL 72B Q4</span></div>
+          <pre style={{ padding: "16px", margin: 0, fontSize: "11px", fontFamily: mono, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, whiteSpace: "pre-wrap", wordBreak: "break-word", maxHeight: "440px", overflowY: "auto" }}>{p.local}</pre>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   CONCEPT 2: OFFICE METAPHOR
+   ═══════════════════════════════════════════ */
+
+const officeItems = [
+  { id: "desk-opus", emoji: "🧠", title: "De Senior Architect", color: gold, items: [
+    { icon: "📐", label: "Systeem-denken", desc: "Ziet hoe alle onderdelen samenhangen" },
+    { icon: "📚", label: "200K context", desc: "Leest 300+ pagina's in één keer" },
+    { icon: "🎯", label: "Instructie-meester", desc: "Volgt 12-staps workflows foutloos" },
+    { icon: "🇳🇱", label: "Vloeiend Nederlands", desc: "Schrijft als een native speaker" },
+    { icon: "💡", label: "Creatief", desc: "Bedenkt oplossingen die je zelf niet zag" },
+  ]},
+  { id: "desk-local", emoji: "⚙️", title: "De Betrouwbare Werknemer", color: blue, items: [
+    { icon: "📂", label: "Sorteren & labelen", desc: "Classificeert documenten razendsnel" },
+    { icon: "🔒", label: "Kluiswaardig", desc: "Data verlaat nooit het gebouw" },
+    { icon: "⚡", label: "Onvermoeibaar", desc: "24/7, 10.000 taken/dag, gratis" },
+    { icon: "⛏️", label: "Data-extractie", desc: "Haalt gegevens uit facturen en bonnen" },
+    { icon: "🔍", label: "Zoeken & matchen", desc: "Embeddings en RAG voor document search" },
+  ]},
+];
+
+function Concept2() {
+  const [activeDesk, setActiveDesk] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const desk = activeDesk !== null ? officeItems[activeDesk] : null;
+
+  return (
+    <div>
+      <div style={{ textAlign: "center", marginBottom: "32px" }}>
+        <h2 style={{ fontSize: "24px", fontWeight: 800, margin: "0 0 8px 0", letterSpacing: "-0.03em" }}>Twee collega's, twee talenten</h2>
+        <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.35)", margin: 0 }}>Klik op een bureau om te zien wat elke collega kan.</p>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "28px" }}>
+        {officeItems.map((item, i) => (
+          <div key={item.id} onClick={() => setActiveDesk(activeDesk === i ? null : i)} style={{ background: activeDesk === i ? `${item.color}12` : "rgba(255,255,255,0.02)", border: `1px solid ${activeDesk === i ? item.color + "33" : "rgba(255,255,255,0.06)"}`, borderRadius: "16px", padding: "28px 24px", cursor: "pointer", transition: "all 0.3s ease", textAlign: "center", transform: activeDesk === i ? "scale(1.02)" : "scale(1)" }}>
+            <div style={{ fontSize: "48px", marginBottom: "12px" }}>{item.emoji}</div>
+            <div style={{ fontSize: "16px", fontWeight: 700, color: item.color, marginBottom: "6px" }}>{item.title}</div>
+            <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>{i === 0 ? "Claude Opus 4.6" : "Qwen 72B op L40S"}</div>
+          </div>
+        ))}
+      </div>
+      {desk && (
+        <div style={{ background: `${desk.color}06`, border: `1px solid ${desk.color}1a`, borderRadius: "16px", padding: "24px", animation: "fadeSlideIn 0.3s ease" }}>
+          <div style={{ fontSize: "13px", fontWeight: 700, color: desk.color, marginBottom: "16px", letterSpacing: "0.05em" }}>{desk.emoji} WAAR {activeDesk === 0 ? "OPUS" : "LOKAAL"} UITBLINKT</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {desk.items.map((skill, si) => (
+              <div key={si} onMouseEnter={() => setHoveredItem(si)} onMouseLeave={() => setHoveredItem(null)} style={{ display: "flex", alignItems: "flex-start", gap: "12px", padding: "12px 14px", borderRadius: "10px", background: hoveredItem === si ? "rgba(255,255,255,0.04)" : "transparent", transition: "all 0.2s", cursor: "default" }}>
+                <span style={{ fontSize: "20px", flexShrink: 0 }}>{skill.icon}</span>
+                <div><div style={{ fontSize: "13px", fontWeight: 700, color: "rgba(255,255,255,0.85)", marginBottom: "2px" }}>{skill.label}</div><div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", lineHeight: 1.5 }}>{skill.desc}</div></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   CONCEPT 3: WORKFLOW
+   ═══════════════════════════════════════════ */
+
+const workflows = [
+  { id: "contract", label: "Analyseer een contract", icon: "📄",
+    opus: [{step:"Leest alle 42 pagina's",status:"done",time:"12s",detail:"Volledige context in één pass"},{step:"Identificeert 8 risicovolle clausules",status:"done",time:"3s",detail:"Kruisverwijzingen gevonden"},{step:"Vindt verborgen omzetclausule",status:"done",time:"1s",detail:"Art. 22 ↔ bijlage D"},{step:"Genereert actielijst",status:"done",time:"2s",detail:"4 acties, gerankt op urgentie"},{step:"Schrijft klant-samenvatting",status:"done",time:"3s",detail:"In begrijpelijk Nederlands"}],
+    local: [{step:"Leest pagina 1-8",status:"done",time:"4s",detail:"Context window vol"},{step:"Leest pagina 9-16",status:"done",time:"4s",detail:"Vergeet pagina 1-4"},{step:"Leest pagina 17-24",status:"partial",time:"4s",detail:"Verliest samenhang"},{step:"...(nog 18 pagina's)",status:"fail",time:"—",detail:"Moet in 3+ sessies"},{step:"Mist kruisverwijzing",status:"fail",time:"—",detail:"Zag ze apart"}],
+  },
+  { id: "tickets", label: "500 support tickets", icon: "🎫",
+    opus: [{step:"Analyseert & classificeert",status:"done",time:"0.8s/stuk",detail:"12 categorieën"},{step:"Bepaalt urgentie",status:"done",time:"0.2s/stuk",detail:"Met context-begrip"},{step:"500 tickets verwerkt",status:"done",time:"~11 min",detail:"Accurate resultaten"},{step:"Totale kosten",status:"warn",time:"€3-5",detail:"Per batch"}],
+    local: [{step:"Analyseert & classificeert",status:"done",time:"1.2s/stuk",detail:"12 categorieën"},{step:"Bepaalt urgentie",status:"done",time:"0.3s/stuk",detail:"Iets minder nuance"},{step:"500 tickets verwerkt",status:"done",time:"~17 min",detail:"Goede resultaten"},{step:"Totale kosten",status:"done",time:"€0",detail:"Eigen hardware"}],
+  },
+];
+
+function StepDot({ status }) {
+  const c = { done: "#4ADE80", partial: "#FBBF24", warn: "#FBBF24", fail: "#EF4444" };
+  return <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: c[status] || "#666", flexShrink: 0, boxShadow: `0 0 8px ${c[status]}44` }} />;
+}
+
+function WorkflowColumn({ steps, color, label }) {
+  const [vis, setVis] = useState(0);
+  useEffect(() => { setVis(0); let c = 0; const iv = setInterval(() => { c++; setVis(c); if (c >= steps.length) clearInterval(iv); }, 350); return () => clearInterval(iv); }, [steps]);
+  return (
+    <div>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px", padding: "8px 12px", background: `${color}10`, borderRadius: "8px" }}><span style={{ width: "8px", height: "8px", borderRadius: "2px", background: color }} /><span style={{ fontSize: "11px", fontWeight: 700, color, letterSpacing: "0.06em" }}>{label}</span></div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+        {steps.map((step, i) => (
+          <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", padding: "10px 12px", borderRadius: "8px", background: i < vis ? "rgba(255,255,255,0.02)" : "transparent", opacity: i < vis ? 1 : 0.15, transform: i < vis ? "translateY(0)" : "translateY(8px)", transition: "all 0.4s ease" }}>
+            <div style={{ paddingTop: "3px" }}><StepDot status={i < vis ? step.status : "pending"} /></div>
+            <div style={{ flex: 1, minWidth: 0 }}><div style={{ fontSize: "12px", fontWeight: 600, color: "rgba(255,255,255,0.8)", marginBottom: "2px" }}>{step.step}</div><div style={{ fontSize: "11px", color: "rgba(255,255,255,0.3)" }}>{step.detail}</div></div>
+            <div style={{ fontSize: "11px", fontFamily: mono, color: "rgba(255,255,255,0.25)", flexShrink: 0, paddingTop: "1px" }}>{step.time}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Concept3() {
+  const [active, setActive] = useState(0);
+  const [key, setKey] = useState(0);
+  const wf = workflows[active];
+  const sw = (i) => { setActive(i); setKey(k => k + 1); };
+  return (
+    <div>
+      <div style={{ textAlign: "center", marginBottom: "32px" }}>
+        <h2 style={{ fontSize: "24px", fontWeight: 800, margin: "0 0 8px 0", letterSpacing: "-0.03em" }}>Dezelfde klus. Twee werkwijzen.</h2>
+        <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.35)", margin: 0 }}>Volg stap voor stap hoe elk model een taak aanpakt.</p>
+      </div>
+      <div style={{ display: "flex", gap: "8px", marginBottom: "24px", justifyContent: "center" }}>
+        {workflows.map((w, i) => (<button key={w.id} onClick={() => sw(i)} style={{ padding: "10px 18px", borderRadius: "10px", border: `1px solid ${i === active ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.06)"}`, background: i === active ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.02)", color: i === active ? "#fff" : "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: "13px", fontWeight: 600, fontFamily: font, transition: "all 0.2s" }}>{w.icon} {w.label}</button>))}
+      </div>
+      <div key={key} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+        <WorkflowColumn steps={wf.opus} color={gold} label="OPUS 4.6" />
+        <WorkflowColumn steps={wf.local} color={blue} label="LOKAAL (72B Q4)" />
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════
+   MAIN APP
+   ═══════════════════════════════════════════ */
+
+const concepts = [
+  { id: "visual", label: "① In één oogopslag", component: Concept0, desc: "Visuele metaforen" },
+  { id: "side-by-side", label: "② Output vergelijken", component: Concept1, desc: "Echte resultaten naast elkaar" },
+  { id: "office", label: "③ Twee collega's", component: Concept2, desc: "Interactieve kantoormetafoor" },
+  { id: "workflow", label: "④ De werkbank", component: Concept3, desc: "Stap-voor-stap aanpak" },
+];
+
+function App() {
+  const [active, setActive] = useState(0);
+  const Comp = concepts[active].component;
+  return (
+    <div style={{ minHeight: "100vh", background: "#08090C", color: "#fff", fontFamily: font, padding: "32px 20px" }}>
+      <div style={{ maxWidth: "820px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "24px" }}><span style={{ fontSize: "10px", fontWeight: 700, color: "rgba(255,255,255,0.25)", letterSpacing: "0.12em", textTransform: "uppercase" }}>UTEQ · Opus 4.6 vs L40S Lokaal · 4 Concepten</span></div>
+        <div style={{ display: "flex", gap: "4px", marginBottom: "36px", background: "rgba(255,255,255,0.03)", padding: "5px", borderRadius: "12px" }}>
+          {concepts.map((c, i) => (
+            <button key={c.id} onClick={() => setActive(i)} style={{ flex: 1, padding: "12px 6px", borderRadius: "9px", border: "none", background: i === active ? "rgba(255,255,255,0.08)" : "transparent", color: i === active ? "#fff" : "rgba(255,255,255,0.3)", cursor: "pointer", fontFamily: font, transition: "all 0.2s", textAlign: "center" }}>
+              <div style={{ fontSize: "12px", fontWeight: 700, marginBottom: "2px" }}>{c.label}</div>
+              <div style={{ fontSize: "9px", opacity: 0.5 }}>{c.desc}</div>
+            </button>
+          ))}
+        </div>
+        <div key={active} style={{ animation: "fadeSlideIn 0.4s ease" }}><Comp /></div>
+        <div style={{ textAlign: "center", marginTop: "40px", padding: "20px", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.3)", margin: "0 0 6px 0", fontWeight: 600 }}>💡 De conclusie is steeds dezelfde</p>
+          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.2)", margin: 0, lineHeight: 1.6 }}><span style={{ color: gold }}>Opus</span> voor het denkwerk, <span style={{ color: blue }}>Lokaal</span> voor het bulkwerk. Samen onverslaanbaar.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
