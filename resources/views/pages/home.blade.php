@@ -4,6 +4,7 @@
     @include('pages.home.how')
     @include('pages.home.comments')
     @include('pages.home.projects')
+    @include('pages.home.clients')
     @include('pages.home.roi')
     @include('pages.home.quote')
     @include('pages.home.services')

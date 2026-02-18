@@ -15,7 +15,7 @@
         {{-- Vergelijkingstabel --}}
         <div data-aos="fade-up" class="grid md:grid-cols-3 gap-6 mb-16">
             {{-- Optie 1: Niets doen --}}
-            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+            <div class="glass-card rounded-2xl p-6 card-hover">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
                         <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -45,7 +45,7 @@
             </div>
 
             {{-- Optie 2: SaaS --}}
-            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+            <div class="glass-card rounded-2xl p-6 card-hover">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
                         <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -75,7 +75,7 @@
             </div>
 
             {{-- Optie 3: Maatwerk --}}
-            <div class="bg-primary/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary relative">
+            <div class="glass-card-strong rounded-2xl p-6 border-2 border-primary relative card-hover">
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-secondary text-xs font-bold px-3 py-1 rounded-full">
                     Aanbevolen
                 </div>
@@ -109,7 +109,7 @@
         </div>
 
         {{-- ROI Rekenvoorbeeld --}}
-        <div data-aos="fade-up" class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
+        <div data-aos="fade-up" class="glass-card-strong rounded-3xl p-8 md:p-12">
             <h3 class="font-sregs-bold text-2xl text-white mb-6">Rekenvoorbeeld: Administratie automatiseren</h3>
 
             <div class="grid md:grid-cols-2 gap-8">

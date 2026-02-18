@@ -10,7 +10,7 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-            <div data-aos="fade-up" data-aos-delay="100" class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div data-aos="fade-up" data-aos-delay="100" class="relative glass-card rounded-2xl p-8 card-hover">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-secondary font-sregs-bold text-2xl shadow-lg shadow-primary/30">
                         1
@@ -21,7 +21,7 @@
                 <p class="text-gray-400 leading-relaxed">Ik kom bij je op kantoor. We lopen door je processen. Ik stel vragen, jij laat zien waar het schuurt.</p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="200" class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div data-aos="fade-up" data-aos-delay="200" class="relative glass-card rounded-2xl p-8 card-hover">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-secondary font-sregs-bold text-2xl shadow-lg shadow-primary/30">
                         2
@@ -32,7 +32,7 @@
                 <p class="text-gray-400 leading-relaxed">Je krijgt een concreet voorstel. Wat het doet, wat het kost, wat het oplevert. In normale taal.</p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="300" class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div data-aos="fade-up" data-aos-delay="300" class="relative glass-card rounded-2xl p-8 card-hover">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-secondary font-sregs-bold text-2xl shadow-lg shadow-primary/30">
                         3

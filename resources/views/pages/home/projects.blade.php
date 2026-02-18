@@ -12,10 +12,10 @@
 
         <div class="space-y-8">
             {{-- Case 1: BioValue Administratie --}}
-            <div data-aos="fade-up" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+            <div data-aos="fade-up" class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
                 <div class="flex flex-col lg:flex-row">
-                    <div class="lg:w-1/2">
-                        <img class="w-full h-64 lg:h-full object-cover" src="{{ Vite::image('uteq-adminpanelen.webp') }}" alt="BioValue adminpaneel" width="990" height="684" loading="lazy">
+                    <div class="lg:w-1/2 overflow-hidden">
+                        <img class="w-full h-64 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105" src="{{ Vite::image('uteq-adminpanelen.webp') }}" alt="BioValue adminpaneel" width="990" height="684" loading="lazy">
                     </div>
                     <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                         <p class="text-primary font-semibold text-sm mb-2">BioValue &middot; Vergistingsinstallaties</p>
@@ -23,15 +23,15 @@
                         <p class="text-gray-600 leading-relaxed mb-6">BioValue verwerkte bonnen, facturen en massabalansen met de hand. Nu doet de software het tikwerk en kan het team zich focussen op klantcontact en groei.</p>
                         <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">&euro;150k</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="150" data-prefix="&euro;" data-suffix="k">0</span></p>
                                 <p class="text-sm text-gray-500">bespaard per jaar</p>
                             </div>
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">3 mnd</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="3" data-suffix=" mnd">0</span></p>
                                 <p class="text-sm text-gray-500">terugverdiend</p>
                             </div>
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">0</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="0">0</span></p>
                                 <p class="text-sm text-gray-500">fouten per maand</p>
                             </div>
                         </div>
@@ -40,10 +40,10 @@
             </div>
 
             {{-- Case 2: BioValue Storingsdienst --}}
-            <div data-aos="fade-up" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+            <div data-aos="fade-up" class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
                 <div class="flex flex-col lg:flex-row-reverse">
-                    <div class="lg:w-1/2">
-                        <img class="w-full h-64 lg:h-full object-cover" src="{{ Vite::image('uteq-telegram.webp') }}" alt="Storingsdienst BioValue" width="990" height="684" loading="lazy">
+                    <div class="lg:w-1/2 overflow-hidden">
+                        <img class="w-full h-64 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105" src="{{ Vite::image('uteq-telegram.webp') }}" alt="Storingsdienst BioValue" width="990" height="684" loading="lazy">
                     </div>
                     <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                         <p class="text-primary font-semibold text-sm mb-2">BioValue &middot; Monitoring</p>
@@ -51,11 +51,11 @@
                         <p class="text-gray-600 leading-relaxed mb-6">Vergistingsinstallaties stonden soms 45 minuten stil voor iemand het merkte. Nu detecteert het systeem de storing en stuurt direct een melding. Automatisch.</p>
                         <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">95%</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="95" data-suffix="%">0</span></p>
                                 <p class="text-sm text-gray-500">snellere reactie</p>
                             </div>
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">&euro;40k</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="40" data-prefix="&euro;" data-suffix="k">0</span></p>
                                 <p class="text-sm text-gray-500">stilstand voorkomen</p>
                             </div>
                             <div>
@@ -68,10 +68,10 @@
             </div>
 
             {{-- Case 3: All Under Control --}}
-            <div data-aos="fade-up" class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+            <div data-aos="fade-up" class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
                 <div class="flex flex-col lg:flex-row">
-                    <div class="lg:w-1/2">
-                        <img class="w-full h-64 lg:h-full object-cover" src="{{ Vite::image('uteq-auc.webp') }}" alt="All Under Control dashboard" width="990" height="684" loading="lazy">
+                    <div class="lg:w-1/2 overflow-hidden">
+                        <img class="w-full h-64 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105" src="{{ Vite::image('uteq-auc.webp') }}" alt="All Under Control dashboard" width="990" height="684" loading="lazy">
                     </div>
                     <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                         <p class="text-primary font-semibold text-sm mb-2">All Under Control &middot; Procesmonitoring</p>
@@ -79,11 +79,11 @@
                         <p class="text-gray-600 leading-relaxed mb-6">Vergistingsprocessen werden gecontroleerd met rondjes lopen en pen en papier. Nu staat alles real-time op &eacute;&eacute;n scherm. Afwijkingen vallen direct op.</p>
                         <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">6</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="6">0</span></p>
                                 <p class="text-sm text-gray-500">Excel-bestanden weg</p>
                             </div>
                             <div>
-                                <p class="text-2xl font-sregs-bold text-primary">10 uur</p>
+                                <p class="text-2xl font-sregs-bold text-primary"><span data-count="10" data-suffix=" uur">0</span></p>
                                 <p class="text-sm text-gray-500">per week bespaard</p>
                             </div>
                             <div>

@@ -93,10 +93,10 @@
                 </div>
             </div>
             <div class="hidden lg:flex lg:gap-x-16 lg:flex-grow lg:justify-end">
-                <a href="/#aanpak" class="text-lg leading-6 font-sregs text-white">Aanpak</a>
-                <a href="/#resultaten" class="text-lg leading-6 font-sregs text-white">Resultaten</a>
-                <a href="/#aanbod" class="text-lg leading-6 font-sregs text-white">Aanbod</a>
-                <a href="/#footer" class="text-lg leading-6 font-sregs text-white">Contact</a>
+                <a href="/#aanpak" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors duration-200">Aanpak</a>
+                <a href="/#resultaten" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors duration-200">Resultaten</a>
+                <a href="/#aanbod" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors duration-200">Aanbod</a>
+                <a href="/#footer" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors duration-200">Contact</a>
             </div>
             @endif
         </div>
@@ -114,6 +114,8 @@
     @livewire('wire-elements-modal')
 </div>
 
+{{-- Global contact modal at body level to avoid stacking context issues --}}
+<x-global-contact-modal />
 
 </body>
 </html>

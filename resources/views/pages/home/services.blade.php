@@ -3,7 +3,7 @@
         <div class="text-center mb-12">
             <p data-aos="fade-up" class="text-primary font-semibold uppercase tracking-widest text-sm mb-4">Het aanbod</p>
             <h2 data-aos="fade-up" class="font-sregs-bold text-3xl md:text-4xl lg:text-5xl text-secondary leading-tight mb-6">
-                3 bedrijven. Q2 2026.
+                3 bedrijven. Q3 2026.
             </h2>
             <p data-aos="fade-up" class="text-xl text-gray-600">
                 Ik werk met maximaal 3 klanten tegelijk. Zo krijgt elk project de aandacht die het verdient.
@@ -48,7 +48,7 @@
             <x-contact-form-modal title="Vraag een plek aan">
                 <button class="group rounded-full bg-primary px-8 py-4 md:px-10 md:py-5 md:text-lg font-semibold text-secondary shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 inline-flex gap-3 items-center">
                     Vraag een plek aan
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
                 </button>
             </x-contact-form-modal>
         </div>

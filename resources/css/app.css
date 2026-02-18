@@ -17,3 +17,121 @@
 .font-sregs-bold {
     font-family: 'Calistoga', Georgia, serif;
 }
+
+/* =================================
+   ANIMATED HERO GRADIENT BACKGROUND
+   ================================= */
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-gradient {
+    background: linear-gradient(-45deg, #272838, #1a1a2e, #272838, #2d2d44);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+/* =================================
+   CTA GLOW EFFECT
+   ================================= */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(1, 220, 130, 0.3), 0 10px 40px -10px rgba(1, 220, 130, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(1, 220, 130, 0.5), 0 10px 40px -10px rgba(1, 220, 130, 0.5); }
+}
+
+.cta-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* =================================
+   GRADIENT TEXT
+   ================================= */
+.gradient-text {
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 60%, #01DC82 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* =================================
+   CLIENT LOGO SLIDER
+   ================================= */
+@keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-logos {
+    animation: scroll-logos 30s linear infinite;
+}
+
+.animate-scroll-logos:hover {
+    animation-play-state: paused;
+}
+
+/* =================================
+   WAVE SECTION DIVIDER
+   ================================= */
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.wave-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-divider-top svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+/* =================================
+   GLASSMORPHISM ENHANCED
+   ================================= */
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-strong {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+   CARD HOVER LIFT EFFECT
+   ================================= */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+}
