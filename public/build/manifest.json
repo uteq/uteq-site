@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-dc5bee45.css",
+    "file": "assets/app-716ebb54.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -31,6 +31,10 @@
   "resources/images/kantoor-steenklip.webp": {
     "file": "assets/kantoor-steenklip-ba14c871.webp",
     "src": "resources/images/kantoor-steenklip.webp"
+  },
+  "resources/images/projects/biobase.webp": {
+    "file": "assets/biobase-ab89f4b9.webp",
+    "src": "resources/images/projects/biobase.webp"
   },
   "resources/images/projects/civilgrow.png": {
     "file": "assets/civilgrow-6abde2e0.png",

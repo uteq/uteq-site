@@ -80,34 +80,24 @@
                 </div>
             </div>
 
-            {{-- Bergman Postma --}}
+            {{-- Biobase --}}
             <div data-aos="fade-up" data-aos-delay="250" class="flex flex-col md:flex-row-reverse gap-8 items-center">
                 <div class="md:w-1/2">
                     <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
-                        <div class="aspect-video bg-gradient-to-br from-primary/10 via-white/5 to-white/[0.02] flex items-center justify-center relative">
-                            {{-- Abstract UI wireframe shapes --}}
-                            <svg class="absolute inset-0 w-full h-full opacity-[0.07]" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="40" y="30" width="560" height="40" rx="6" fill="white"/>
-                                <rect x="40" y="90" width="170" height="240" rx="8" fill="white"/>
-                                <rect x="230" y="90" width="370" height="110" rx="8" fill="white"/>
-                                <rect x="230" y="220" width="175" height="110" rx="8" fill="white"/>
-                                <rect x="425" y="220" width="175" height="110" rx="8" fill="white"/>
-                            </svg>
-                            <span class="text-white/20 text-sm font-medium tracking-wide relative z-10">Bergman Postma</span>
-                        </div>
+                        <img src="{{ Vite::image('projects/biobase.webp') }}" alt="Biobase GRS Platform" class="w-full aspect-video object-cover object-top">
                     </div>
                 </div>
                 <div class="md:w-1/2">
                     <div class="flex flex-col gap-3">
-                        <p class="uppercase tracking-wider text-xs font-semibold text-primary">CRM & Automatisering</p>
-                        <p class="font-sregs-bold text-2xl md:text-3xl text-white">Bergman Postma</p>
+                        <p class="uppercase tracking-wider text-xs font-semibold text-primary">GRS Platform</p>
+                        <p class="font-sregs-bold text-2xl md:text-3xl text-white">Biobase</p>
                         <p class="leading-relaxed text-gray-300 pb-2">
-                            Van papieren dossiers naar een digitaal CRM-systeem. Automatische PDF-verwerking en gesprekstranscriptie. Het systeem neemt handmatige stappen over, zodat het team zich kan richten op klantcontact.
+                            Een compleet ERP-systeem voor de groengas- en biogassector. Feedstockbeheer, massabalanstracking en duurzaamheidsrapportages in een platform. Installatie-eigenaren houden grip op compliance en zien direct waar ze staan.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">CRM</span>
-                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Automatisering</span>
-                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">AI</span>
+                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Platform</span>
+                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Energie</span>
+                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">ERP</span>
                         </div>
                     </div>
                 </div>

@@ -42,7 +42,7 @@
                 <span class="text-gray-400 text-sm font-bold uppercase tracking-[0.2em]">Noorderinzicht</span>
                 <span class="text-gray-400 text-sm font-semibold uppercase tracking-[0.12em]">De Goede Advies</span>
                 <span class="text-gray-400 text-sm font-extrabold uppercase tracking-[0.18em]">Kubus</span>
-                <span class="text-gray-400 text-sm font-semibold uppercase tracking-[0.15em]">Bergman Postma</span>
+                <span class="text-gray-400 text-sm font-semibold uppercase tracking-[0.15em]">Biobase</span>
                 <span class="text-gray-400 text-sm font-bold uppercase tracking-[0.25em]">Easie</span>
             </div>
         </div>
