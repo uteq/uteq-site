@@ -358,11 +358,9 @@
     </section>
 
     {{-- Contact Modal --}}
-    <div x-data x-on:open-contact-modal.window="document.getElementById('firda-contact-modal-trigger').click()">
-        <x-contact-form-modal title="Neem contact op">
-            <x-slot:trigger>
-                <button id="firda-contact-modal-trigger" class="sr-only">Open contact formulier</button>
-            </x-slot:trigger>
-        </x-contact-form-modal>
-    </div>
+    <x-contact-form-modal title="Neem contact op">
+        <x-slot:trigger>
+            <span class="sr-only">Open contact formulier</span>
+        </x-slot:trigger>
+    </x-contact-form-modal>
 </x-layouts.app>

@@ -2,50 +2,47 @@
 
 namespace App\Livewire;
 
-use Filament\Forms\Components\Textarea;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Form;
-use LivewireUI\Modal\ModalComponent;
 
-class ContactForm extends ModalComponent implements HasForms
+class ContactForm extends Component
 {
-    public static function modalMaxWidth(): string
-    {
-        return '4xl';
-    }
-
-    use InteractsWithForms;
-
-    public ?array $data = [];
+    public string $name = '';
+    public string $company = '';
+    public string $email = '';
+    public string $phone = '';
+    public string $employees = '';
+    public string $budget = '';
+    public string $content = '';
 
     public bool $done = false;
 
-    public function mount(): void
+    protected function rules(): array
     {
-        $this->form->fill();
-    }
-
-    public function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                TextInput::make('name')->inlineLabel()->label('Naam')->required(),
-                TextInput::make('company')->inlineLabel()->label('Bedrijfsnaam')->required(),
-                TextInput::make('email')->inlineLabel()->label('E-mailadres')->required(),
-                TextInput::make('phone')->inlineLabel()->label('Telefoonnummer'),
-                Textarea::make('content')->inlineLabel()->label('Bericht'),
-            ])
-            ->statePath('data');
+        return [
+            'name' => 'required|string|max:255',
+            'company' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:50',
+            'employees' => 'nullable|string',
+            'budget' => 'nullable|string',
+            'content' => 'nullable|string|max:5000',
+        ];
     }
 
     public function create(): void
     {
-        Mail::to('info@uteq.nl')->send(new \App\Mail\Contact($this->form->getState()));
+        $this->validate();
+
+        Mail::to('info@uteq.nl')->send(new \App\Mail\Contact([
+            'name' => $this->name,
+            'company' => $this->company,
+            'email' => $this->email,
+            'phone' => $this->phone,
+            'employees' => $this->employees,
+            'budget' => $this->budget,
+            'content' => $this->content,
+        ]));
 
         $this->done = true;
     }

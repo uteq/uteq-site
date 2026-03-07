@@ -266,12 +266,10 @@ Overall Tone:
         </div>
     </section>
 
-    {{-- Contact Modal (buiten overflow-hidden section) --}}
-    <div x-data x-on:open-contact-modal.window="document.getElementById('contact-modal-trigger').click()">
-        <x-contact-form-modal title="Neem contact op">
-            <x-slot:trigger>
-                <button id="contact-modal-trigger" class="sr-only">Open contact formulier</button>
-            </x-slot:trigger>
-        </x-contact-form-modal>
-    </div>
+    {{-- Contact Modal --}}
+    <x-contact-form-modal title="Neem contact op">
+        <x-slot:trigger>
+            <span class="sr-only">Open contact formulier</span>
+        </x-slot:trigger>
+    </x-contact-form-modal>
 </x-layouts.app>
