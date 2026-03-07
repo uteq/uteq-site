@@ -1,12 +1,16 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-18f75c38.css",
+    "file": "assets/app-dc5bee45.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/images/avatar.png": {
-    "file": "assets/avatar-d58c9536.png",
+    "file": "assets/avatar-198e7a93.png",
     "src": "resources/images/avatar.png"
+  },
+  "resources/images/avatar.webp": {
+    "file": "assets/avatar-d3482ee1.webp",
+    "src": "resources/images/avatar.webp"
   },
   "resources/images/dienst6.webp": {
     "file": "assets/dienst6-30a25f5b.webp",
@@ -19,6 +23,42 @@
   "resources/images/favicon1.png": {
     "file": "assets/favicon1-6ad35909.png",
     "src": "resources/images/favicon1.png"
+  },
+  "resources/images/kantoor-steenklip.png": {
+    "file": "assets/kantoor-steenklip-5e674b75.png",
+    "src": "resources/images/kantoor-steenklip.png"
+  },
+  "resources/images/kantoor-steenklip.webp": {
+    "file": "assets/kantoor-steenklip-ba14c871.webp",
+    "src": "resources/images/kantoor-steenklip.webp"
+  },
+  "resources/images/projects/civilgrow.png": {
+    "file": "assets/civilgrow-6abde2e0.png",
+    "src": "resources/images/projects/civilgrow.png"
+  },
+  "resources/images/projects/civilgrow.webp": {
+    "file": "assets/civilgrow-e140dade.webp",
+    "src": "resources/images/projects/civilgrow.webp"
+  },
+  "resources/images/projects/degoede.png": {
+    "file": "assets/degoede-676ff486.png",
+    "src": "resources/images/projects/degoede.png"
+  },
+  "resources/images/projects/degoede.webp": {
+    "file": "assets/degoede-405c546c.webp",
+    "src": "resources/images/projects/degoede.webp"
+  },
+  "resources/images/projects/kubus.png": {
+    "file": "assets/kubus-ec1740e5.png",
+    "src": "resources/images/projects/kubus.png"
+  },
+  "resources/images/projects/noorderinzicht.png": {
+    "file": "assets/noorderinzicht-0b5c7b85.png",
+    "src": "resources/images/projects/noorderinzicht.png"
+  },
+  "resources/images/projects/noorderinzicht.webp": {
+    "file": "assets/noorderinzicht-5ff7e99e.webp",
+    "src": "resources/images/projects/noorderinzicht.webp"
   },
   "resources/images/safesent.png": {
     "file": "assets/safesent-947c96c2.png",

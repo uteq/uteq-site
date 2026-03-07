@@ -6,6 +6,8 @@
 Naam: {{ $name }}<br />
 Bedrijfsnaam: {{ $company }}<br />
 E-mailadres: {{ $email }}<br />
-Telefoonnummer: {{ $phone }}
+Telefoonnummer: {{ $phone }}<br />
+Aantal medewerkers: {{ $employees ?? '-' }}<br />
+Budget-indicatie: {{ $budget ?? '-' }}
 
 </x-mail::message>
