@@ -38,20 +38,20 @@
             <div data-aos="fade-up" data-aos-delay="150" class="flex flex-col md:flex-row-reverse gap-8 items-center">
                 <div class="md:w-1/2">
                     <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
-                        <img src="{{ Vite::image('projects/noorderinzicht.webp') }}" alt="Noorderinzicht Sales Platform" class="w-full aspect-video object-cover object-top">
+                        <img src="{{ Vite::image('projects/noorderinzicht.webp') }}" alt="Noorderinzicht Meeting Tool" class="w-full aspect-video object-cover object-top">
                     </div>
                 </div>
                 <div class="md:w-1/2">
                     <div class="flex flex-col gap-3">
-                        <p class="uppercase tracking-wider text-xs font-semibold text-primary">Sales Platform</p>
+                        <p class="uppercase tracking-wider text-xs font-semibold text-primary">Meeting Tool</p>
                         <p class="font-sregs-bold text-2xl md:text-3xl text-white">Noorderinzicht</p>
                         <p class="leading-relaxed text-gray-300 pb-2">
-                            Een compleet verkoopplatform voor energieadvies. Klanten doorlopen zelfstandig het adviestraject, van intake tot offerte. Adviseurs hebben overzicht over alle lopende trajecten.
+                            Van vergadering naar actie, zonder uittypen. Vergadertranscripties worden automatisch verwerkt door AI die de actiepunten eruit haalt. Het team reviewt, keurt goed en stuurt ze met een klik door naar Asana.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Platform</span>
-                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Sales</span>
-                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Energie</span>
+                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">AI</span>
+                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Integratie</span>
+                            <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300">Maatwerk</span>
                         </div>
                     </div>
                 </div>

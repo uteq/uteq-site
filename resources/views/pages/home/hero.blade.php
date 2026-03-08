@@ -6,7 +6,7 @@
             {{-- Tekst links --}}
             <div class="md:w-3/5 text-center md:text-left">
                 <h1 data-aos="fade-up" class="font-sregs-bold text-4xl md:text-5xl lg:text-6xl text-white tracking-wide leading-tight md:leading-tight lg:leading-tight mb-6">
-                    Wij vullen het gat tussen de websitebouwer en grote softwarepartijen.
+                    Software die werkt. Zoals jij werkt.
                 </h1>
 
                 <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
