@@ -32,6 +32,7 @@
                 <a href="{{ route('werkwijze') }}" class="hover:text-gray-300 transition-colors">Werkwijze</a>
                 <a href="{{ route('projecten') }}" class="hover:text-gray-300 transition-colors">Projecten</a>
                 <a href="{{ route('over') }}" class="hover:text-gray-300 transition-colors">Over ons</a>
+                <a href="{{ route('partners') }}" class="hover:text-gray-300 transition-colors">Partners</a>
                 <a href="{{ route('contact') }}" class="hover:text-gray-300 transition-colors">Contact</a>
             </div>
             <span>&copy; {{ date('Y') }} UTEQ</span>

@@ -7,6 +7,7 @@ Route::view('/werkwijze', 'pages.werkwijze')->name('werkwijze');
 Route::view('/projecten', 'pages.projecten')->name('projecten');
 Route::view('/over', 'pages.over')->name('over');
 Route::view('/contact', 'pages.contact')->name('contact');
+Route::view('/partners', 'pages.partners')->name('partners');
 
 Route::view('/flexlokaal', 'pages.flexlokaal')->name('flexlokaal');
 
