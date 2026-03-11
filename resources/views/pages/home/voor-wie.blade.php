@@ -1,14 +1,5 @@
 <div class="relative bg-[#F9F8F8] py-24 lg:py-32 overflow-hidden" id="voor-wie">
 
-    {{-- Grain texture overlay --}}
-    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04] mix-blend-multiply" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <filter id="voorwie-noise">
-            <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" stitchTiles="stitch"/>
-            <feColorMatrix type="saturate" values="0"/>
-        </filter>
-        <rect width="100%" height="100%" filter="url(#voorwie-noise)"/>
-    </svg>
-
     {{-- Subtiele dot grid — links --}}
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
          style="background-image: radial-gradient(circle at 1px 1px, rgba(1,220,130,0.07) 1px, transparent 0); background-size: 28px 28px; -webkit-mask-image: radial-gradient(ellipse 50% 120% at 10% 50%, black 10%, transparent 70%); mask-image: radial-gradient(ellipse 50% 120% at 10% 50%, black 10%, transparent 70%);"></div>
