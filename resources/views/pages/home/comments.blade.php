@@ -12,7 +12,7 @@
 
         <div data-aos="fade-up" data-aos-delay="150">
             <x-contact-form-modal title="Vraag een kennismakingsgesprek aan">
-                <button class="rounded-xl bg-primary px-8 py-4 md:px-14 md:py-6 md:text-lg font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+                <button class="btn-shimmer rounded-xl bg-primary px-8 py-4 md:px-14 md:py-6 md:text-lg font-semibold text-secondary shadow-sm hover:bg-primary/90 hover:shadow-[0_0_32px_rgba(1,220,130,0.4)] hover:scale-[1.02] transition-all duration-300">
                     Vraag een kennismakingsgesprek aan
                 </button>
             </x-contact-form-modal>

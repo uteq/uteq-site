@@ -1,6 +1,15 @@
 <div class="relative bg-white py-24 lg:py-32 overflow-hidden" id="team">
     <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/[0.03] to-transparent pointer-events-none"></div>
 
+    {{-- Grain texture overlay --}}
+    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-[0.03] mix-blend-multiply" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <filter id="team-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#team-noise)"/>
+    </svg>
+
     <div class="max-w-6xl mx-auto px-8 relative">
         <div class="text-center mb-16">
             <span data-aos="fade-up" class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-medium tracking-wide mb-4">

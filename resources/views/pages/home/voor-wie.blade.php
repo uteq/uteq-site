@@ -1,5 +1,17 @@
 <div class="relative bg-[#F9F8F8] py-24 lg:py-32 overflow-hidden" id="voor-wie">
-    <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary/[0.03] to-transparent pointer-events-none"></div>
+
+    {{-- Grain texture overlay --}}
+    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04] mix-blend-multiply" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <filter id="voorwie-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#voorwie-noise)"/>
+    </svg>
+
+    {{-- Subtiele dot grid — links --}}
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+         style="background-image: radial-gradient(circle at 1px 1px, rgba(1,220,130,0.07) 1px, transparent 0); background-size: 28px 28px; -webkit-mask-image: radial-gradient(ellipse 50% 120% at 10% 50%, black 10%, transparent 70%); mask-image: radial-gradient(ellipse 50% 120% at 10% 50%, black 10%, transparent 70%);"></div>
 
     <div class="max-w-6xl mx-auto px-8 relative">
         <div class="text-center mb-12">
@@ -12,16 +24,16 @@
         </div>
 
         <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-3 justify-center mb-10">
-            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-medium text-secondary">Financieel advies</span>
-            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-medium text-secondary">Bouw</span>
-            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-medium text-secondary">Energie</span>
-            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-medium text-secondary">Accountancy</span>
-            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-medium text-secondary">HR & Recruitment</span>
-            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-medium text-secondary">Zakelijke dienstverlening</span>
+            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 shadow-sm px-4 py-2 text-sm font-medium text-secondary hover:border-primary/30 hover:text-primary transition-colors duration-200 cursor-default">Financieel advies</span>
+            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 shadow-sm px-4 py-2 text-sm font-medium text-secondary hover:border-primary/30 hover:text-primary transition-colors duration-200 cursor-default">Bouw</span>
+            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 shadow-sm px-4 py-2 text-sm font-medium text-secondary hover:border-primary/30 hover:text-primary transition-colors duration-200 cursor-default">Energie</span>
+            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 shadow-sm px-4 py-2 text-sm font-medium text-secondary hover:border-primary/30 hover:text-primary transition-colors duration-200 cursor-default">Accountancy</span>
+            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 shadow-sm px-4 py-2 text-sm font-medium text-secondary hover:border-primary/30 hover:text-primary transition-colors duration-200 cursor-default">HR & Recruitment</span>
+            <span class="inline-flex items-center rounded-full bg-white border border-gray-200 shadow-sm px-4 py-2 text-sm font-medium text-secondary hover:border-primary/30 hover:text-primary transition-colors duration-200 cursor-default">Zakelijke dienstverlening</span>
         </div>
 
         <p data-aos="fade-up" data-aos-delay="150" class="text-center text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Bedrijven met 15 tot 100 medewerkers waar processen niet meegroeien met de organisatie. Handmatige planning, losse systemen, geen overzicht. Wij bouwen de software die dat oplost.
+            Bedrijven met 15 tot 100 medewerkers waar processen niet meegroeien met de organisatie. Handmatige planning, losse systemen, geen overzicht. <span class="text-secondary font-semibold">Wij bouwen de software die dat oplost.</span>
         </p>
     </div>
 </div>
