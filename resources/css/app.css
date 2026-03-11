@@ -24,3 +24,111 @@
 [data-aos].aos-animate {
     transform: none !important;
 }
+
+/* ── Hero: dot grid background ────────────────────────────────────── */
+.hero-dot-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(1, 220, 130, 0.11) 1px, transparent 0);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 65% 120% at 78% 50%, black 10%, transparent 72%);
+    mask-image: radial-gradient(ellipse 65% 120% at 78% 50%, black 10%, transparent 72%);
+    pointer-events: none;
+}
+
+/* ── Hero: floating glow orbs ─────────────────────────────────────── */
+@keyframes hero-drift-a {
+    0%, 100% { transform: translate(0, 0); }
+    33%       { transform: translate(28px, -45px); }
+    66%       { transform: translate(-18px, 32px); }
+}
+@keyframes hero-drift-b {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(-36px, -28px); }
+}
+
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    will-change: transform;
+}
+.hero-orb-1 {
+    width: 700px;
+    height: 700px;
+    background: #01DC82;
+    opacity: 0.07;
+    top: -240px;
+    right: -100px;
+    animation: hero-drift-a 24s ease-in-out infinite;
+}
+.hero-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #01DC82;
+    opacity: 0.04;
+    bottom: -80px;
+    left: 5%;
+    animation: hero-drift-b 18s ease-in-out infinite 5s;
+}
+
+/* ── Hero: logo mark — subtiele opacity pulse ─────────────────────── */
+@keyframes logo-breathe {
+    0%, 100% { opacity: 0.18; }
+    50%       { opacity: 0.28; }
+}
+.hero-logo-svg {
+    animation: logo-breathe 6s ease-in-out infinite;
+    position: relative;
+    z-index: 10;
+}
+
+/* ── Hero: logo mark — één rustige ring ──────────────────────────── */
+@keyframes ring-out {
+    0%   { transform: scale(0.9); opacity: 0.25; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+.hero-ring {
+    position: absolute;
+    inset: -5%;
+    border-radius: 50%;
+    border: 1px solid rgba(1, 220, 130, 0.2);
+    animation: ring-out 5s ease-out infinite;
+    pointer-events: none;
+}
+
+/* ── Client logo marquee ──────────────────────────────────────────── */
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 22s linear infinite;
+    will-change: transform;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* ── Button shimmer ───────────────────────────────────────────────── */
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 35%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-15deg) translateX(-200%);
+    animation: btn-sweep 4.5s ease-in-out infinite 2s;
+}
+@keyframes btn-sweep {
+    0%   { transform: skewX(-15deg) translateX(-200%); }
+    40%  { transform: skewX(-15deg) translateX(500%); }
+    100% { transform: skewX(-15deg) translateX(500%); }
+}

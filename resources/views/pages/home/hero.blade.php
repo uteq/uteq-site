@@ -4,7 +4,7 @@
     <div class="hero-dot-bg" aria-hidden="true"></div>
 
     {{-- Grain texture overlay --}}
-    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-[0.025] mix-blend-overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <filter id="hero-noise">
             <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" stitchTiles="stitch"/>
             <feColorMatrix type="saturate" values="0"/>

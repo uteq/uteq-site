@@ -21,7 +21,7 @@
             {{-- Stap 1 --}}
             <div data-aos="fade-up" data-aos-delay="100" class="relative overflow-hidden pb-12 md:pb-0 md:pr-12 border-b border-white/10 md:border-b-0">
                 {{-- Ghost nummer --}}
-                <div class="absolute -bottom-4 right-0 font-sregs-bold leading-none text-white pointer-events-none select-none" style="font-size: clamp(100px, 14vw, 160px); opacity: 0.04;" aria-hidden="true">01</div>
+                <div class="absolute -bottom-4 right-0 font-extrabold leading-none text-white pointer-events-none select-none" style="font-size: clamp(100px, 14vw, 160px); opacity: 0.04;" aria-hidden="true">01</div>
 
                 <div class="relative">
                     <div class="flex items-center gap-3 mb-6">
@@ -36,7 +36,7 @@
 
             {{-- Stap 2 --}}
             <div data-aos="fade-up" data-aos-delay="200" class="relative overflow-hidden py-12 md:py-0 md:px-12 border-b border-white/10 md:border-b-0">
-                <div class="absolute -bottom-4 right-0 font-sregs-bold leading-none text-white pointer-events-none select-none" style="font-size: clamp(100px, 14vw, 160px); opacity: 0.04;" aria-hidden="true">02</div>
+                <div class="absolute -bottom-4 right-0 font-extrabold leading-none text-white pointer-events-none select-none" style="font-size: clamp(100px, 14vw, 160px); opacity: 0.04;" aria-hidden="true">02</div>
 
                 <div class="relative">
                     <div class="flex items-center gap-3 mb-6">
@@ -50,7 +50,7 @@
 
             {{-- Stap 3 --}}
             <div data-aos="fade-up" data-aos-delay="300" class="relative overflow-hidden pt-12 md:pt-0 md:pl-12">
-                <div class="absolute -bottom-4 right-0 font-sregs-bold leading-none text-white pointer-events-none select-none" style="font-size: clamp(100px, 14vw, 160px); opacity: 0.04;" aria-hidden="true">03</div>
+                <div class="absolute -bottom-4 right-0 font-extrabold leading-none text-white pointer-events-none select-none" style="font-size: clamp(100px, 14vw, 160px); opacity: 0.04;" aria-hidden="true">03</div>
 
                 <div class="relative">
                     <div class="flex items-center gap-3 mb-6">
