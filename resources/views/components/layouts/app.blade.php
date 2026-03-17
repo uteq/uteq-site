@@ -8,11 +8,11 @@
     <meta name="application-name" content="{{ config('app.name') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $metaDescription ?? 'UTEQ bouwt maatwerk software voor zakelijke dienstverleners. Van planning tot portaal, vaste prijs, geen verrassingen.' }}">
+    <meta name="description" content="{{ $metaDescription ?? 'UTEQ bouwt maatwerksoftware voor zakelijk, finance en bouw. Van planning tot portaal, vaste prijs, geen verrassingen.' }}">
     <link rel="shortcut icon" href="{{ Vite::image('favicon1.png') }}">
     <link rel="preload" href="/fonts/Sregs Serif Free - Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
-    <title>{{ $title ? $title . ' | UTEQ' : 'UTEQ - Maatwerk software voor zakelijke dienstverleners' }}</title>
+    <title>{{ $title ? $title . ' | UTEQ' : 'UTEQ - Maatwerksoftware voor zakelijk, finance en bouw' }}</title>
 
     @stack('head')
 
@@ -76,19 +76,19 @@
                         </div>
                     </button>
                     <nav class="flex flex-col bg-white p-8">
-                        <a href="{{ route('werkwijze') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="{{ route('werkwijze') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl bg-white flex justify-between w-full {{ request()->routeIs('werkwijze') ? 'border-l-2 border-primary text-primary' : 'text-secondary' }}">
                             Werkwijze
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="{{ route('projecten') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="{{ route('projecten') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl bg-white flex justify-between w-full {{ request()->routeIs('projecten') ? 'border-l-2 border-primary text-primary' : 'text-secondary' }}">
                             Projecten
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="{{ route('over') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="{{ route('over') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl bg-white flex justify-between w-full {{ request()->routeIs('over') ? 'border-l-2 border-primary text-primary' : 'text-secondary' }}">
                             Over ons
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="{{ route('contact') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl text-secondary bg-white flex justify-between w-full border-primary-900 hover:text-primary-100 hover:bg-primary-600">
+                        <a href="{{ route('contact') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl bg-white flex justify-between w-full {{ request()->routeIs('contact') ? 'border-l-2 border-primary text-primary' : 'text-secondary' }}">
                             Contact
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -96,10 +96,10 @@
                 </div>
             </div>
             <div class="hidden lg:flex lg:gap-x-16 lg:flex-grow lg:justify-end">
-                <a href="{{ route('werkwijze') }}" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors">Werkwijze</a>
-                <a href="{{ route('projecten') }}" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors">Projecten</a>
-                <a href="{{ route('over') }}" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors">Over ons</a>
-                <a href="{{ route('contact') }}" class="text-lg leading-6 font-sregs text-white hover:text-primary transition-colors">Contact</a>
+                <a href="{{ route('werkwijze') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('werkwijze') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Werkwijze</a>
+                <a href="{{ route('projecten') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('projecten') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Projecten</a>
+                <a href="{{ route('over') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('over') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Over ons</a>
+                <a href="{{ route('contact') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('contact') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Contact</a>
             </div>
             @endif
         </div>

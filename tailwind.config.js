@@ -27,11 +27,17 @@ module.exports = {
             },
             colors: {
                 'primary': '#01DC82',
+                'primary-dark': '#00B86B',
                 'secondary': '#272838',
+                'surface': '#F7F6F4',
+                'sand': '#F5F0EB',
                 'uteq-black':  '#262626',
                 'floral-white': '#FEFAF2',
                 'uteq-yellow': '#FFD501',
                 'uteq-blue': '#3559FE',
+            },
+            transitionTimingFunction: {
+                'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
             },
         },
     },

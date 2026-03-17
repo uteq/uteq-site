@@ -4,7 +4,7 @@
 
     <div class="max-w-6xl mx-auto px-8 relative">
         <div class="text-center mb-16">
-            <span data-aos="fade-up" class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-medium tracking-wide mb-4">
+            <span data-aos="fade-up" class="font-mono text-xs tracking-widest text-primary uppercase mb-4 block">
                 Wie wij zijn
             </span>
             <h2 data-aos="fade-up" data-aos-delay="50" class="text-3xl md:text-4xl font-sregs-bold text-secondary leading-tight">
@@ -27,7 +27,7 @@
                         nathanjansen.nl
                         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
                     </a>
-                    <p class="text-gray-600 leading-relaxed">Ontwerpt en bouwt. 10+ jaar ervaring in maatwerk software voor zakelijke dienstverleners. Van probleem naar werkende oplossing, met oog voor wat het bedrijf echt nodig heeft.</p>
+                    <p class="text-gray-600 leading-relaxed">Ontwerpt en bouwt. 10+ jaar ervaring in maatwerksoftware voor zakelijk, finance en bouw. Van probleem naar werkende oplossing, met oog voor wat het bedrijf echt nodig heeft.</p>
                 </div>
             </div>
         </div>

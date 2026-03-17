@@ -25,52 +25,97 @@
     transform: none !important;
 }
 
-/* ── Hero: dot grid background ────────────────────────────────────── */
-.hero-dot-bg {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(1, 220, 130, 0.11) 1px, transparent 0);
-    background-size: 28px 28px;
-    -webkit-mask-image: radial-gradient(ellipse 65% 120% at 78% 50%, black 10%, transparent 72%);
-    mask-image: radial-gradient(ellipse 65% 120% at 78% 50%, black 10%, transparent 72%);
-    pointer-events: none;
+/* ── Button variants ─────────────────────────────────────────────── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: #01DC82;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    color: #272838;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover {
+    background-color: #00B86B;
+    box-shadow: 0 0 40px rgba(1, 220, 130, 0.3);
+}
+.btn-primary:focus-visible {
+    outline: 2px solid #01DC82;
+    outline-offset: 2px;
+}
+.btn-primary svg {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover svg {
+    transform: translateX(4px);
 }
 
-/* ── Hero: floating glow orbs ─────────────────────────────────────── */
-@keyframes hero-drift-a {
-    0%, 100% { transform: translate(0, 0); }
-    33%       { transform: translate(28px, -45px); }
-    66%       { transform: translate(-18px, 32px); }
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-@keyframes hero-drift-b {
-    0%, 100% { transform: translate(0, 0); }
-    50%       { transform: translate(-36px, -28px); }
+.btn-secondary:hover {
+    border-color: #01DC82;
+    color: #01DC82;
+}
+.btn-secondary:focus-visible {
+    outline: 2px solid #01DC82;
+    outline-offset: 2px;
 }
 
-.hero-orb {
+.btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: #01DC82;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-text:hover {
+    color: #00B86B;
+    gap: 0.75rem;
+}
+
+/* ── Nav active state ────────────────────────────────────────────── */
+.nav-link-active {
+    position: relative;
+    color: #01DC82;
+}
+.nav-link-active::after {
+    content: '';
     position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    pointer-events: none;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #01DC82;
+    border-radius: 1px;
+}
+
+/* ── Card 3D tilt ────────────────────────────────────────────────── */
+.card-tilt {
     will-change: transform;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.hero-orb-1 {
-    width: 700px;
-    height: 700px;
-    background: #01DC82;
-    opacity: 0.07;
-    top: -240px;
-    right: -100px;
-    animation: hero-drift-a 24s ease-in-out infinite;
+
+/* ── Hero: text clip-mask reveal ─────────────────────────────────── */
+.hero-line-mask {
+    overflow: hidden;
+    display: block;
 }
-.hero-orb-2 {
-    width: 400px;
-    height: 400px;
-    background: #01DC82;
-    opacity: 0.04;
-    bottom: -80px;
-    left: 5%;
-    animation: hero-drift-b 18s ease-in-out infinite 5s;
+.hero-reveal {
+    display: inline-block;
 }
 
 /* ── Hero: logo mark — subtiele opacity pulse ─────────────────────── */
@@ -86,8 +131,8 @@
 
 /* ── Hero: logo mark — één rustige ring ──────────────────────────── */
 @keyframes ring-out {
-    0%   { transform: scale(0.9); opacity: 0.25; }
-    100% { transform: scale(1.5); opacity: 0; }
+    0%   { transform: scale(0.9); opacity: 0.15; }
+    100% { transform: scale(1.3); opacity: 0; }
 }
 .hero-ring {
     position: absolute;
@@ -113,22 +158,38 @@
     animation-play-state: paused;
 }
 
-/* ── Button shimmer ───────────────────────────────────────────────── */
-.btn-shimmer {
+/* ── Cursor glow ─────────────────────────────────────────────────── */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(1, 220, 130, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 50;
+    mix-blend-mode: screen;
+    will-change: transform;
+}
+
+/* ── Project bento cards ─────────────────────────────────────────── */
+.project-card img {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: brightness(0.6) saturate(0.85) contrast(1.1);
+}
+.project-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.75) saturate(0.95) contrast(1.05);
+}
+
+/* ── Section overlap transitions ─────────────────────────────────── */
+.section-overlap {
     position: relative;
-    overflow: hidden;
+    z-index: 2;
+    margin-top: -2rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 0 -20px 60px -20px rgba(0, 0, 0, 0.06);
 }
-.btn-shimmer::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 35%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transform: skewX(-15deg) translateX(-200%);
-    animation: btn-sweep 4.5s ease-in-out infinite 2s;
-}
-@keyframes btn-sweep {
-    0%   { transform: skewX(-15deg) translateX(-200%); }
-    40%  { transform: skewX(-15deg) translateX(500%); }
-    100% { transform: skewX(-15deg) translateX(500%); }
-}
+

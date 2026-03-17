@@ -1,12 +1,8 @@
-<div class="relative bg-[#F9F8F8] py-24 lg:py-32 overflow-hidden" id="voor-wie">
-
-    {{-- Subtiele dot grid — links --}}
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-         style="background-image: radial-gradient(circle at 1px 1px, rgba(1,220,130,0.07) 1px, transparent 0); background-size: 28px 28px; -webkit-mask-image: radial-gradient(ellipse 50% 120% at 10% 50%, black 10%, transparent 70%); mask-image: radial-gradient(ellipse 50% 120% at 10% 50%, black 10%, transparent 70%);"></div>
+<div class="section-overlap bg-sand py-24 lg:py-32 overflow-hidden" id="voor-wie">
 
     <div class="max-w-6xl mx-auto px-8 relative">
         <div class="text-center mb-12">
-            <span data-aos="fade-up" class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-sm font-medium tracking-wide mb-4">
+            <span data-aos="fade-up" class="font-mono text-xs tracking-widest text-primary uppercase mb-4 block">
                 Voor wie wij werken
             </span>
             <h2 data-aos="fade-up" data-aos-delay="50" class="text-3xl md:text-4xl lg:text-5xl font-sregs-bold text-secondary leading-tight mb-6">
