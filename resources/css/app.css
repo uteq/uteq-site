@@ -32,18 +32,18 @@
     justify-content: center;
     gap: 0.5rem;
     border-radius: 0.75rem;
-    background-color: #01DC82;
+    background-color: #3EE88C;
     padding: 1rem 2rem;
     font-weight: 600;
     color: #272838;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-primary:hover {
-    background-color: #00B86B;
-    box-shadow: 0 0 40px rgba(1, 220, 130, 0.3);
+    background-color: #2ECC91;
+    box-shadow: 0 0 40px rgba(62, 232, 140, 0.3);
 }
 .btn-primary:focus-visible {
-    outline: 2px solid #01DC82;
+    outline: 2px solid #3EE88C;
     outline-offset: 2px;
 }
 .btn-primary svg {
@@ -51,6 +51,10 @@
 }
 .btn-primary:hover svg {
     transform: translateX(4px);
+}
+.btn-primary:active {
+    transform: scale(0.98);
+    box-shadow: none;
 }
 
 .btn-secondary {
@@ -66,11 +70,14 @@
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-secondary:hover {
-    border-color: #01DC82;
-    color: #01DC82;
+    border-color: #3EE88C;
+    color: #3EE88C;
+}
+.btn-secondary:active {
+    transform: scale(0.98);
 }
 .btn-secondary:focus-visible {
-    outline: 2px solid #01DC82;
+    outline: 2px solid #3EE88C;
     outline-offset: 2px;
 }
 
@@ -79,18 +86,42 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
-    color: #01DC82;
+    color: #3EE88C;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-text:hover {
-    color: #00B86B;
+    color: #2ECC91;
     gap: 0.75rem;
+}
+.btn-text:active {
+    transform: scale(0.98);
+}
+
+/* ── Nav link hover underline ────────────────────────────────────── */
+.nav-link-hover {
+    position: relative;
+}
+.nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #3EE88C;
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link-hover:hover::after {
+    transform: scaleX(1);
 }
 
 /* ── Nav active state ────────────────────────────────────────────── */
 .nav-link-active {
     position: relative;
-    color: #01DC82;
+    color: #3EE88C;
 }
 .nav-link-active::after {
     content: '';
@@ -99,7 +130,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #01DC82;
+    background-color: #3EE88C;
     border-radius: 1px;
 }
 
@@ -138,7 +169,7 @@
     position: absolute;
     inset: -5%;
     border-radius: 50%;
-    border: 1px solid rgba(1, 220, 130, 0.2);
+    border: 1px solid rgba(62, 232, 140, 0.2);
     animation: ring-out 5s ease-out infinite;
     pointer-events: none;
 }
@@ -166,7 +197,7 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(1, 220, 130, 0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(62, 232, 140, 0.07) 0%, transparent 70%);
     pointer-events: none;
     z-index: 50;
     mix-blend-mode: screen;
@@ -176,11 +207,11 @@
 /* ── Project bento cards ─────────────────────────────────────────── */
 .project-card img {
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: brightness(0.6) saturate(0.85) contrast(1.1);
+    filter: brightness(0.85) saturate(0.9) contrast(1.05);
 }
 .project-card:hover img {
     transform: scale(1.05);
-    filter: brightness(0.75) saturate(0.95) contrast(1.05);
+    filter: brightness(0.95) saturate(1) contrast(1);
 }
 
 /* ── Section overlap transitions ─────────────────────────────────── */
@@ -190,6 +221,6 @@
     margin-top: -2rem;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
-    box-shadow: 0 -20px 60px -20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 -12px 40px -16px rgba(0, 0, 0, 0.03);
 }
 

@@ -18,7 +18,7 @@
 
     <div class="relative mx-auto max-w-5xl text-center pb-24 pt-20 sm:pb-32 sm:pt-28 lg:pb-40 lg:pt-36">
 
-        <h1 class="font-sregs-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-[1.08] mb-8">
+        <h1 class="font-sregs-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-[1.08] mb-8 [text-wrap:balance]">
             <span class="hero-line-mask">
                 <span class="hero-reveal">Software die <span class="text-primary">werkt.</span></span>
             </span>

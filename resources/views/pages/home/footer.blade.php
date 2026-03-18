@@ -57,7 +57,10 @@
         {{-- Copyright --}}
         <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-white/[0.07] text-gray-500 text-xs">
             <span>&copy; {{ date('Y') }} UTEQ</span>
-            <span>KvK 53331540</span>
+            <div class="flex items-center gap-4">
+                <a href="/privacybeleid" class="hover:text-white transition-colors duration-300">Privacybeleid</a>
+                <a href="/algemene-voorwaarden" class="hover:text-white transition-colors duration-300">Algemene voorwaarden</a>
+            </div>
         </div>
     </div>
 </footer>

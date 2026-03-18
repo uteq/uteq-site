@@ -3,13 +3,18 @@
 
 
     <div class="max-w-6xl mx-auto px-8 relative">
-        <div class="text-center mb-16">
-            <span data-aos="fade-up" class="font-mono text-xs tracking-widest text-primary uppercase mb-4 block">
-                Wie wij zijn
-            </span>
-            <h2 data-aos="fade-up" data-aos-delay="50" class="text-3xl md:text-4xl font-sregs-bold text-secondary leading-tight">
-                De mensen achter UTEQ
-            </h2>
+        <div class="text-left mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+                <span data-aos="fade-up" class="text-sm font-medium text-primary tracking-wide mb-4 block">
+                    Wie wij zijn
+                </span>
+                <h2 data-aos="fade-up" data-aos-delay="50" class="text-3xl md:text-4xl font-sregs-bold text-secondary leading-tight [text-wrap:balance]">
+                    De mensen achter UTEQ
+                </h2>
+            </div>
+            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-500 max-w-sm text-sm leading-relaxed">
+                Klein team, groot netwerk. Wij werken samen met specialisten voor elk project.
+            </p>
         </div>
 
         {{-- Nathan centraal en prominent --}}
@@ -34,7 +39,7 @@
 
         {{-- Partners netwerk --}}
         <div data-aos="fade-up" data-aos-delay="200">
-            <p class="text-center text-gray-500 text-sm uppercase tracking-widest mb-8">Wij werken samen met specialisten</p>
+            <p class="text-center text-gray-500 text-sm font-medium tracking-wide mb-8">Wij werken samen met specialisten</p>
 
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
                 <a href="https://iisatmedia.com" target="_blank" rel="noopener" class="rounded-2xl border border-gray-200 bg-white p-6 text-center hover:shadow-lg hover:border-primary/20 transition-all duration-300 group block">

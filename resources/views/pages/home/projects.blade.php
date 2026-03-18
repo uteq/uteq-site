@@ -3,10 +3,10 @@
 
     <div class="max-w-6xl px-8 py-24 lg:py-32 mx-auto relative">
         <div class="text-left mb-16">
-            <span data-aos="fade-up" class="font-mono text-xs tracking-widest text-primary uppercase mb-4 block">
+            <span data-aos="fade-up" class="text-sm font-medium text-primary tracking-wide mb-4 block">
                 Recent werk
             </span>
-            <h2 data-aos="fade-up" data-aos-delay="50" class="font-sregs-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight max-w-2xl">Wat wij gebouwd hebben</h2>
+            <h2 data-aos="fade-up" data-aos-delay="50" class="font-sregs-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight max-w-2xl [text-wrap:balance]">Wat wij gebouwd hebben</h2>
         </div>
 
         {{-- Twee rijen, geen row-span --}}
@@ -22,7 +22,7 @@
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
                     <img src="{{ Vite::image('projects/civilgrow.webp') }}" alt="CivilGrow Planning Dashboard" class="project-parallax w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-secondary/25 pointer-events-none"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
                     <span class="text-xs font-mono tracking-widest uppercase text-primary">Planning Dashboard</span>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
                     <img src="{{ Vite::image('projects/noorderinzicht.webp') }}" alt="Noorderinzicht Meeting Tool" class="project-parallax w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-secondary/25 pointer-events-none"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
                     <span class="text-xs font-mono tracking-widest uppercase text-primary">Meeting Tool</span>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
                     <img src="{{ Vite::image('projects/degoede.webp') }}" alt="De Goede Advies Portaal" class="project-parallax w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-secondary/30 pointer-events-none"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
                     <span class="text-xs font-mono tracking-widest uppercase text-primary">Adviesportaal</span>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
                     <img src="{{ Vite::image('projects/biobase.webp') }}" alt="Biobase GRS Platform" class="project-parallax w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-secondary/25 pointer-events-none"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
                     <span class="text-xs font-mono tracking-widest uppercase text-primary">GRS Platform</span>

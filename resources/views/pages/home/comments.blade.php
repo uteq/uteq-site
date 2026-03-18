@@ -2,9 +2,9 @@
     <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary/[0.06] to-transparent pointer-events-none"></div>
 
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-        <p data-aos="fade-up" class="font-mono text-xs tracking-widest text-primary uppercase mb-6">Laten we praten</p>
+        <p data-aos="fade-up" class="text-sm font-medium text-primary tracking-wide mb-6">Laten we praten</p>
 
-        <h2 data-aos="fade-up" data-aos-delay="50" class="font-sregs-bold text-white text-4xl md:text-6xl lg:text-7xl tracking-wide leading-[1.1] mb-6">
+        <h2 data-aos="fade-up" data-aos-delay="50" class="font-sregs-bold text-white text-4xl md:text-6xl lg:text-7xl tracking-wide leading-[1.1] mb-6 [text-wrap:balance]">
             Handmatig proces dat jullie team tijd kost?
         </h2>
         <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">

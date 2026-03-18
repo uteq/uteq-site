@@ -8,11 +8,24 @@
     <meta name="application-name" content="{{ config('app.name') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $metaDescription ?? 'UTEQ bouwt maatwerksoftware voor zakelijk, finance en bouw. Van planning tot portaal, vaste prijs, geen verrassingen.' }}">
+    @php
+        $pageTitle = $title ? $title . ' | UTEQ' : 'UTEQ - Maatwerksoftware voor zakelijk, finance en bouw';
+        $pageDescription = $metaDescription ?? 'UTEQ bouwt maatwerksoftware voor zakelijk, finance en bouw. Van planning tot portaal, vaste prijs, geen verrassingen.';
+    @endphp
+
+    <meta name="description" content="{{ $pageDescription }}">
+
+    <meta property="og:title" content="{{ $pageTitle }}">
+    <meta property="og:description" content="{{ $pageDescription }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ Vite::image('favicon1.png') }}">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="shortcut icon" href="{{ Vite::image('favicon1.png') }}">
     <link rel="preload" href="/fonts/Sregs Serif Free - Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
-    <title>{{ $title ? $title . ' | UTEQ' : 'UTEQ - Maatwerksoftware voor zakelijk, finance en bouw' }}</title>
+    <title>{{ $pageTitle }}</title>
 
     @stack('head')
 
@@ -28,6 +41,9 @@
 </head>
 
 <body class="antialiased" x-data="{ showMenu : false }">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-secondary focus:rounded-lg">
+    Ga naar inhoud
+</a>
 <div
     x-transition
     x-show="showMenu"
@@ -96,10 +112,10 @@
                 </div>
             </div>
             <div class="hidden lg:flex lg:gap-x-16 lg:flex-grow lg:justify-end">
-                <a href="{{ route('werkwijze') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('werkwijze') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Werkwijze</a>
-                <a href="{{ route('projecten') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('projecten') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Projecten</a>
-                <a href="{{ route('over') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('over') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Over ons</a>
-                <a href="{{ route('contact') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('contact') ? 'nav-link-active' : 'text-white hover:text-primary' }}">Contact</a>
+                <a href="{{ route('werkwijze') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('werkwijze') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Werkwijze</a>
+                <a href="{{ route('projecten') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('projecten') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Projecten</a>
+                <a href="{{ route('over') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('over') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Over ons</a>
+                <a href="{{ route('contact') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('contact') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Contact</a>
             </div>
             @endif
         </div>
@@ -108,7 +124,7 @@
 
 </header>
 
-<main>
+<main id="main-content">
 {{ $slot }}
 </main>
 
