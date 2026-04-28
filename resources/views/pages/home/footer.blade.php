@@ -44,7 +44,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-8 mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
                 <p class="text-white font-sregs text-lg">Een proces dat sneller en slimmer kan?</p>
-                <p class="text-gray-500 text-sm mt-1">Wij luisteren graag. Eerste gesprek altijd gratis.</p>
+                <p class="text-gray-400 text-sm mt-1">Wij luisteren graag. Eerste gesprek altijd gratis.</p>
             </div>
             <x-contact-form-modal title="Vraag een kennismakingsgesprek aan">
                 <button class="btn-primary shrink-0 px-6 py-3 text-sm">
@@ -55,11 +55,13 @@
         </div>
 
         {{-- Copyright --}}
-        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-white/[0.07] text-gray-500 text-xs">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-white/[0.07] text-gray-400 text-xs">
             <span>&copy; {{ date('Y') }} UTEQ</span>
-            <div class="flex items-center gap-4">
-                <a href="/privacybeleid" class="hover:text-white transition-colors duration-300">Privacybeleid</a>
-                <a href="/algemene-voorwaarden" class="hover:text-white transition-colors duration-300">Algemene voorwaarden</a>
+            <div class="flex items-center gap-4 flex-wrap justify-center">
+                <a href="/juridisch" class="hover:text-white transition-colors duration-300">Juridisch</a>
+                <a href="/privacy" class="hover:text-white transition-colors duration-300">Privacy</a>
+                <a href="/juridisch/algemene-voorwaarden" class="hover:text-white transition-colors duration-300">Algemene voorwaarden</a>
+                <a href="/juridisch/subverwerkers" class="hover:text-white transition-colors duration-300">Subverwerkers</a>
             </div>
         </div>
     </div>

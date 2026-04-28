@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\JuridischController;
+use App\Http\Controllers\SubprocessorController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.home')->name('home');
@@ -28,3 +30,19 @@ Route::get('/firda/opus-vs-lokaal', function () {
         ['Content-Type' => 'text/html']
     );
 })->name('firda.opus-vs-lokaal');
+
+Route::get('/juridisch', [JuridischController::class, 'index'])->name('juridisch.index');
+Route::get('/juridisch/subverwerkers', [SubprocessorController::class, 'index'])
+    ->name('juridisch.subverwerkers');
+Route::get('/juridisch/subverwerkers/rss', [SubprocessorController::class, 'rss'])
+    ->name('juridisch.subverwerkers.rss');
+Route::get('/juridisch/subverwerkers/bevestigen/{token}', [SubprocessorController::class, 'confirm'])
+    ->where('token', '[A-Za-z0-9]+')
+    ->name('juridisch.subverwerkers.confirm');
+Route::get('/juridisch/subverwerkers/afmelden/{token}', [SubprocessorController::class, 'unsubscribe'])
+    ->where('token', '[A-Za-z0-9]+')
+    ->name('juridisch.subverwerkers.unsubscribe');
+Route::get('/juridisch/{slug}', [JuridischController::class, 'show'])
+    ->where('slug', '[a-z0-9-]+')
+    ->name('juridisch.show');
+Route::get('/privacy', [JuridischController::class, 'privacy'])->name('privacy');
