@@ -38,7 +38,7 @@
                     <span class="text-2xl font-medium text-primary/25 leading-none block md:mr-4">03</span>
                     <div>
                         <h3 class="font-sregs-bold text-2xl text-white mb-3">Bouw</h3>
-                        <p class="text-gray-400 leading-relaxed max-w-xl">Wij bouwen. Jij test en geeft feedback. Elke week een update.</p>
+                        <p class="text-gray-400 leading-relaxed max-w-xl">Wij bouwen, jij ziet de voortgang. Transparant, met korte lijnen.</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
         <div data-aos="fade-up" class="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
                 <p class="text-white font-sregs text-lg mb-1">Klaar om te starten?</p>
-                <p class="text-gray-500 text-sm">Eerste gesprek altijd gratis en vrijblijvend.</p>
+                <p class="text-gray-400 text-sm">Eerste gesprek altijd gratis en vrijblijvend.</p>
             </div>
             <x-contact-form-modal title="Vraag een kennismakingsgesprek aan">
                 <button class="btn-primary shrink-0 px-8 py-4">

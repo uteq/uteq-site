@@ -38,12 +38,12 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </button>
             </x-contact-form-modal>
-            <p class="text-gray-500 text-sm mt-3">Eerste gesprek altijd gratis</p>
+            <p class="text-gray-400 text-sm mt-3">Eerste gesprek altijd gratis</p>
         </div>
 
         {{-- Client logos marquee --}}
         <div class="hero-clients mt-20 pt-10 border-t border-white/10">
-            <p class="text-gray-500 text-xs uppercase tracking-widest mb-5">Wij werken onder andere voor</p>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-5">Wij werken onder andere voor</p>
             <div class="overflow-hidden">
                 <div class="marquee-track gap-x-16 items-center">
                     @for ($i = 0; $i < 2; $i++)

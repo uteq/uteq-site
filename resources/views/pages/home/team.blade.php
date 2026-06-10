@@ -22,7 +22,7 @@
             <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8">
                 <div class="flex-shrink-0">
                     <div class="w-32 h-32 rounded-2xl bg-gray-200 overflow-hidden">
-                        <img src="{{ Vite::image('avatar.webp') }}" alt="Nathan Jansen" class="w-full h-full object-cover">
+                        <img src="{{ Vite::image('avatar.webp') }}" alt="Nathan Jansen" class="w-full h-full object-cover" width="128" height="128" loading="lazy">
                     </div>
                 </div>
                 <div class="text-center sm:text-left">

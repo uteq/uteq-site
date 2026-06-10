@@ -21,7 +21,7 @@
                     <span class="ml-2 text-[10px] text-gray-500 font-mono truncate">civilgrow.app/dashboard</span>
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
-                    <img src="{{ Vite::image('projects/civilgrow.webp') }}" alt="CivilGrow Planning Dashboard" class="project-parallax w-full h-full object-cover object-top">
+                    <img src="{{ Vite::image('projects/civilgrow.webp') }}" alt="CivilGrow Planning Dashboard" class="project-parallax w-full h-full object-cover object-top" width="800" height="320" loading="lazy">
                     <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
@@ -44,7 +44,7 @@
                     <span class="ml-2 text-[10px] text-gray-500 font-mono truncate">app.noorderinzicht.nl</span>
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
-                    <img src="{{ Vite::image('projects/noorderinzicht.webp') }}" alt="Noorderinzicht Meeting Tool" class="project-parallax w-full h-full object-cover object-top">
+                    <img src="{{ Vite::image('projects/noorderinzicht.webp') }}" alt="Noorderinzicht Meeting Tool" class="project-parallax w-full h-full object-cover object-top" width="800" height="320" loading="lazy">
                     <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
@@ -68,7 +68,7 @@
                     <span class="ml-2 text-[10px] text-gray-500 font-mono truncate">portaal.degoede-advies.nl</span>
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
-                    <img src="{{ Vite::image('projects/degoede.webp') }}" alt="De Goede Advies Portaal" class="project-parallax w-full h-full object-cover object-top">
+                    <img src="{{ Vite::image('projects/degoede.webp') }}" alt="De Goede Advies Portaal" class="project-parallax w-full h-full object-cover object-top" width="800" height="320" loading="lazy">
                     <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
@@ -91,7 +91,7 @@
                     <span class="ml-2 text-[10px] text-gray-500 font-mono truncate">platform.biobase.nl/grs</span>
                 </div>
                 <div class="relative h-[280px] md:h-[320px] overflow-hidden">
-                    <img src="{{ Vite::image('projects/biobase.webp') }}" alt="Biobase GRS Platform" class="project-parallax w-full h-full object-cover object-top">
+                    <img src="{{ Vite::image('projects/biobase.webp') }}" alt="Biobase GRS Platform" class="project-parallax w-full h-full object-cover object-top" width="800" height="320" loading="lazy">
                     <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1a1a2e] to-transparent pointer-events-none"></div>
                 </div>
                 <div class="p-6 shrink-0">
