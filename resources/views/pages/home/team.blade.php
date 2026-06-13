@@ -68,7 +68,20 @@
                     </span>
                 </a>
 
-                <a href="{{ route('partners') }}" class="rounded-2xl border border-gray-200 bg-white p-6 text-center hover:shadow-lg hover:border-primary/20 transition-all duration-300 group block sm:col-span-2 md:col-span-1">
+                <a href="https://growth-ai.nl" target="_blank" rel="noopener" class="rounded-2xl border border-gray-200 bg-white p-6 text-center hover:shadow-lg hover:border-primary/20 transition-all duration-300 group block">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-primary font-bold text-lg">G</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-secondary mb-1">Growth AI</h3>
+                    <p class="text-primary text-sm font-medium mb-2">Marketing, Sales &amp; AI</p>
+                    <p class="text-gray-500 text-sm mb-3">AI-automatisering voor marketing en sales</p>
+                    <span class="inline-flex items-center gap-1 text-xs text-gray-400 group-hover:text-primary transition-colors">
+                        growth-ai.nl
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                    </span>
+                </a>
+
+                <a href="{{ route('partners') }}" class="rounded-2xl border border-gray-200 bg-white p-6 text-center hover:shadow-lg hover:border-primary/20 transition-all duration-300 group block">
                     <div class="w-12 h-12 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
                         <span class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors">+</span>
                     </div>

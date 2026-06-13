@@ -58,6 +58,30 @@
                 </div>
             </div>
 
+            {{-- Growth AI --}}
+            <div data-aos="fade-up" data-aos-delay="200" class="rounded-2xl border border-gray-200 p-8 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+                <div class="flex flex-col sm:flex-row items-start gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="text-primary font-bold text-2xl">G</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                            <h2 class="text-2xl font-semibold text-secondary">Growth AI <span class="text-gray-400 font-normal text-lg">(Johan Oenema)</span></h2>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-0.5 text-xs font-medium">Marketing, Sales &amp; AI</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Growth AI bouwt werkende AI-systemen voor het MKB: van procesautomatisering en slimme assistenten tot maatwerkportalen. Waar marketing, sales en AI samenkomen, schakelen wij Johan in. Samen zetten we repeterend handwerk om in oplossingen die binnen weken draaien.
+                        </p>
+                        <a href="https://growth-ai.nl" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-primary transition-colors">
+                            growth-ai.nl
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
