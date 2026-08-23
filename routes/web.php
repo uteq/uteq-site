@@ -10,6 +10,8 @@ Route::view('/projecten', 'pages.projecten')->name('projecten');
 Route::view('/over', 'pages.over')->name('over');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/partners', 'pages.partners')->name('partners');
+Route::view('/vacatures', 'pages.vacatures')->name('vacatures');
+Route::view('/vacature/full-stack-medior-developer', 'pages.vacature-developer')->name('vacature.developer');
 
 Route::view('/flexlokaal', 'pages.flexlokaal')->name('flexlokaal');
 

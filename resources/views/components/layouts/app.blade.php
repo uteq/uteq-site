@@ -104,6 +104,10 @@
                             Over ons
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
                         </a>
+                        <a href="{{ route('vacatures') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl bg-white flex justify-between w-full {{ request()->routeIs('vacatures', 'vacature.*') ? 'border-l-2 border-primary text-primary' : 'text-secondary' }}">
+                            Vacatures
+                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
+                        </a>
                         <a href="{{ route('contact') }}" x-on:click="showMenu = false" class="px-2 py-4 font-sregs-bold tracking-wide text-2xl bg-white flex justify-between w-full {{ request()->routeIs('contact') ? 'border-l-2 border-primary text-primary' : 'text-secondary' }}">
                             Contact
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
@@ -115,6 +119,7 @@
                 <a href="{{ route('werkwijze') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('werkwijze') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Werkwijze</a>
                 <a href="{{ route('projecten') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('projecten') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Projecten</a>
                 <a href="{{ route('over') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('over') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Over ons</a>
+                <a href="{{ route('vacatures') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('vacatures', 'vacature.*') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Vacatures</a>
                 <a href="{{ route('contact') }}" class="text-lg leading-6 font-sregs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary {{ request()->routeIs('contact') ? 'nav-link-active' : 'text-white hover:text-primary nav-link-hover' }}">Contact</a>
             </div>
             @endif
