@@ -76,6 +76,13 @@
             </section>
 
             <section class="mb-14">
+                <h2 class="font-sregs-bold text-3xl text-secondary mb-5">Zo ziet je werkweek eruit</h2>
+                <p class="mb-5">Op onze vaste kantoordag in Sneek stemmen we de prioriteiten af, bespreken we technische keuzes en kijken we samen naar werk waar een tweede paar ogen bij helpt. Er is ook ruimte om bij te praten en ideeën voor klantprojecten of onze eigen producten uit te werken.</p>
+                <p class="mb-5">Op de andere dagen werk je vanuit huis. Die dagen zijn vooral bedoeld om zelfstandig en geconcentreerd features uit te werken, AI-agents aan te sturen, code te beoordelen en werk op te leveren. We houden dagelijks contact en je hoeft niet te wachten tot de volgende kantoordag als je wilt sparren.</p>
+                <p>We plannen en volgen het werk in Linear. GitHub gebruiken we voor code en reviews, Laravel Herd en TablePlus voor je lokale werkomgeving, Laravel Forge voor deployments en Codex, Claude Code en Cursor bij het bouwen en controleren van software.</p>
+            </section>
+
+            <section class="mb-14">
                 <h2 class="font-sregs-bold text-3xl text-secondary mb-5">Wat je krijgt</h2>
                 <ul class="list-disc pl-6 space-y-3">
                     <li><strong class="text-secondary">Salaris:</strong> €4.000 tot €5.000 bruto per maand op basis van 40 uur, afhankelijk van je ervaring en resultaten.</li>
