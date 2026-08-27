@@ -17,6 +17,7 @@ class VacancyTest extends TestCase
         $home = $this->get('/')->assertSuccessful();
 
         self::assertSame(2, substr_count($home->getContent(), route('vacatures')));
+        self::assertSame(2, substr_count($home->getContent(), '1 open'));
     }
 
     public function testDeveloperVacancyIsPubliclyAvailable(): void

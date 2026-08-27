@@ -14,6 +14,7 @@
     <div class="bg-white py-20 px-6">
         <article class="max-w-4xl mx-auto text-gray-600 leading-relaxed">
             <p class="text-xl text-secondary leading-relaxed mb-6">Bij UTEQ bouw je webapplicaties voor Nederlandse mkb-bedrijven en werk je mee aan onze eigen producten. Je krijgt uitdagend en afwisselend werk, veel inhoudelijke verantwoordelijkheid en korte lijnen in een klein team.</p>
+            <p class="mb-6">De projecten verschillen sterk. De ene keer bouw je een klantportaal waarin klanten zelf hun gegevens en documenten beheren. De andere keer werk je aan interne software voor planning, verhuur of administratie, of voeg je AI toe om handmatig werk te automatiseren. Je bouwt meestal geen losse website, maar software die een belangrijk onderdeel van de dagelijkse bedrijfsvoering wordt.</p>
             <p class="mb-14">Laravel met Livewire is onze hoofdstack. Daarnaast werken we met WordPress, Vue en React. Je hoeft niet al deze technieken al te beheersen. Een sterke basis als full stack developer en aantoonbaar medior niveau zijn belangrijker dan een lijst met dienstjaren of frameworks.</p>
 
             <section class="mb-14">
