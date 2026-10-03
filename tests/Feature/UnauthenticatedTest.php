@@ -7,16 +7,11 @@ use Tests\TestCase;
 class UnauthenticatedTest extends TestCase
 {
     /**
-     * De site heeft geen loginpagina; een niet-ingelogde browser-request op een
-     * beschermde route moet een 401 geven in plaats van "Route [login] not defined."
+     * De ongebruikte route /api/user gaf voor niet-ingelogde browser-requests
+     * "Route [login] not defined." omdat de site geen loginpagina heeft.
      */
-    public function testBrowserRequestOnProtectedRouteReturns401WithoutLoginRoute()
+    public function testApiUserRouteDoesNotExist()
     {
-        $this->get('/api/user', ['Accept' => 'text/html'])->assertUnauthorized();
-    }
-
-    public function testJsonRequestOnProtectedRouteReturns401()
-    {
-        $this->getJson('/api/user')->assertUnauthorized();
+        $this->get('/api/user', ['Accept' => 'text/html'])->assertNotFound();
     }
 }
