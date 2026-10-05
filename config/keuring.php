@@ -7,7 +7,7 @@ $ja = ['Ja', 'Nee', 'Weet ik niet'];
 
 return [
 
-    'ontvangers' => array_filter(explode(',', env('KEURING_ONTVANGERS', 'info@uteq.nl'))),
+    'ontvangers' => array_filter(explode(',', env('KEURING_ONTVANGERS', 'info@uteq.nl,info@growthdept.nl'))),
     'keuringsadres' => env('KEURING_ADRES', 'keuring@uteq.nl'),
     'github_account' => env('KEURING_GITHUB', 'uteq-keuring'),
 
