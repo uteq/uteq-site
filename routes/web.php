@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\JuridischController;
 use App\Http\Controllers\SubprocessorController;
+use App\Livewire\KeuringBeheer;
+use App\Livewire\KeuringDossier;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.home')->name('home');
@@ -12,6 +14,14 @@ Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/partners', 'pages.partners')->name('partners');
 Route::view('/vacatures', 'pages.vacatures')->name('vacatures');
 Route::view('/vacature/full-stack-medior-developer', 'pages.vacature-developer')->name('vacature.developer');
+
+// Bouwkundige keuring. De URL /keuring staat in een gedrukte advertentie: nooit wijzigen.
+Route::view('/keuring', 'pages.keuring')->name('keuring');
+Route::get('/keuring/dossier/{token}', KeuringDossier::class)
+    ->where('token', '[A-Za-z0-9]{40}')
+    ->middleware('throttle:60,1')
+    ->name('keuring.dossier');
+Route::get('/keuring/beheer', KeuringBeheer::class)->middleware(['throttle:10,1', 'auth.basic'])->name('keuring.beheer');
 
 Route::view('/flexlokaal', 'pages.flexlokaal')->name('flexlokaal');
 

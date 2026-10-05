@@ -23,6 +23,7 @@ module.exports = {
                 sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
                 sregs: ['SregsSerifDisplay-SemiBold', 'sans-serif'],
                 'sregs-bold': ['Sregs Serif Free', 'sans-serif'],
+                'sregs-display': ['"Sregs Serif Display"', 'serif'],
 
             },
             colors: {

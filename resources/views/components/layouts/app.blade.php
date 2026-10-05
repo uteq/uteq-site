@@ -1,4 +1,4 @@
-@props(['nav' => true, 'title' => null, 'metaDescription' => null])
+@props(['nav' => true, 'title' => null, 'fullTitle' => null, 'metaDescription' => null, 'ogImage' => null, 'brandSuffix' => null])
 
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php
-        $pageTitle = $title ? $title . ' | UTEQ' : 'UTEQ - Maatwerksoftware voor zakelijk, finance en bouw';
+        $pageTitle = $fullTitle ?? ($title ? $title . ' | UTEQ' : 'UTEQ - Maatwerksoftware voor zakelijk, finance en bouw');
         $pageDescription = $metaDescription ?? 'UTEQ bouwt maatwerksoftware voor zakelijk, finance en bouw. Van planning tot portaal, vaste prijs, geen verrassingen.';
     @endphp
 
@@ -19,7 +19,11 @@
     <meta property="og:description" content="{{ $pageDescription }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="{{ Vite::image('favicon1.png') }}">
+    <meta property="og:image" content="{{ $ogImage ?? Vite::image('favicon1.png') }}">
+    @if ($ogImage)
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    @endif
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="shortcut icon" href="{{ Vite::image('favicon1.png') }}">
@@ -66,6 +70,9 @@
                         </svg>
                     </div>
                 </a>
+                @if ($brandSuffix)
+                    <span class="ml-3 self-center text-sm text-gray-300">{{ $brandSuffix }}</span>
+                @endif
             </div>
 
             @if ($nav)

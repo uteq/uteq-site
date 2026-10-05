@@ -68,6 +68,8 @@ Dit statement gaat over de verwerkingen waarvoor UTEQ zelf verwerkingsverantwoor
 
 3.5 Het verstrekken van bepaalde gegevens, zoals factuurgegevens of identificatiegegevens, kan een contractuele of wettelijke voorwaarde zijn voor het kunnen uitvoeren van een opdracht. Niet-verstrekking betekent in dat geval dat UTEQ de opdracht niet of niet volledig kan uitvoeren.
 
+3.6 <span id="keuring"></span>**Bouwkundige keuring (oktober 2026).** Vraagt u een keuring aan via uteq.nl/keuring, dan gebruiken UTEQ en Growth AI uw gegevens samen. Het gaat om de gegevens uit het aanvraagformulier en, na toelating, uit het bouwdossier. Wij gebruiken ze om de tien deelnemers te kiezen, uw oplossing te keuren, de avond te regelen, de factuur te sturen en de nabespreking te plannen. De grondslag is uw toestemming (art 6.1.a), en voor de factuur de uitvoering van de overeenkomst (art 6.1.b). UTEQ en Growth AI zijn hiervoor samen verwerkingsverantwoordelijk (art 26 AVG). U kunt voor al uw rechten terecht bij UTEQ via info@uteq.nl.
+
 ## Artikel 4. Bewaartermijnen
 
 4.1 UTEQ hanteert de volgende bewaartermijnen:
@@ -83,6 +85,7 @@ Dit statement gaat over de verwerkingen waarvoor UTEQ zelf verwerkingsverantwoor
 | Meeting-transcripten | Maximaal 2 jaar, alleen zolang nodig voor het afgesproken project- of relatiedoel |
 | Projectinhoud na afronding | 1 jaar, tenzij in offerte anders afgesproken |
 | Bezoekersstatistieken (Plausible) | Geaggregeerd onbeperkt, niet herleidbaar tot personen |
+| Aanvragen en bouwdossiers bouwkundige keuring | Tot drie maanden na het event, dus tot 28 januari 2027, tenzij er een opdracht uit voortkomt (factuurgegevens: 7 jaar) |
 | Server- en applicatielogs | 90 dagen, security-events tot 1 jaar |
 
 4.2 Na afloop van de termijn worden gegevens verwijderd of geanonimiseerd. Voor wettelijk verplichte bewaring (zoals facturatie) blijven gegevens beschikbaar voor de duur van de wettelijke termijn, maar uitsluitend voor dat doel.

@@ -257,13 +257,33 @@
             "version": "v1.1.0",
             "hash": "tree-v2:c86f7d52ac48f2c41e98d6527013874a888c6fee16de7fcf5c6887776f6a9536"
         },
+        "spatie/backtrace": {
+            "version": "1.8.2",
+            "hash": "tree-v2:4f33e38138383ac77d64aca8cddf65a1d3e9357eb0613965a01dfdc9c7fbce88"
+        },
         "spatie/color": {
             "version": "1.8.0",
             "hash": "tree-v2:56a202a8d031966d918335dec895e4b152d2864eec163d52385470be26b8368b"
         },
+        "spatie/flare-client-php": {
+            "version": "3.5.1",
+            "hash": "tree-v2:953e9ba73004a7c1a1d70897ea8ab83251767453aeb46e65c76b8be72d3e3e0f"
+        },
+        "spatie/flare-daemon": {
+            "version": "0.3.1",
+            "hash": "tree-v2:4204d60303359e53f36acf3af38d65ac768bd405b77992a2576aaef7d9aea60f"
+        },
         "spatie/invade": {
             "version": "2.1.0",
             "hash": "tree-v2:d27d9bc81e698d9dbdd4846d0962be05d0cc91f967cc1f3834f034f21d883f20"
+        },
+        "spatie/laravel-error-share": {
+            "version": "1.0.8",
+            "hash": "tree-v2:001ff4b20e51963146727dee3ab6134bdc81a58b2f8e7c256dba5a9015e1e119"
+        },
+        "spatie/laravel-flare": {
+            "version": "3.6.1",
+            "hash": "tree-v2:e96c28e073b1372434c90112443343d77067c884337567d3c5f55ea52e376de2"
         },
         "spatie/laravel-package-tools": {
             "version": "1.92.7",
