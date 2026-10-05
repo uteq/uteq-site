@@ -425,6 +425,10 @@
             "version": "v7.4.3",
             "hash": "tree-v2:8c1bc76ae1a9515f4e58a8c62660b83fce78ac4c7c503ca041a775eb6366011a"
         },
+        "symfony/yaml": {
+            "version": "v7.4.20",
+            "hash": "tree-v2:6df48f1dc34ac760427993457ed35021434f1ae3d5ebfd610dfffee57bc7cfe9"
+        },
         "tijsverkoyen/css-to-inline-styles": {
             "version": "v2.4.0",
             "hash": "tree-v2:ac5b86c6dee0dc8f5c5f7f98d250d378d8c65dde04156022650e4776734f7fcb"
@@ -574,10 +578,6 @@
         "staabm/side-effects-detector": {
             "version": "1.0.5",
             "hash": "tree-v2:26d964435c381c94abd5dbadf497d7888b5a811f0693b66aa7976a3d01c545ba"
-        },
-        "symfony/yaml": {
-            "version": "v7.4.1",
-            "hash": "tree-v2:98a02c315db7edb1b3019b7cff0f268e553eff7c3f6c9b8c80162ebf165744b2"
         },
         "theseer/tokenizer": {
             "version": "2.0.1",
