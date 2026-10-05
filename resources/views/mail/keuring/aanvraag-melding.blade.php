@@ -1,13 +1,13 @@
 <x-mail::message>
-# {{ $k->aanvraag['bouwzin'] ?? 'Wachtlijst' }}
+# {{ \App\Models\Keuring::md($k->aanvraag['bouwzin'] ?? 'Wachtlijst') }}
 
-**Status:** {{ $k->status }} · **Bron:** {{ $k->bron }}
+**Status:** {{ $k->status }} · **Bron:** {{ \App\Models\Keuring::md($k->bron) }}
 
 <x-mail::table>
 | Vraag | Antwoord |
 |:--|:--|
 @foreach ($k->aanvraagRegels() as $label => $antwoord)
-| {{ $label }} | {{ str_replace(["\r", "\n", '|'], [' ', ' ', '/'], $antwoord) }} |
+| {{ $label }} | {{ \App\Models\Keuring::md($antwoord) }} |
 @endforeach
 | E-mail | {{ $k->email }} |
 | Persoonlijke dossierlink | {{ $k->dossierUrl() }} |

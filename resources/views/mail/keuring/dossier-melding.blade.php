@@ -1,5 +1,5 @@
 <x-mail::message>
-# Bouwdossier van {{ $k->bedrijf }}
+# Bouwdossier van {{ \App\Models\Keuring::md($k->bedrijf) }}
 
 **Personen:** {{ $k->personen }} · **Totaal:** €{{ $k->totaal() }} excl. btw
 
@@ -10,7 +10,7 @@
 | Vraag | Antwoord |
 |:--|:--|
 @foreach ($regels as $label => $antwoord)
-| {{ $label }} | {{ str_replace(["\r", "\n", '|'], [' ', ' ', '/'], $antwoord) }} |
+| {{ $label }} | {{ \App\Models\Keuring::md($antwoord) }} |
 @endforeach
 </x-mail::table>
 

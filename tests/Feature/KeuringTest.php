@@ -199,4 +199,11 @@ class KeuringTest extends TestCase
         $this->assertSame('gefactureerd', Keuring::sole()->status);
         $this->assertSame(7, Keuring::plaatsenOver());
     }
+
+    public function test_invoer_kan_geen_links_in_de_melding_zetten(): void
+    {
+        $k = Keuring::create(['email' => 'a@b.nl', 'naam' => 'A', 'bedrijf' => 'X', 'aanvraag' => $this->aanvraag(['bouwzin' => '[Klik hier](https://phish.example)'])]);
+
+        $this->assertStringNotContainsString('href="https://phish.example"', (new KeuringMail($k, 'aanvraag-melding', 'x'))->render());
+    }
 }

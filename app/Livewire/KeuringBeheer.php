@@ -64,12 +64,14 @@ class KeuringBeheer extends Component
                 array_map(fn ($v) => 'A: '.Keuring::label($v), array_values($aanvraag)),
                 array_map(fn ($v) => 'B: '.Keuring::label($v), array_values($dossier)),
             ));
+            // Cellen die met = + - @ beginnen voert Excel of Sheets uit als formule.
+            $veilig = fn ($v) => is_string($v) && preg_match('/^[=+\-@\t\r]/', $v) ? "'".$v : $v;
             foreach (Keuring::oldest()->cursor() as $k) {
-                fputcsv($out, array_merge(
+                fputcsv($out, array_map($veilig, array_merge(
                     [$k->id, $k->created_at->timezone('Europe/Amsterdam')->format('Y-m-d H:i'), $k->status, $k->bron, $k->email, $k->personen, $k->totaal(), $k->naam ? $k->dossierUrl() : '', $k->dossier_op?->timezone('Europe/Amsterdam')->format('Y-m-d H:i')],
                     array_map(fn ($key) => Keuring::waarde($k->aanvraag[$key] ?? ''), array_keys($aanvraag)),
                     array_map(fn ($key) => Keuring::waarde($k->dossier[$key] ?? ''), array_keys($dossier)),
-                ));
+                )));
             }
             fclose($out);
         }, 'keuringen-'.now()->format('Y-m-d').'.csv', ['Content-Type' => 'text/csv; charset=UTF-8']);

@@ -110,6 +110,12 @@ class Keuring extends Model
         'prohibited' => 'Laat dit veld leeg.',
     ];
 
+    /** Invoer van bezoekers veilig in een markdown-mail: geen eigen links, koppen of tabelcellen. */
+    public static function md(?string $tekst): string
+    {
+        return addcslashes(str_replace(["\r", "\n", '|'], [' ', ' ', '/'], (string) $tekst), '\\`*_[]()<>#!~');
+    }
+
     public static function waarde(mixed $waarde): string
     {
         return match (true) {
