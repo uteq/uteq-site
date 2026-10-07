@@ -33,6 +33,7 @@
                     <span class="h-2 w-2 rounded-full bg-primary" aria-hidden="true"></span>
                     Nog {{ $over }} van de 10 keuringen
                 </p>
+                <x-keuring.timer class="mt-8" />
             </div>
 
             {{-- Beeld: wat jij ziet / wat wij zien --}}
@@ -289,6 +290,7 @@
         <div class="max-w-3xl mx-auto">
             <h2 class="{{ $h2 }} text-white mb-4">Vraag een keuring <span class="text-primary">aan.</span></h2>
             <p class="text-lg text-gray-300 mb-10">Twee minuten. Wij kiezen er tien. Binnen twee werkdagen hoor je of je erbij bent.</p>
+            <x-keuring.timer class="mb-10" />
             <livewire:keuring-aanvraag />
         </div>
     </section>
