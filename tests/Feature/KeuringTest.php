@@ -206,4 +206,13 @@ class KeuringTest extends TestCase
 
         $this->assertStringNotContainsString('href="https://phish.example"', (new KeuringMail($k, 'aanvraag-melding', 'x'))->render());
     }
+
+    public function test_timer_telt_af_tot_de_deadline_en_verdwijnt_daarna(): void
+    {
+        Carbon::setTestNow(Carbon::parse('2026-10-13 22:58:30', 'Europe/Amsterdam'));
+        $this->get('/keuring')->assertSee('Aanvragen sluit over')->assertSeeInOrder(['01', 'dagen', '01', 'uur', '01', 'min', '30', 'sec']);
+
+        Carbon::setTestNow(Carbon::parse('2026-10-15 00:00', 'Europe/Amsterdam'));
+        $this->get('/keuring')->assertDontSee('Aanvragen sluit over');
+    }
 }
