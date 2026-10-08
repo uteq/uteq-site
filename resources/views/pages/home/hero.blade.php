@@ -18,6 +18,15 @@
 
     <div class="relative mx-auto max-w-5xl text-center pb-24 pt-20 sm:pb-32 sm:pt-28 lg:pb-40 lg:pt-36">
 
+        {{-- Tijdelijk: verdwijnt vanzelf zodra de keuringaanvragen sluiten. --}}
+        @if (\App\Models\Keuring::stand() === 'open')
+            <a href="{{ url('/keuring?bron=home') }}" class="group mb-10 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs sm:text-sm text-white hover:border-primary hover:bg-primary/20 transition-colors">
+                <span class="h-2 w-2 rounded-full bg-primary" aria-hidden="true"></span>
+                Laat je AI keuren op 28 oktober in Sneek
+                <span class="text-primary group-hover:translate-x-0.5 transition-transform" aria-hidden="true">→</span>
+            </a>
+        @endif
+
         <h1 class="font-sregs-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-[1.08] mb-8 [text-wrap:balance]">
             <span class="hero-line-mask">
                 <span class="hero-reveal">Software die <span class="text-primary">werkt.</span></span>

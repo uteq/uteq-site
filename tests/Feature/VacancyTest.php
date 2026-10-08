@@ -2,10 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class VacancyTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testVacancyOverviewLinksToDeveloperVacancy(): void
     {
         $this->get('/vacatures')
