@@ -2,10 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class JuridischTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_juridisch_index_loads(): void
     {
         $this->get(route('juridisch.index'))

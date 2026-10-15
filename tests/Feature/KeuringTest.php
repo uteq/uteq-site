@@ -215,4 +215,12 @@ class KeuringTest extends TestCase
         Carbon::setTestNow(Carbon::parse('2026-10-15 00:00', 'Europe/Amsterdam'));
         $this->get('/keuring')->assertDontSee('Aanvragen sluit over');
     }
+
+    public function test_home_linkt_naar_de_keuring_zolang_aanvragen_open_is(): void
+    {
+        $this->get('/')->assertOk()->assertSee('keuring?bron=home');
+
+        Instelling::set('formulier', 'gesloten');
+        $this->get('/')->assertOk()->assertDontSee('keuring?bron=home');
+    }
 }
