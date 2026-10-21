@@ -16,7 +16,7 @@ class KeuringAanvraag extends Component
     #[Locked]
     public string $bron = 'direct';
 
-    public array $antwoorden = ['gebouwd_met' => []];
+    public array $antwoorden = ['meenemen' => 'Nee, ik kom kijken en luisteren'];
 
     public bool $akkoord = false;
 
@@ -48,20 +48,23 @@ class KeuringAanvraag extends Component
         $this->beperk();
 
         $a = Arr::only($this->antwoorden, array_keys($velden));
+        $wachtlijst = $a['medewerkers'] === 'Alleen ik';
         $keuring = Keuring::create([
-            'status' => $a['medewerkers'] === 'Alleen ik' ? 'wachtlijst' : 'aangevraagd',
+            'status' => $wachtlijst ? 'wachtlijst' : 'aangemeld',
             'bron' => $this->bron,
             'email' => strtolower(trim($a['email'])),
             'naam' => $a['naam'],
             'bedrijf' => $a['bedrijf'],
+            'personen' => $wachtlijst ? null : ($a['personen'] === 'Met een collega' ? 2 : 1),
             'aanvraag' => $a,
         ]);
 
-        $wachtlijst = $keuring->status === 'wachtlijst';
+        $mee = $a['meenemen'] === 'Ja, ik neem iets mee' ? 'neemt iets mee' : 'komt kijken';
         KeuringMail::stuur($keuring->email, $keuring, $wachtlijst ? 'wachtlijst-bevestiging' : 'aanvraag-bevestiging',
-            $wachtlijst ? 'Je staat op de lijst voor de volgende bouwkundige keuring' : 'Je aanvraag voor de bouwkundige keuring is binnen');
-        KeuringMail::stuur(config('keuring.ontvangers'), $keuring, 'aanvraag-melding',
-            ($wachtlijst ? 'Wachtlijst keuring: ' : 'Nieuwe aanvraag keuring: ')."{$keuring->bedrijf} ({$a['medewerkers']}, {$a['belang']})");
+            $wachtlijst ? 'Je staat op de lijst voor de volgende bouwkundige keuring' : 'Je bent aangemeld voor de avond van 28 oktober');
+        KeuringMail::stuur(config('keuring.ontvangers'), $keuring, 'aanvraag-melding', $wachtlijst
+            ? "Wachtlijst keuring: {$keuring->bedrijf} ({$a['medewerkers']})"
+            : "Nieuwe aanmelding avond: {$keuring->bedrijf} ({$keuring->personen} pers., {$mee})");
 
         $this->klaar = $wachtlijst ? 'wachtlijst' : 'aanvraag';
         $this->voornaam = $keuring->voornaam();

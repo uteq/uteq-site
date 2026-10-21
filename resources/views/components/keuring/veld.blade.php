@@ -2,7 +2,7 @@
 @php
     $id = 'veld-'.$naam;
     $label = \App\Models\Keuring::label($veld);
-    $verplicht = ! empty($veld['required']);
+    $verplicht = ! empty($veld['required']) || isset($veld['required_if']);
     $fout = $errors->first("antwoorden.$naam") ?: $errors->first("antwoorden.$naam.*");
     $tekst = $dark ? 'text-white' : 'text-secondary';
     $hint = $dark ? 'text-gray-400' : 'text-gray-500';

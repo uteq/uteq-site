@@ -15,7 +15,7 @@
 
         <form wire:submit="opslaan" class="rounded-2xl border border-gray-200 bg-white p-6 grid sm:grid-cols-4 gap-4 items-end">
             <div>
-                <label for="plaatsen" class="block text-sm font-semibold text-secondary mb-1">Nog over (teller)</label>
+                <label for="plaatsen" class="block text-sm font-semibold text-secondary mb-1">Plekken over (0 = vol)</label>
                 <input id="plaatsen" type="number" min="0" max="{{ config('keuring.plaatsen') }}" wire:model="plaatsenOver" class="w-full rounded-lg border-gray-300">
                 @error('plaatsenOver')<p class="text-sm text-red-700 mt-1">{{ $message }}</p>@enderror
             </div>
@@ -28,7 +28,7 @@
             <div>
                 <label for="formulier" class="block text-sm font-semibold text-secondary mb-1">Formulier</label>
                 <select id="formulier" wire:model="formulier" class="w-full rounded-lg border-gray-300">
-                    <option value="auto">Automatisch (dicht na 14 oktober)</option>
+                    <option value="auto">Automatisch (dicht na 27 oktober)</option>
                     <option value="open">Altijd open</option>
                     <option value="gesloten">Gesloten</option>
                 </select>
@@ -43,7 +43,7 @@
             <table class="w-full text-sm text-left">
                 <thead class="bg-gray-100 text-gray-700">
                     <tr>
-                        <th class="p-3">Aanvraag</th><th class="p-3">Team / belang</th><th class="p-3">Bron</th><th class="p-3">Status</th><th class="p-3">Personen</th><th class="p-3">Dossierlink</th>
+                        <th class="p-3">Aanvraag</th><th class="p-3">Team / meenemen</th><th class="p-3">Bron</th><th class="p-3">Status</th><th class="p-3">Personen</th><th class="p-3">Dossierlink</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 align-top">
@@ -70,7 +70,7 @@
                                     </details>
                                 @endif
                             </td>
-                            <td class="p-3">{{ $k->aanvraag['medewerkers'] ?? '' }}<br>{{ $k->aanvraag['belang'] ?? '' }}</td>
+                            <td class="p-3">{{ $k->aanvraag['medewerkers'] ?? '' }}<br>{{ $k->aanvraag['meenemen'] ?? $k->aanvraag['belang'] ?? '' }}</td>
                             <td class="p-3">{{ $k->bron }}</td>
                             <td class="p-3">
                                 <label class="sr-only" for="status-{{ $k->id }}">Status</label>

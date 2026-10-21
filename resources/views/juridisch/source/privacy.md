@@ -68,7 +68,7 @@ Dit statement gaat over de verwerkingen waarvoor UTEQ zelf verwerkingsverantwoor
 
 3.5 Het verstrekken van bepaalde gegevens, zoals factuurgegevens of identificatiegegevens, kan een contractuele of wettelijke voorwaarde zijn voor het kunnen uitvoeren van een opdracht. Niet-verstrekking betekent in dat geval dat UTEQ de opdracht niet of niet volledig kan uitvoeren.
 
-3.6 <span id="keuring"></span>**Bouwkundige keuring (oktober 2026).** Vraagt u een keuring aan via uteq.nl/keuring, dan gebruiken UTEQ en Growth AI uw gegevens samen. Het gaat om de gegevens uit het aanvraagformulier en, na toelating, uit het bouwdossier. Wij gebruiken ze om de tien deelnemers te kiezen, uw oplossing te keuren, de avond te regelen, de factuur te sturen en de nabespreking te plannen. De grondslag is uw toestemming (art 6.1.a), en voor de factuur de uitvoering van de overeenkomst (art 6.1.b). UTEQ en Growth AI zijn hiervoor samen verwerkingsverantwoordelijk (art 26 AVG). U kunt voor al uw rechten terecht bij UTEQ via info@uteq.nl.
+3.6 <span id="keuring"></span>**Bouwkundige keuring (oktober 2026).** Meldt u zich aan of vraagt u een keuring aan via uteq.nl/keuring, dan gebruiken UTEQ en Growth AI uw gegevens samen. Het gaat om de gegevens uit het formulier en, als u dat invulde, uit het bouwdossier. Wij gebruiken ze om de avond te regelen, de factuur te sturen, de oplossing te bekijken die u meeneemt of instuurt en, als dat is afgesproken, de nabespreking te plannen. De grondslag is uw toestemming (art 6.1.a), en voor de factuur de uitvoering van de overeenkomst (art 6.1.b). UTEQ en Growth AI zijn hiervoor samen verwerkingsverantwoordelijk (art 26 AVG). U kunt voor al uw rechten terecht bij UTEQ via info@uteq.nl.
 
 ## Artikel 4. Bewaartermijnen
 

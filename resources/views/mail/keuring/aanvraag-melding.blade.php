@@ -1,5 +1,5 @@
 <x-mail::message>
-# {{ \App\Models\Keuring::md($k->aanvraag['bouwzin'] ?? 'Wachtlijst') }}
+# {{ \App\Models\Keuring::md($k->bedrijf ?? 'Wachtlijst') }}
 
 **Status:** {{ $k->status }} · **Bron:** {{ \App\Models\Keuring::md($k->bron) }}
 
@@ -10,7 +10,6 @@
 | {{ $label }} | {{ \App\Models\Keuring::md($antwoord) }} |
 @endforeach
 | E-mail | {{ $k->email }} |
-| Persoonlijke dossierlink | {{ $k->dossierUrl() }} |
 </x-mail::table>
 
 <x-mail::button :url="route('keuring.beheer')">

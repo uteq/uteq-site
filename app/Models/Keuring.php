@@ -76,7 +76,8 @@ class Keuring extends Model
             $verplicht = match (true) {
                 $veld['type'] === 'accept' => 'accepted',
                 ! empty($veld['required']) => 'required',
-                isset($veld['required_if']) => "required_if:{$prefix}.{$veld['required_if'][0]},{$veld['required_if'][1]}",
+                // Quoted: Laravel splits rule parameters as CSV, so a comma in the answer would break it.
+                isset($veld['required_if']) => "required_if:{$prefix}.{$veld['required_if'][0]},\"{$veld['required_if'][1]}\"",
                 default => 'nullable',
             };
 

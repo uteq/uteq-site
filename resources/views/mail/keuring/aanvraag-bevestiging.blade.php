@@ -1,11 +1,11 @@
 <x-mail::message>
-# Aanvraag binnen
+# Je bent aangemeld
 
-Bedankt, {{ $k->voornaam() }}. Binnen twee werkdagen hoor je van Johan of je erbij bent.
+Bedankt, {{ $k->voornaam() }}. Je hebt een plek op de avond{{ $k->personen === 2 ? ', samen met je collega' : '' }}.
 
-1. Wij bekijken je aanvraag.
-2. Je krijgt een mail met je plek en de link naar je bouwdossier.
-3. Je vult je bouwdossier in, uiterlijk maandag 19 oktober. Daarna volgt de factuur.
+1. Je krijgt de factuur van Uteq: €{{ $k->totaal() }} excl. btw. Dat bedrag geldt als voucher.
+2. Heb je iets gebouwd met AI? Neem het mee op je laptop of telefoon. Niets gebouwd is ook goed.
+3. Kom naar Lokaal55. De deur is open vanaf 17:30.
 
 **Bouwkundige keuring**
 Woensdag 28 oktober 2026, van 17:30 tot 21:30
