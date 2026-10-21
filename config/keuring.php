@@ -1,6 +1,6 @@
 <?php
 
-// Bouwkundige keuring, 28 oktober 2026. Vragen komen letterlijk uit het bouwdossier-format.
+// Bouwkundige keuring, 28 oktober 2026. Sinds 20 oktober een aanmelding voor de avond; het bouwdossier is dicht.
 // De teller, de kop en open/dicht staan in de database en pas je aan op /keuring/beheer.
 
 $ja = ['Ja', 'Nee', 'Weet ik niet'];
@@ -12,7 +12,7 @@ return [
     'github_account' => env('KEURING_GITHUB', 'uteq-keuring'),
 
     // Na deze momenten (Europe/Amsterdam) gaat het formulier vanzelf dicht.
-    'aanvragen_tot' => '2026-10-15 00:00',
+    'aanvragen_tot' => '2026-10-28 00:00',
     'dossier_tot' => '2026-10-20 00:00',
 
     'plaatsen' => 10,
@@ -26,32 +26,30 @@ return [
     ],
 
     'statussen' => [
-        'aangevraagd', 'toegelaten', 'afgewezen', 'wachtlijst', 'dossier binnen',
+        'aangemeld', 'aangevraagd', 'toegelaten', 'afgewezen', 'wachtlijst', 'dossier binnen',
         'gefactureerd', 'betaald', 'gekeurd', 'nabespreking gepland',
     ],
 
-    // Deel A: de aanvraag. type: text, email, tel, url, number, textarea, select, radio, checkbox.
+    // Deel A: de aanmelding voor de avond. Iets meenemen om te laten keuren mag, hoeft niet.
+    // type: text, email, tel, url, number, textarea, select, radio, checkbox.
+    // Een veld met required_if staat alleen in beeld bij dat antwoord.
     'aanvraag' => [
         'naam' => ['label' => 'Naam', 'type' => 'text', 'required' => true, 'half' => true, 'autocomplete' => 'name'],
-        'functie' => ['label' => 'Functie', 'type' => 'text', 'half' => true, 'autocomplete' => 'organization-title'],
         'email' => ['label' => 'E-mail', 'type' => 'email', 'required' => true, 'half' => true, 'autocomplete' => 'email'],
-        'telefoon' => ['label' => 'Telefoon', 'type' => 'tel', 'half' => true, 'autocomplete' => 'tel'],
         'bedrijf' => ['label' => 'Bedrijf', 'type' => 'text', 'required' => true, 'half' => true, 'autocomplete' => 'organization'],
-        'website' => ['label' => 'Website', 'type' => 'url', 'half' => true, 'autocomplete' => 'url'],
-        'branche' => ['label' => 'Branche', 'type' => 'select', 'required' => true, 'options' => [
-            'Bouw en installatie', 'Zakelijke dienstverlening', 'Handel en webshop', 'Zorg en welzijn', 'Productie en logistiek', 'Anders',
-        ]],
+        'telefoon' => ['label' => 'Telefoon', 'type' => 'tel', 'half' => true, 'autocomplete' => 'tel'],
         'medewerkers' => ['label' => 'Hoeveel mensen werken er?', 'type' => 'radio', 'required' => true, 'options' => ['Alleen ik', '2-9', '10-49', '50+']],
-        'bouwzin' => ['label' => 'Je bouwzin', 'type' => 'textarea', 'required' => true, 'rows' => 3,
-            'hint' => 'Ik bouwde … zodat …',
-            'placeholder' => "Ik bouwde een planbord zodat onze 14 monteurs 's ochtends zelf zien waar ze heen moeten."],
-        'gebouwd_met' => ['label' => 'Gebouwd met', 'type' => 'checkbox', 'required' => true, 'options' => [
-            'ChatGPT of eigen GPT', 'Claude', 'Lovable', 'Cursor', 'Make, Zapier of n8n', 'Copilot', 'Anders',
-        ]],
-        'gebruikers' => ['label' => 'Wie gebruikt het?', 'type' => 'radio', 'required' => true, 'options' => ['Alleen ik', 'Mijn team', 'Onze klanten']],
-        'gebruikers_aantal' => ['label' => 'En hoeveel mensen?', 'type' => 'number', 'required' => true],
-        'belang' => ['label' => 'Hoe belangrijk is het voor je bedrijf?', 'type' => 'radio', 'required' => true, 'options' => ['Handig', 'Belangrijk', 'We kunnen niet meer zonder']],
-        'over_een_jaar' => ['label' => 'Wat moet het over een jaar kunnen?', 'type' => 'textarea', 'required' => true, 'rows' => 3],
+        'personen' => ['label' => 'Met hoeveel personen kom je?', 'type' => 'radio', 'required' => true, 'options' => ['Alleen', 'Met een collega'],
+            'hint' => '€99 excl. btw per persoon, hooguit twee'],
+        'collega' => ['label' => 'Naam van je collega', 'type' => 'text', 'required_if' => ['personen', 'Met een collega']],
+        'factuur' => ['label' => 'Adres voor de factuur', 'type' => 'textarea', 'required' => true, 'rows' => 3,
+            'hint' => 'Bedrijfsnaam, adres en het e-mailadres voor de factuur'],
+        'meenemen' => ['label' => 'Neem je iets mee om te laten keuren?', 'type' => 'radio', 'required' => true,
+            'hint' => 'Dat hoeft niet. Je bent ook welkom als je nog niets hebt gebouwd.',
+            'options' => ['Nee, ik kom kijken en luisteren', 'Ja, ik neem iets mee']],
+        'wat_mee' => ['label' => 'Wat neem je mee?', 'type' => 'textarea', 'rows' => 3, 'required_if' => ['meenemen', 'Ja, ik neem iets mee'],
+            'hint' => 'Een app, een automatisering of een eigen GPT. Je laat het op de avond zelf zien, op je laptop of telefoon.'],
+        'dieet' => ['label' => 'Dieetwensen of allergieën?', 'type' => 'text'],
     ],
 
     // Deel B: het bouwdossier, in negen blokken.

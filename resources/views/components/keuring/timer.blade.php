@@ -1,4 +1,4 @@
-{{-- Telt af tot het formulier vanzelf sluit. Alleen zichtbaar zolang aanvragen kan. --}}
+{{-- Telt af tot het formulier vanzelf sluit. Alleen zichtbaar zolang aanmelden kan. --}}
 @php
     $tot = \Illuminate\Support\Carbon::parse(config('keuring.aanvragen_tot'), 'Europe/Amsterdam');
     $rest = max(0, now()->diffInSeconds($tot, false));
@@ -16,8 +16,8 @@
             },
         }"
         x-init="tik(); setInterval(() => tik(), 1000)">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-3">Aanvragen sluit over</p>
-        <p class="sr-only">Je kunt aanvragen tot en met woensdag 14 oktober, 23:59 uur.</p>
+        <p class="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-3">Aanmelden sluit over</p>
+        <p class="sr-only">Je kunt je aanmelden tot en met dinsdag 27 oktober, 23:59 uur.</p>
         <div class="flex gap-2 sm:gap-3" aria-hidden="true">
             @foreach ($delen as $eenheid => $waarde)
                 <div class="w-16 sm:w-20 rounded-lg border border-white/15 bg-white/[0.04] py-2 text-center">

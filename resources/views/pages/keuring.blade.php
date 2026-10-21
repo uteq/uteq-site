@@ -1,7 +1,6 @@
 @php
     use App\Models\Keuring;
     [$kopRegel1, $kopRegel2, $kopGroen] = Keuring::kop();
-    $over = Keuring::plaatsenOver();
     $label = 'font-mono text-xs tracking-[0.2em] uppercase';
     $h2 = 'font-sregs-display text-3xl sm:text-4xl lg:text-5xl leading-tight';
 @endphp
@@ -23,16 +22,12 @@
                     @if ($kopRegel1){{ $kopRegel1 }}<br>@endif
                     {{ $kopRegel2 }} <span class="text-primary">{{ $kopGroen }}</span>
                 </h1>
-                <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-xl">Twee specialisten keuren wat jij met AI hebt gebouwd of ingericht: een app, een automatisering of een eigen GPT. Wat zien zij dat jij mist?</p>
+                <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-xl">Een avond over wat je met AI kunt bouwen, en waar het misgaat. Je hoeft zelf niets mee te nemen. Heb je wel iets gebouwd, zoals een app, een automatisering of een eigen GPT? Neem het mee, dan kijken twee specialisten ernaar.</p>
                 <a href="#aanvragen" class="btn-primary !rounded-lg px-8 py-4 text-lg">
-                    Vraag een keuring aan
+                    Meld je aan voor de avond
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                 </a>
-                <p class="text-sm text-gray-400 mt-4">10 keuringen · €99 excl. btw per persoon · geldt als voucher</p>
-                <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-1.5 text-sm text-white">
-                    <span class="h-2 w-2 rounded-full bg-primary" aria-hidden="true"></span>
-                    Nog {{ $over }} van de 10 keuringen
-                </p>
+                <p class="text-sm text-gray-400 mt-4">€99 excl. btw per persoon · geldt als voucher</p>
                 <x-keuring.timer class="mt-8" />
             </div>
 
@@ -141,10 +136,10 @@
             <p class="{{ $label }} text-primary mb-4">Zo werkt het</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
                 @foreach ([
-                    ['Vraag een keuring aan.', 'Twee minuten. Kan tot en met woensdag 14 oktober.'],
-                    ['Wij kiezen er tien.', 'Binnen twee werkdagen hoor je of je erbij bent. Dan krijg je de link naar je bouwdossier.'],
-                    ['Vul je bouwdossier in.', 'Uiterlijk maandag 19 oktober, in ongeveer tien minuten: met hoeveel personen je komt, je factuurgegevens, wat je hebt gebouwd, en hoe wij het kunnen bekijken.'],
-                    ['Hoor de uitslag op 28 oktober.', 'Je neemt je keuringsrapport mee naar huis. In november volgt een nabespreking.'],
+                    ['Meld je aan.', 'Twee minuten. Kan tot en met dinsdag 27 oktober.'],
+                    ['Je krijgt de factuur.', '€99 excl. btw per persoon. Dat bedrag geldt als voucher.'],
+                    ['Neem mee wat je hebt.', 'Heb je iets gebouwd met AI? Zet het op je laptop of telefoon. Heb je nog niets? Ook goed. Je leert net zoveel van wat anderen bouwden.'],
+                    ['Kom naar Lokaal55.', 'Woensdag 28 oktober, de deur is open vanaf 17:30. Je gaat naar huis met de checklist.'],
                 ] as [$titel, $tekst])
                     <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
                         <p class="font-sregs-display text-4xl text-primary mb-4">{{ $loop->iteration }}</p>
@@ -162,12 +157,9 @@
             <h2 class="{{ $h2 }} text-secondary mb-10">Wat je <span class="text-primary-dark">krijgt.</span></h2>
             <ul class="space-y-4">
                 @foreach ([
-                    'Een keuring van je AI-oplossing op zes punten',
-                    'Een persoonlijk bericht als we een lek vinden, vóór de avond',
-                    'Je keuringsrapport: één A4 met uitslag en de volgende stap',
                     'Een plek op de avond, met bites en drinks. Een collega mag mee, ook voor €99',
                     'De checklist met de zes punten, bruikbaar in elke tool',
-                    'Een nabespreking van 30 minuten in november',
+                    'Neem je iets mee? Dan kijken we ernaar op de avond, in de live keuring of aan een bouwtafel',
                     'Je €99 als voucher, verrekend bij een opdracht vóór 1 december 2026',
                 ] as $punt)
                     <li class="flex gap-4 text-lg text-gray-800">
@@ -190,13 +182,13 @@
                     @foreach ([
                         '17:30' => 'Inloop, bites en drinks',
                         '18:00' => 'Welkom en spelregels',
-                        '18:15' => 'De inspectie: wat we zagen bij alle tien',
+                        '18:15' => 'De inspectie: wat we vaak zien in zelfgebouwde AI',
                         '18:45' => 'Live keuringen. De zaal stemt mee',
                         '19:15' => 'Pauze',
                         '19:35' => 'Zo bouw je wel: fundament, afspraken en werkwijze',
                         '20:05' => 'Live keuringen, ronde 2',
                         '20:35' => 'Bouwtafels: ondernemers helpen elkaar',
-                        '21:05' => 'Oplevering: je rapport in een envelop',
+                        '21:05' => 'Afsluiting: de checklist mee naar huis',
                     ] as $tijd => $onderdeel)
                         <tr>
                             <th scope="row" class="py-4 pr-6 font-mono text-secondary font-semibold align-top w-20">{{ $tijd }}</th>
@@ -212,7 +204,7 @@
     <section class="bg-white px-6 py-20 lg:py-24">
         <div class="max-w-3xl mx-auto">
             <h2 class="{{ $h2 }} text-secondary mb-6">We kraken <span class="text-primary-dark">niets.</span></h2>
-            <p class="text-lg text-gray-700 leading-relaxed">Je laat ons zien wat je hebt gebouwd: met een uitnodiging als gebruiker, een link of schermafbeeldingen. Je deelt geen wachtwoorden. Vinden we een lek, dan hoor jij het vóór de avond, en als enige. Op het scherm komen alleen patronen, nooit jouw lek. En jij kiest hoe je gekeurd wordt: alleen in je eigen rapport, anoniem op het scherm, of live met naam.</p>
+            <p class="text-lg text-gray-700 leading-relaxed">Neem je iets mee, dan laat je het zelf zien op je eigen laptop of telefoon. Je deelt geen wachtwoorden. Zien we een lek, dan hoor jij het, en niet de zaal. Jij kiest of je oplossing op het grote scherm komt.</p>
         </div>
     </section>
 
@@ -242,13 +234,12 @@
     <section class="bg-white px-6 py-20 lg:py-28">
         <div class="max-w-6xl mx-auto">
             <h2 class="{{ $h2 }} text-secondary mb-10"><span class="text-primary-dark">Praktisch.</span></h2>
-            <dl class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+            <dl class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 @foreach ([
                     'Wanneer' => 'wo 28 oktober, 17:30 tot 21:30',
                     'Waar' => 'Lokaal55, Oude Oppenhuizerweg 55, Sneek',
                     'Prijs' => '€99 excl. btw per persoon, geldt als voucher',
-                    'Keuringen' => '10',
-                    'Aanvragen' => 'tot en met wo 14 oktober',
+                    'Aanmelden' => 'tot en met di 27 oktober',
                 ] as $wat => $waarde)
                     <div class="rounded-2xl border border-gray-200 p-5">
                         <dt class="{{ $label }} text-gray-600 mb-2">{{ $wat }}</dt>
@@ -266,11 +257,12 @@
             <h2 class="{{ $h2 }} text-secondary mb-8"><span class="text-primary-dark">Vragen.</span></h2>
             <div class="divide-y divide-gray-200 border-y border-gray-200">
                 @foreach ([
-                    'Is dit een pentest?' => 'Nee. We bekijken wat je hebt gebouwd als gewone gebruiker, of via wat je ons laat zien. Als je dat wilt, kijken we mee in de code. We proberen niets te kraken.',
-                    'Ik heb geen app, maar een automatisering of een eigen GPT. Kan ik meedoen?' => 'Ja. Alles wat je met AI hebt gebouwd of ingericht en wat in je bedrijf echt gebruikt wordt, kunnen we keuren. Alleen ChatGPT gebruiken voor losse teksten valt erbuiten.',
-                    'Wat kost het?' => '€99 excl. btw per persoon. Kom je met een collega, dan is dat €198 excl. btw. Elk ticket is een voucher: neem je vóór 1 december 2026 iets bij ons af, dan verrekenen we het. Je betaalt pas na je toelating.',
-                    'Wat moet ik insturen?' => 'Na je toelating vul je je bouwdossier in: met hoeveel personen je komt, je factuurgegevens, wat je oplossing doet, een link of een uitnodiging als dat kan, en een schermopname of schermafbeeldingen. Uiterlijk maandag 19 oktober.',
-                    'Word ik voor de hele zaal afgebrand?' => 'Alleen als je dat zelf wilt. Je kiest: alleen in je eigen rapport, anoniem op het scherm, of live met naam.',
+                    'Ik heb nog niets gebouwd. Kan ik komen?' => 'Ja. Je hoeft niets mee te nemen. Je ziet wat anderen bouwden, hoort waar het vaak misgaat en gaat naar huis met de checklist.',
+                    'Is dit een pentest?' => 'Nee. We kijken alleen naar wat jij ons laat zien. We proberen niets te kraken.',
+                    'Ik heb geen app, maar een automatisering of een eigen GPT. Mag ik die meenemen?' => 'Ja. Alles wat je met AI hebt gebouwd of ingericht en wat in je bedrijf echt gebruikt wordt, kunnen we bekijken.',
+                    'Wat kost het?' => '€99 excl. btw per persoon. Kom je met een collega, dan is dat €198 excl. btw. Elk ticket is een voucher: neem je vóór 1 december 2026 iets bij ons af, dan verrekenen we het. Na je aanmelding krijg je de factuur.',
+                    'Wat moet ik meenemen?' => 'Niets. Heb je iets gebouwd, neem het dan mee op je laptop of telefoon. Je hoeft vooraf niets in te sturen.',
+                    'Word ik voor de hele zaal afgebrand?' => 'Nee. Neem je iets mee, dan kies jij of het op het grote scherm komt.',
                     "Ik ben zzp'er. Kan ik meedoen?" => 'Deze editie is voor ondernemers met een team. Laat je gegevens achter, dan hoor je het als er een volgende editie komt.',
                 ] as $vraag => $antwoord)
                     <details class="group py-5">
@@ -288,8 +280,8 @@
     {{-- 11. Aanvraagformulier --}}
     <section id="aanvragen" class="bg-secondary px-6 py-20 lg:py-28 scroll-mt-20">
         <div class="max-w-3xl mx-auto">
-            <h2 class="{{ $h2 }} text-white mb-4">Vraag een keuring <span class="text-primary">aan.</span></h2>
-            <p class="text-lg text-gray-300 mb-10">Twee minuten. Wij kiezen er tien. Binnen twee werkdagen hoor je of je erbij bent.</p>
+            <h2 class="{{ $h2 }} text-white mb-4">Meld je aan voor de <span class="text-primary">avond.</span></h2>
+            <p class="text-lg text-gray-300 mb-10">Twee minuten. Je hoeft niets mee te nemen. Heb je iets gebouwd met AI? Neem het mee, dan kijken we ernaar.</p>
             <x-keuring.timer class="mb-10" />
             <livewire:keuring-aanvraag />
         </div>

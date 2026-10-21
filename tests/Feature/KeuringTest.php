@@ -29,11 +29,9 @@ class KeuringTest extends TestCase
     private function aanvraag(array $anders = []): array
     {
         return array_merge([
-            'naam' => 'Anne de Vries', 'functie' => 'Eigenaar', 'email' => 'anne@example.nl', 'telefoon' => '0612345678',
-            'bedrijf' => 'De Vries Installatie', 'website' => 'devries.nl', 'branche' => 'Bouw en installatie',
-            'medewerkers' => '10-49', 'bouwzin' => 'Ik bouwde een planbord zodat onze monteurs zelf zien waar ze heen moeten.',
-            'gebouwd_met' => ['Lovable', 'Make, Zapier of n8n'], 'gebruikers' => 'Mijn team', 'gebruikers_aantal' => 14,
-            'belang' => 'We kunnen niet meer zonder', 'over_een_jaar' => 'Ook offertes maken.',
+            'naam' => 'Anne de Vries', 'email' => 'anne@example.nl', 'bedrijf' => 'De Vries Installatie', 'telefoon' => '0612345678',
+            'medewerkers' => '10-49', 'personen' => 'Alleen', 'factuur' => "De Vries Installatie\nDorpsstraat 1, Sneek",
+            'meenemen' => 'Nee, ik kom kijken en luisteren',
         ], $anders);
     }
 
@@ -43,20 +41,20 @@ class KeuringTest extends TestCase
             ->assertSee('<title>Bouwkundige keuring voor je AI · 28 oktober · Uteq</title>', false)
             ->assertSee('images/keuring/og-image.png')
             ->assertSee('Jij ziet de gevel.')
-            ->assertSee('Nog 10 van de 10 keuringen')
+            ->assertSee('Meld je aan voor de avond')
+            ->assertSee('Je hoeft niets mee te nemen.')
             ->assertSee('id="aanvragen"', false)
-            ->assertDontSee('Aanvragen is gesloten');
+            ->assertDontSee('Aanmelden is gesloten');
     }
 
-    public function test_kop_en_teller_komen_uit_de_instellingen(): void
+    public function test_kop_komt_uit_de_instellingen(): void
     {
         Instelling::set('kop', 3);
-        Instelling::set('plaatsen_over', 4);
 
-        $this->get('/keuring')->assertSee('Een huis koop je niet zonder keuring.')->assertSee('Nog 4 van de 10 keuringen');
+        $this->get('/keuring')->assertSee('Een huis koop je niet zonder keuring.');
     }
 
-    public function test_aanvraag_wordt_opgeslagen_met_bron_en_mails(): void
+    public function test_aanmelding_wordt_opgeslagen_met_bron_en_mails(): void
     {
         Livewire::withQueryParams(['bron' => 'advertentie'])->test(KeuringAanvraag::class)
             ->set('antwoorden', $this->aanvraag())
@@ -68,13 +66,31 @@ class KeuringTest extends TestCase
             ->assertDispatched('keuring-verstuurd');
 
         $k = Keuring::sole();
-        $this->assertSame(['advertentie', 'aangevraagd', 'De Vries Installatie'], [$k->bron, $k->status, $k->bedrijf]);
-        $this->assertSame(14, $k->aanvraag['gebruikers_aantal']);
+        $this->assertSame(['advertentie', 'aangemeld', 'De Vries Installatie', 1, 99], [$k->bron, $k->status, $k->bedrijf, $k->personen, $k->totaal()]);
         $this->assertSame(40, strlen($k->token));
 
-        Mail::assertSent(KeuringMail::class, fn ($m) => $m->hasTo('anne@example.nl') && $m->onderwerp === 'Je aanvraag voor de bouwkundige keuring is binnen');
+        Mail::assertSent(KeuringMail::class, fn ($m) => $m->hasTo('anne@example.nl') && $m->onderwerp === 'Je bent aangemeld voor de avond van 28 oktober');
         Mail::assertSent(KeuringMail::class, fn ($m) => $m->hasTo('info@uteq.nl')
-            && $m->onderwerp === 'Nieuwe aanvraag keuring: De Vries Installatie (10-49, We kunnen niet meer zonder)');
+            && $m->onderwerp === 'Nieuwe aanmelding avond: De Vries Installatie (1 pers., komt kijken)');
+    }
+
+    public function test_niets_meenemen_staat_vooraan_en_iets_meenemen_vraagt_wat(): void
+    {
+        Livewire::test(KeuringAanvraag::class)
+            ->assertSet('antwoorden.meenemen', 'Nee, ik kom kijken en luisteren')
+            ->set('antwoorden', $this->aanvraag(['meenemen' => 'Ja, ik neem iets mee', 'personen' => 'Met een collega']))->set('akkoord', true)
+            ->call('aanvragen')
+            ->assertHasErrors(['antwoorden.wat_mee', 'antwoorden.collega'])
+            ->set('antwoorden.wat_mee', 'Ons planbord in Lovable')
+            ->set('antwoorden.collega', 'Piet')
+            ->call('aanvragen')
+            ->assertHasNoErrors();
+
+        $k = Keuring::sole();
+        $this->assertSame([2, 198, 'Ons planbord in Lovable'], [$k->personen, $k->totaal(), $k->aanvraag['wat_mee']]);
+        Mail::assertSent(KeuringMail::class, fn ($m) => $m->onderwerp === 'Nieuwe aanmelding avond: De Vries Installatie (2 pers., neemt iets mee)');
+        $this->assertStringContainsString('Ons planbord in Lovable', (new KeuringMail($k, 'aanvraag-melding', 'x'))->render());
+        $this->assertStringContainsString('€198 excl. btw', (new KeuringMail($k, 'aanvraag-bevestiging', 'x'))->render());
     }
 
     public function test_zonder_bron_is_het_direct(): void
@@ -87,9 +103,9 @@ class KeuringTest extends TestCase
     public function test_verplichte_velden_en_akkoord(): void
     {
         Livewire::test(KeuringAanvraag::class)
-            ->set('antwoorden', $this->aanvraag(['bedrijf' => '', 'gebouwd_met' => [], 'branche' => 'Hacker']))
+            ->set('antwoorden', $this->aanvraag(['bedrijf' => '', 'factuur' => '', 'personen' => 'Drie', 'meenemen' => 'Misschien']))
             ->call('aanvragen')
-            ->assertHasErrors(['antwoorden.bedrijf', 'antwoorden.gebouwd_met', 'antwoorden.branche', 'akkoord']);
+            ->assertHasErrors(['antwoorden.bedrijf', 'antwoorden.factuur', 'antwoorden.personen', 'antwoorden.meenemen', 'akkoord']);
 
         $this->assertSame(0, Keuring::count());
     }
@@ -121,14 +137,14 @@ class KeuringTest extends TestCase
 
     public function test_na_de_deadline_is_het_gesloten_met_wachtlijst(): void
     {
-        Carbon::setTestNow(Carbon::parse('2026-10-14 23:59', 'Europe/Amsterdam'));
+        Carbon::setTestNow(Carbon::parse('2026-10-27 23:59', 'Europe/Amsterdam'));
         $this->assertSame('open', Keuring::stand());
 
-        Carbon::setTestNow(Carbon::parse('2026-10-15 00:00', 'Europe/Amsterdam'));
+        Carbon::setTestNow(Carbon::parse('2026-10-28 00:00', 'Europe/Amsterdam'));
         $this->assertSame('gesloten', Keuring::stand());
 
         Livewire::test(KeuringAanvraag::class)
-            ->assertSee('Aanvragen is gesloten. Wil je bij een volgende editie zijn? Laat je e-mail achter.')
+            ->assertSee('Aanmelden is gesloten. Wil je bij een volgende editie zijn? Laat je e-mail achter.')
             ->set('antwoorden', $this->aanvraag())->set('akkoord', true)->call('aanvragen')
             ->set('wachtlijstEmail', 'later@example.nl')->call('wachtlijst')
             ->assertSet('klaar', 'wachtlijst');
@@ -142,7 +158,7 @@ class KeuringTest extends TestCase
     public function test_vol_en_handmatig_gesloten(): void
     {
         Instelling::set('plaatsen_over', 0);
-        Livewire::test(KeuringAanvraag::class)->assertSee('Alle tien keuringen zijn vergeven.');
+        Livewire::test(KeuringAanvraag::class)->assertSee('De avond is vol.');
 
         Instelling::set('plaatsen_over', 3);
         Instelling::set('formulier', 'gesloten');
@@ -202,18 +218,19 @@ class KeuringTest extends TestCase
 
     public function test_invoer_kan_geen_links_in_de_melding_zetten(): void
     {
-        $k = Keuring::create(['email' => 'a@b.nl', 'naam' => 'A', 'bedrijf' => 'X', 'aanvraag' => $this->aanvraag(['bouwzin' => '[Klik hier](https://phish.example)'])]);
+        $link = '[Klik hier](https://phish.example)';
+        $k = Keuring::create(['email' => 'a@b.nl', 'naam' => 'A', 'bedrijf' => $link, 'aanvraag' => $this->aanvraag(['wat_mee' => $link])]);
 
         $this->assertStringNotContainsString('href="https://phish.example"', (new KeuringMail($k, 'aanvraag-melding', 'x'))->render());
     }
 
     public function test_timer_telt_af_tot_de_deadline_en_verdwijnt_daarna(): void
     {
-        Carbon::setTestNow(Carbon::parse('2026-10-13 22:58:30', 'Europe/Amsterdam'));
-        $this->get('/keuring')->assertSee('Aanvragen sluit over')->assertSeeInOrder(['01', 'dagen', '01', 'uur', '01', 'min', '30', 'sec']);
+        Carbon::setTestNow(Carbon::parse('2026-10-26 22:58:30', 'Europe/Amsterdam'));
+        $this->get('/keuring')->assertSee('Aanmelden sluit over')->assertSeeInOrder(['01', 'dagen', '01', 'uur', '01', 'min', '30', 'sec']);
 
-        Carbon::setTestNow(Carbon::parse('2026-10-15 00:00', 'Europe/Amsterdam'));
-        $this->get('/keuring')->assertDontSee('Aanvragen sluit over');
+        Carbon::setTestNow(Carbon::parse('2026-10-28 00:00', 'Europe/Amsterdam'));
+        $this->get('/keuring')->assertDontSee('Aanmelden sluit over');
     }
 
     public function test_home_linkt_naar_de_keuring_zolang_aanvragen_open_is(): void
