@@ -310,8 +310,8 @@
             "hash": "tree-v2:6bdec73148be033ed5a0525579cd64a0a6efc355982303c985610a77c52031cd"
         },
         "symfony/event-dispatcher": {
-            "version": "v8.1.5",
-            "hash": "tree-v2:44ed3dd86aee506338f18bd5293ebfd1e23ead8659903a8bc020cd1a263dba0a"
+            "version": "v7.4.17",
+            "hash": "tree-v2:73521e41e370d258ea1f31627646e5eb10e0431b73fe09db983c8e7417d02060"
         },
         "symfony/event-dispatcher-contracts": {
             "version": "v3.7.1",
@@ -406,8 +406,8 @@
             "hash": "tree-v2:87421779a4d0f4aae910ba4a77c7a04bfd6d385d86190a96ec8276ec1ba48987"
         },
         "symfony/string": {
-            "version": "v8.1.10",
-            "hash": "tree-v2:9d9f9666a7b757602ca92ee10b4950dff6553c7a4d45fefbda4e36eb0a850782"
+            "version": "v7.4.22",
+            "hash": "tree-v2:3b3696c30b296920af5cbcbaa09611bc876dc0cb86d49bb7b8033dacde358642"
         },
         "symfony/translation": {
             "version": "v7.4.3",
