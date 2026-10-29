@@ -1,14 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-import preset from './vendor/filament/support/tailwind.config.preset';
 
 module.exports = {
-    preset: [preset],
     content: [
-        './app/Filament/**/*.php',
-        './resources/views/filament/**/*.blade.php',
-        './vendor/wire-elements/modal/resources/views/*.blade.php',
-        './vendor/wire-elements/modal/src/ModalComponent.php',
-        './vendor/filament/**/*.blade.php',
         './storage/framework/views/*.php',
         './app/**/*.php',
         './resources/**/*.blade.php',
