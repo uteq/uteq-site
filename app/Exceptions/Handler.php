@@ -7,6 +7,12 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    // Livewire throws these when a scanner sends a tampered request; they are not application errors.
+    protected $dontReport = [
+        \Livewire\Mechanisms\HandleComponents\CorruptComponentPayloadException::class,
+        \Livewire\Features\SupportFileUploads\MissingFileUploadsTraitException::class,
+    ];
+
     /**
      * The list of the inputs that are never flashed to the session on validation exceptions.
      *
