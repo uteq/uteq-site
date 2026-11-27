@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 require_once __DIR__.'/../LightLists/LightListsTest.php';
+require_once __DIR__.'/../LightLists/GuardsListGrowth.php';
 use App\Models\Keuring;
 use App\Models\Subprocessor;
 use App\Models\SubprocessorChange;
@@ -14,6 +15,7 @@ use Tests\LightLists\LightListsTest;
 final class AppLightListsTest extends LightListsTest
 {
     use RefreshDatabase;
+    use \Tests\LightLists\GuardsListGrowth;
 
     private ?User $actor = null;
 
@@ -66,13 +68,26 @@ final class AppLightListsTest extends LightListsTest
         ];
     }
 
-    public function test_light_lists_per_item_and_bound(): void
+    private function keuringGrowthList(): array
     {
+        return ['name' => 'keuring', 'url' => '/keuring/beheer', 'rows' => '[data-keuring-row]', 'id' => 'data-id', 'main' => '[data-keuring-main]', 'pageSize' => 50, 'next' => '[data-page-weight-next]', 'seed' => fn ($n) => $this->seedKeuringen($n)];
+    }
+
+    public static function listCases(): array
+    {
+        return ['keuring' => ['keuring'], 'full' => ['full']];
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('listCases')]
+    public function test_light_lists_per_item_and_bound(?string $name = null): void
+    {
+        if ($name === 'keuring') {
+            $this->assertListGrowth($this->keuringGrowthList());
+
+            return;
+        }
         foreach ($this->lightLists() as $list) {
             $weight = LightLists::perItem(seed: $list['seed'], url: $list['url'], rows: $list['rows'], request: fn ($url) => $this->get($url), login: fn () => $this->loginForLightLists(), fakeAi: fn () => $this->fakeAiForLightLists())->bounded(followUp: $list['next'] ?? '[data-page-weight-next]');
-            foreach ($weight->measurements as $name => $m) {
-                fwrite(STDERR, 'MEASURE '.$list['rows'].' '.$name.' '.json_encode(array_intersect_key($m, array_flip(['bytes', 'elements', 'alpine', 'queries', 'rows']))).PHP_EOL);
-            }
         }
     }
 
@@ -105,24 +120,13 @@ final class AppLightListsTest extends LightListsTest
             'flexlokaal' => '#main-content',
             'juridisch.index' => '#main-content',
             'juridisch.subverwerkers' => '#main-content',
-            'juridisch.subverwerkers.unsubscribe' => '#main-content',
-            'juridisch.subverwerkers.confirm' => '#main-content',
-            'juridisch.subverwerkers.rss' => '#main-content',
             'juridisch.show' => '#main-content',
             'keuring' => '#main-content',
             'keuring.dossier' => '#main-content',
-            '/livewire-4aeeedbb/css/{component}.css' => '#main-content',
-            '/livewire-4aeeedbb/css/{component}.global.css' => '#main-content',
-            '/livewire-4aeeedbb/js/{component}.js' => '#main-content',
-            '/livewire-4aeeedbb/livewire.csp.min.js.map' => '#main-content',
-            '/livewire-4aeeedbb/livewire.js' => '#main-content',
-            '/livewire-4aeeedbb/livewire.min.js.map' => '#main-content',
-            'livewire.preview-file' => '#main-content',
             'over' => '#main-content',
             'partners' => '#main-content',
             'privacy' => '#main-content',
             'projecten' => '#main-content',
-            'sanctum.csrf-cookie' => '#main-content',
             'vacature.developer' => '#main-content',
             'vacatures' => '#main-content',
             'werkwijze' => '#main-content',
@@ -132,9 +136,9 @@ final class AppLightListsTest extends LightListsTest
     public function test_light_lists_get_sweep(): void
     {
         $params = null;
+        $this->assertListGrowth($this->keuringGrowthList());
         $weight = LightLists::sweep(request: function ($url) {
             $r = $this->get($url);
-            fwrite(STDERR, 'GET '.$url.' '.$r->getStatusCode().PHP_EOL);
 
             return $r;
         }, login: fn () => $this->loginForLightLists(), fakeAi: fn () => $this->fakeAiForLightLists(), resolve: function ($route) use (&$params) {
@@ -142,12 +146,12 @@ final class AppLightListsTest extends LightListsTest
 
             return $params[$route->getName() ?? ''] ?? [];
         }, exclude: $this->routeExclusions(), main: $this->mainSelectors());
-        self::assertSame(['/keuring/beheer', '/firda/opus-vs-lokaal'], $weight->notCovered);
-        fwrite(STDERR, 'LightLists not covered: /keuring/beheer: representative dossier rows cost 8302 bytes and 159 elements per row (budget 5120 / 40); pagination and shared copy controller are covered separately.'.PHP_EOL);
-        fwrite(STDERR, 'LightLists not covered: /firda/opus-vs-lokaal: main content is a JavaScript application; first response contains an empty root.'.PHP_EOL);
-        foreach ($weight->measurements as $url => $m) {
-            fwrite(STDERR, 'SWEEP '.$url.' '.json_encode(array_intersect_key($m, array_flip(['bytes', 'elements', 'alpine', 'queries']))).PHP_EOL);
+        $reasons = ['/keuring/beheer' => $this->measuredDebtReason('keuring'), '/firda/opus-vs-lokaal' => 'The main presentation is generated by JavaScript after an empty server root.'];
+        self::assertSame(array_keys($reasons), $weight->notCovered);
+        foreach ($weight->notCovered as $url) {
+            $weight->notCoveredReasons[$url] = $reasons[$url];
         }
+        self::assertSame($reasons, $weight->notCoveredReasons);
     }
 
     public function test_keuring_pagination_and_one_copy_controller(): void
@@ -182,6 +186,21 @@ final class AppLightListsTest extends LightListsTest
         $doc = new \Tests\LightLists\LightListsHtml($response->getContent());
         self::assertSame(array_map('strval', array_slice($subIds, 50, 50)), array_map(fn ($row) => $row->getAttribute('data-id'), $doc->select('[data-subprocessor-row]')));
         self::assertSame(array_map('strval', array_slice(array_reverse($changes), 100, 50)), array_map(fn ($row) => $row->getAttribute('data-id'), $doc->select('[data-change-row]')));
-        $response->assertSee('subprocessors_page=3', false)->assertSee('changes_page=4',false);
+        $response->assertSee('subprocessors_page=3', false)->assertSee('changes_page=4', false);
+    }
+
+    public function test_status_summary_follows_newest_rows_with_ties_and_backfills(): void
+    {
+        $this->fakeAiForLightLists();
+        $this->loginForLightLists();
+        foreach ([['aangevraagd', '2026-11-01'], ['dossier binnen', '2026-11-04'], ['gefactureerd', '2026-11-03'], ['gefactureerd', '2026-11-04'], ['dossier binnen', '2026-11-02']] as [$status, $date]) {
+            Keuring::create(['email' => 'status@example.test', 'status' => $status, 'created_at' => $date.' 12:00:00']);
+        }
+        $response = $this->get('/keuring/beheer')->assertOk();
+        $doc = new \Tests\LightLists\LightListsHtml($response->getContent());
+        $summary = $doc->select('[data-keuring-main]')[0]->getElementsByTagName('p')->item(0)->textContent;
+        preg_match_all('/(aangevraagd|dossier binnen|gefactureerd):\s*(\d+)/', $summary, $matches);
+        self::assertSame(['gefactureerd', 'dossier binnen', 'aangevraagd'], $matches[1]);
+        self::assertSame(['2', '2', '1'], $matches[2]);
     }
 }

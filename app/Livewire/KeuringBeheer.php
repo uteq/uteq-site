@@ -6,12 +6,13 @@ use App\Models\Instelling;
 use App\Models\Keuring;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /** Overzicht voor Nathan en Johan. De route zit achter auth.basic; boot() checkt het bij elke Livewire-call opnieuw. */
 class KeuringBeheer extends Component
 {
-    use \Livewire\WithPagination;
+    use WithPagination;
 
     public int $plaatsenOver = 10;
 
@@ -83,7 +84,12 @@ class KeuringBeheer extends Component
     {
         return view('livewire.keuring-beheer', [
             'keuringen' => Keuring::latest()->orderByDesc('id')->paginate(50),
-            'statusCounts' => Keuring::query()->selectRaw('status, count(*) as total')->groupBy('status')->pluck('total', 'status'),
+            'statusCounts' => Keuring::query()->selectRaw('status, count(*) as total, max(created_at) as newest_at')
+                ->groupBy('status')->orderByDesc('newest_at')
+                ->orderByDesc(Keuring::query()->from('keuringen as newest')
+                    ->select('newest.id')->whereColumn('newest.status', 'keuringen.status')
+                    ->orderByDesc('newest.created_at')->orderByDesc('newest.id')->limit(1))
+                ->pluck('total', 'status'),
             'totalPersons' => Keuring::query()->sum('personen'),
             'stand' => Keuring::stand(),
         ])->layout('components.layouts.app', ['nav' => false, 'fullTitle' => 'Keuringen · beheer']);

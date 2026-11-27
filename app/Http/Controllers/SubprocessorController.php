@@ -57,7 +57,7 @@ class SubprocessorController extends Controller
             ->first();
 
         if (! $sub) {
-            throw new NotFoundHttpException;
+            throw new NotFoundHttpException();
         }
 
         if (! $sub->confirmed_at) {
@@ -77,7 +77,7 @@ class SubprocessorController extends Controller
             ->first();
 
         if (! $sub) {
-            throw new NotFoundHttpException;
+            throw new NotFoundHttpException();
         }
 
         if (! $sub->unsubscribed_at) {
