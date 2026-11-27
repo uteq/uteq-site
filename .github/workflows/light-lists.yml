@@ -33,18 +33,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Read the repository PHP version
-        if: runner.environment == 'github-hosted'
-        id: php
-        shell: bash
-        run: |
-          # config.platform.php wins; otherwise take the require.php floor.
-          # Runner PHP is used only to parse JSON, before setup-php selects test PHP.
-          php -r '$c=json_decode(file_get_contents("composer.json"),true,512,JSON_THROW_ON_ERROR); $v=$c["config"]["platform"]["php"] ?? $c["require"]["php"] ?? ""; if (!preg_match("/(?<![0-9])([0-9]+\.[0-9]+)(?:\.[0-9]+)?/",$v,$m)) {fwrite(STDERR,"Cannot determine PHP floor; configure this step for the repo constraint.\n");exit(1);} echo "version=".$m[1]."\n";' >> "$GITHUB_OUTPUT"
       - uses: shivammathur/setup-php@v2
         if: runner.environment == 'github-hosted'
         with:
-          php-version: ${{ steps.php.outputs.version }}
+          # composer.json allows ^8.1, but composer.lock needs PHP 8.4 (laravel/vet ^8.4).
+          php-version: '8.4'
           extensions: mbstring, dom, pdo_sqlite
           coverage: none
       - name: Install dependencies
