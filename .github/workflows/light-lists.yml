@@ -12,9 +12,9 @@ concurrency:
   cancel-in-progress: true
 jobs:
   light-lists:
-    # UTEQ's own systems use [self-hosted, uteq-dev].
-    # Client repos use ubuntu-24.04 on the owner's Actions minutes.
-    runs-on: [self-hosted, uteq-dev]
+    # This repository is public: GitHub-hosted runner only. The self-hosted
+    # [self-hosted, uteq-dev] runners never take jobs from public repositories.
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
       APP_ENV: testing
