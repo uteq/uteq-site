@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 /** Overzicht voor Nathan en Johan. De route zit achter auth.basic; boot() checkt het bij elke Livewire-call opnieuw. */
 class KeuringBeheer extends Component
 {
+    use \Livewire\WithPagination;
+
     public int $plaatsenOver = 10;
 
     public int $kop = 1;
@@ -80,7 +82,9 @@ class KeuringBeheer extends Component
     public function render()
     {
         return view('livewire.keuring-beheer', [
-            'keuringen' => Keuring::latest()->get(),
+            'keuringen' => Keuring::latest()->orderByDesc('id')->paginate(50),
+            'statusCounts' => Keuring::query()->selectRaw('status, count(*) as total')->groupBy('status')->pluck('total', 'status'),
+            'totalPersons' => Keuring::query()->sum('personen'),
             'stand' => Keuring::stand(),
         ])->layout('components.layouts.app', ['nav' => false, 'fullTitle' => 'Keuringen · beheer']);
     }

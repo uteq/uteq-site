@@ -1,0 +1,65 @@
+name: Light lists
+on:
+  pull_request:
+    paths-ignore: ['docs/**']
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**']
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  light-lists:
+    # UTEQ's own systems use [self-hosted, uteq-dev].
+    # Client repos use ubuntu-24.04 on the owner's Actions minutes.
+    runs-on: [self-hosted, uteq-dev]
+    timeout-minutes: 15
+    env:
+      APP_ENV: testing
+      # Fictional 32-byte encryption key, only for the isolated test app.
+      APP_KEY: fake-key-for-light-lists-tests!!
+      DB_CONNECTION: sqlite
+      DB_DATABASE: ':memory:'
+      CACHE_STORE: array
+      CACHE_DRIVER: array
+      SESSION_DRIVER: array
+      QUEUE_CONNECTION: sync
+      MAIL_MAILER: array
+      # Keep the repo's own private package auth; never put credentials in this file.
+      COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Read the repository PHP version
+        if: runner.environment == 'github-hosted'
+        id: php
+        shell: bash
+        run: |
+          # config.platform.php wins; otherwise take the require.php floor.
+          # Runner PHP is used only to parse JSON, before setup-php selects test PHP.
+          php -r '$c=json_decode(file_get_contents("composer.json"),true,512,JSON_THROW_ON_ERROR); $v=$c["config"]["platform"]["php"] ?? $c["require"]["php"] ?? ""; if (!preg_match("/(?<![0-9])([0-9]+\.[0-9]+)(?:\.[0-9]+)?/",$v,$m)) {fwrite(STDERR,"Cannot determine PHP floor; configure this step for the repo constraint.\n");exit(1);} echo "version=".$m[1]."\n";' >> "$GITHUB_OUTPUT"
+      - uses: shivammathur/setup-php@v2
+        if: runner.environment == 'github-hosted'
+        with:
+          php-version: ${{ steps.php.outputs.version }}
+          extensions: mbstring, dom, pdo_sqlite
+          coverage: none
+      - name: Install dependencies
+        shell: bash
+        run: |
+          composer install --no-interaction --prefer-dist --no-progress
+      - name: Fetch baseline base
+        env:
+          BASE_BRANCH: ${{ github.base_ref || 'main' }}
+        run: git fetch origin "+refs/heads/$BASE_BRANCH:refs/remotes/origin/$BASE_BRANCH"
+      - name: Run only the light-list contract
+        # Repository adapter: a plain PHPUnit-style class, also discovered by Pest.
+        run: |
+          if [ -x vendor/bin/pest ]; then
+            vendor/bin/pest tests/Feature/AppLightListsTest.php
+          else
+            vendor/bin/phpunit tests/Feature/AppLightListsTest.php
+          fi

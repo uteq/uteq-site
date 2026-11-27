@@ -1,13 +1,13 @@
 @push('head')<meta name="robots" content="noindex, nofollow">@endpush
-<div class="bg-gray-50 min-h-screen px-4 sm:px-6 pt-32 pb-20">
+<div data-keuring-main x-data="{ copied: null }" class="bg-gray-50 min-h-screen px-4 sm:px-6 pt-32 pb-20">
     <div class="max-w-7xl mx-auto space-y-8">
         <div class="flex flex-wrap items-end justify-between gap-4">
             <div>
                 <h1 class="font-sregs-display text-3xl text-secondary">Keuringen</h1>
                 <p class="text-gray-600 mt-1">
                     Formulier nu: <strong>{{ $stand }}</strong> ·
-                    @foreach ($keuringen->countBy('status') as $status => $aantal){{ $status }}: {{ $aantal }}@if (! $loop->last) · @endif @endforeach
-                    · personen met dossier: {{ $keuringen->sum('personen') }}
+                    @foreach ($statusCounts as $status => $aantal){{ $status }}: {{ $aantal }}@if (! $loop->last) · @endif @endforeach
+                    · personen met dossier: {{ $totalPersons }}
                 </p>
             </div>
             <button wire:click="export" class="btn-primary !rounded-lg px-5 py-2.5 text-sm">CSV-export</button>
@@ -48,7 +48,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-200 align-top">
                     @forelse ($keuringen as $k)
-                        <tr wire:key="k-{{ $k->id }}">
+                        <tr data-keuring-row data-id="{{ $k->id }}" wire:key="k-{{ $k->id }}">
                             <td class="p-3 max-w-md">
                                 <p class="font-semibold text-secondary">{{ $k->bedrijf ?? '(alleen e-mail)' }}</p>
                                 <p class="text-gray-600">{{ $k->naam }} · <a href="mailto:{{ $k->email }}" class="underline">{{ $k->email }}</a></p>
@@ -81,8 +81,8 @@
                             <td class="p-3 whitespace-nowrap">@if ($k->personen){{ $k->personen }} · €{{ $k->totaal() }} excl. btw @else – @endif</td>
                             <td class="p-3">
                                 @if ($k->naam)
-                                    <button type="button" x-data="{ ok: false }" x-on:click="navigator.clipboard.writeText('{{ $k->dossierUrl() }}'); ok = true; setTimeout(() => ok = false, 1500)" class="rounded-lg border border-gray-300 px-3 py-1.5 hover:border-primary">
-                                        <span x-show="! ok">Kopieer link</span><span x-cloak x-show="ok">Gekopieerd</span>
+                                    <button type="button" data-copy-url="{{ $k->dossierUrl() }}" x-on:click="navigator.clipboard.writeText($el.dataset.copyUrl); copied = {{ $k->id }}; setTimeout(() => { if (copied === {{ $k->id }}) copied = null }, 1500)" class="rounded-lg border border-gray-300 px-3 py-1.5 hover:border-primary">
+                                        <span x-show="copied !== {{ $k->id }}">Kopieer link</span><span x-cloak x-show="copied === {{ $k->id }}">Gekopieerd</span>
                                     </button>
                                 @endif
                             </td>
@@ -93,5 +93,6 @@
                 </tbody>
             </table>
         </div>
+        <x-list-pages :paginator="$keuringen" :reactive="true" />
     </div>
 </div>

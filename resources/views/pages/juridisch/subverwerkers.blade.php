@@ -40,7 +40,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-200 text-gray-700">
                         @forelse ($subprocessors as $sub)
-                            <tr class="align-top">
+                            <tr data-subprocessor-row data-id="{{ $sub->id }}" class="align-top">
                                 <td class="px-4 py-3 font-semibold text-secondary">{{ $sub->name }}</td>
                                 <td class="px-4 py-3">{{ $sub->service }}</td>
                                 <td class="px-4 py-3">{{ $sub->data_location }}</td>
@@ -54,6 +54,10 @@
                 </table>
             </div>
 
+            @if ($subprocessors->hasPages())
+                <div data-subprocessors-next><x-list-pages :paginator="$subprocessors" /></div>
+            @endif
+
             <p class="text-xs text-gray-500 mt-3">
                 Niet alle subverwerkers zijn voor iedere dienst van toepassing. De daadwerkelijk ingeschakelde subverwerkers per dienst zijn op aanvraag specifiek opvraagbaar via info@uteq.nl.
             </p>
@@ -63,7 +67,7 @@
                     <h2 class="text-xl font-sregs-bold text-secondary mb-3">Recente wijzigingen</h2>
                     <p class="text-xs text-gray-500 mb-4">Wijzigingen uit de afgelopen twaalf maanden.</p>
                     @forelse ($changes as $change)
-                        <div id="change-{{ $change->id }}" class="border-l-2 border-primary/40 pl-4 mb-5">
+                        <div data-change-row data-id="{{ $change->id }}" id="change-{{ $change->id }}" class="border-l-2 border-primary/40 pl-4 mb-5">
                             <div class="text-xs uppercase tracking-wider text-gray-500">
                                 {{ $change->effective_from->translatedFormat('j F Y') }} &middot; {{ ucfirst($change->change_type) }}
                             </div>
@@ -75,6 +79,9 @@
                     @empty
                         <p class="text-gray-500 text-sm">Geen wijzigingen in de afgelopen twaalf maanden.</p>
                     @endforelse
+                    @if ($changes->hasPages())
+                        <div data-changes-next><x-list-pages :paginator="$changes" /></div>
+                    @endif
                     <div class="mt-4 text-xs text-gray-400">
                         Volg ook via <a href="{{ route('juridisch.subverwerkers.rss') }}" class="hover:text-primary">RSS</a>.
                     </div>
