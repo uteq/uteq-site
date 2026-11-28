@@ -15,7 +15,9 @@ class SubprocessorController extends Controller
         $subprocessors = Subprocessor::query()
             ->active()
             ->ordered()
-            ->get();
+            ->orderBy('id')
+            ->paginate(50, ['*'], 'subprocessors_page')
+            ->withQueryString();
 
         $changes = SubprocessorChange::query()
             ->published()
@@ -23,7 +25,8 @@ class SubprocessorController extends Controller
             ->recent(12)
             ->orderByDesc('effective_from')
             ->orderByDesc('id')
-            ->get();
+            ->paginate(50, ['*'], 'changes_page')
+            ->withQueryString();
 
         return view('pages.juridisch.subverwerkers', [
             'subprocessors' => $subprocessors,

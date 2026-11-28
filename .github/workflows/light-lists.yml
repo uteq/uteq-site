@@ -1,0 +1,58 @@
+name: Light lists
+on:
+  pull_request:
+    paths-ignore: ['docs/**']
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**']
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  light-lists:
+    # This repository is public: GitHub-hosted runner only. The self-hosted
+    # [self-hosted, uteq-dev] runners never take jobs from public repositories.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      APP_ENV: testing
+      # Fictional 32-byte encryption key, only for the isolated test app.
+      APP_KEY: fake-key-for-light-lists-tests!!
+      DB_CONNECTION: sqlite
+      DB_DATABASE: ':memory:'
+      CACHE_STORE: array
+      CACHE_DRIVER: array
+      SESSION_DRIVER: array
+      QUEUE_CONNECTION: sync
+      MAIL_MAILER: array
+      # Keep the repo's own private package auth; never put credentials in this file.
+      COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: shivammathur/setup-php@v2
+        if: runner.environment == 'github-hosted'
+        with:
+          # composer.json allows ^8.1, but composer.lock needs PHP 8.4 (laravel/vet ^8.4).
+          php-version: '8.4'
+          extensions: mbstring, dom, pdo_sqlite
+          coverage: none
+      - name: Install dependencies
+        shell: bash
+        run: |
+          composer install --no-interaction --prefer-dist --no-progress
+      - name: Fetch baseline base
+        env:
+          BASE_BRANCH: ${{ github.base_ref || 'main' }}
+        run: git fetch origin "+refs/heads/$BASE_BRANCH:refs/remotes/origin/$BASE_BRANCH"
+      - name: Run only the light-list contract
+        # Repository adapter: a plain PHPUnit-style class, also discovered by Pest.
+        run: |
+          if [ -x vendor/bin/pest ]; then
+            vendor/bin/pest tests/Feature/AppLightListsTest.php
+          else
+            vendor/bin/phpunit tests/Feature/AppLightListsTest.php
+          fi
